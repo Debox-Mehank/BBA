@@ -12,73 +12,35 @@ export default function Home() {
       <br />
       <div id="aboutus" className="grid grid-cols-1 md:grid-cols-2">
         <div className="w-full flex justify-center items-stretch">
-          <Image src={about} objectFit="cover" />
+          <Image src={about} alt="" objectFit="cover" />
         </div>
         <div className="w-full bg-cover bg-center about-div p-6 flex flex-col justify-center">
           <h3 className="font-semibold text-3xl mb-4">About Bawarchi</h3>
-          <p className="text-black text-xs my-2">Bawarchi Biryanis, isn't just about food. It's about the
-            generations of chefs who kept the cooking traditions
-            alive and are behind the delicious dishes we serve in
-            our establishment.</p>
-          <p className="text-black text-xs my-2">Bawarchi means "the chef" as an homage to all the
-            chefs that kept the traditions alive. We strive to
-            tantalize our customers with versatile pan-Indian
-            menu in a modern fine dine setting. We take great
-            pride in delivering most authentic Indian dishes
-            prepared with best ingredients.</p>
-          <p className="text-black text-xs my-2">Bawarchi means "the chef" as an homage to all the
-            chefs that kept the traditions alive. We strive to
-            tantalize our customers with versatile pan-Indian
-            menu in a modern fine dine setting. We take great
-            pride in delivering most authentic Indian dishes
-            prepared with best ingredients.</p>
+          <p className="text-black text-xs my-2">{"Bawarchi Biryanis, isn't just about food. It's about the generations of chefs who kept the cooking traditions alive and are behind the delicious dishes we serve in our establishment."}</p>
+          <p className="text-black text-xs my-2">{"Bawarchi means 'the chef' as an homage to all the chefs that kept the traditions alive. We strive to tantalize our customers with versatile pan-Indian menu in a modern fine dine setting. We take great pride in delivering most authentic Indian dishes prepared with best ingredients."}</p>
+          <p className="text-black text-xs my-2">{"Bawarchi means 'the chef' as an homage to all the chefs that kept the traditions alive. We strive to tantalize our customers with versatile pan-Indian menu in a modern fine dine setting. We take great pride in delivering most authentic Indian dishes prepared with best ingredients."}</p>
         </div>
       </div>
       <br />
       <div id="catering" className="grid grid-cols-1 md:grid-cols-2">
         <div className="w-full bg-cover bg-center catering-div p-6 flex flex-col justify-center">
           <h3 className="font-semibold text-3xl mb-4 text-primary">Catering</h3>
-          <p className="text-white text-xs my-2">Let us Cater your next Event. We are ready to cater
-            to you. We cook for you and your loved ones,
-            co-workers and friends. We cater all groups, from
-            a 20 people office lunch gathering to a 1000
-            people wedding party. Contact us today to set-up
-            your menu for your next special event. In fact
-            Delivery is on us. We offer multiple options
-            including Party Trays to take to a party, Packed
-            Lunch Boxes for Corporate setting, Live Onsite
-            Catering, Buffet Catering, Set Menu's for large
-            dinner parties. We will take your worry away about
-            food and let you focus on celebrating the special
-            occasion.</p>
+          <p className="text-white text-xs my-2">{"Let us Cater your next Event. We are ready to cater to you. We cook for you and your loved ones, co-workers and friends. We cater all groups, from a 20 people office lunch gathering to a 1000 people wedding party. Contact us today to set-up your menu for your next special event. In fact Delivery is on us. We offer multiple options including Party Trays to take to a party, Packed Lunch Boxes for Corporate setting, Live Onsite Catering, Buffet Catering, Set Menu's for large dinner parties. We will take your worry away about food and let you focus on celebrating the special occasion."}</p>
         </div>
         <div className="w-full flex justify-center items-stretch">
-          <Image src={catering} objectFit="cover" />
+          <Image src={catering} alt="" objectFit="cover" />
         </div>
       </div>
       <br />
       <div id="glimpses" className="grid grid-cols-1 md:grid-cols-2">
         <div className="w-full flex justify-center items-stretch">
-          <Image src={glimpses} objectFit="cover" />
+          <Image src={glimpses} alt="" objectFit="cover" />
         </div>
         <div className="w-full bg-cover bg-center glimpses-div p-6 flex flex-col justify-center">
           <h3 className="font-semibold text-3xl mb-4">Glimpses of Past Events</h3>
-          <p className="text-black text-xs my-2">Bawarchi Biryanis, isn't just about food. It's about the
-            generations of chefs who kept the cooking traditions
-            alive and are behind the delicious dishes we serve in
-            our establishment.</p>
-          <p className="text-black text-xs my-2">Bawarchi means "the chef" as an homage to all the
-            chefs that kept the traditions alive. We strive to
-            tantalize our customers with versatile pan-Indian
-            menu in a modern fine dine setting. We take great
-            pride in delivering most authentic Indian dishes
-            prepared with best ingredients.</p>
-          <p className="text-black text-xs my-2">Bawarchi means "the chef" as an homage to all the
-            chefs that kept the traditions alive. We strive to
-            tantalize our customers with versatile pan-Indian
-            menu in a modern fine dine setting. We take great
-            pride in delivering most authentic Indian dishes
-            prepared with best ingredients.</p>
+          <p className="text-black text-xs my-2">{"Bawarchi Biryanis, isn't just about food. It's about the generations of chefs who kept the cooking traditions alive and are behind the delicious dishes we serve in our establishment."}</p>
+          <p className="text-black text-xs my-2">{"Bawarchi means 'the chef' as an homage to all the chefs that kept the traditions alive. We strive to tantalize our customers with versatile pan-Indian menu in a modern fine dine setting. We take great pride in delivering most authentic Indian dishes prepared with best ingredients."}</p>
+          <p className="text-black text-xs my-2">{"Bawarchi means 'the chef' as an homage to all the chefs that kept the traditions alive. We strive to tantalize our customers with versatile pan-Indian menu in a modern fine dine setting. We take great pride in delivering most authentic Indian dishes prepared with best ingredients."}</p>
         </div>
       </div>
       <br />
