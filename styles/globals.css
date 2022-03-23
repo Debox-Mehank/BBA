@@ -2,6 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  @font-face {
+    font-family: "BigCalson";
+    src: url("/fonts/Big-Calson-Medium.woff2") format("woff2");
+    font-weight: 400;
+    font-display: swap;
+    font-style: normal;
+  }
+}
+
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap");
 
 * {
@@ -23,7 +33,7 @@ body {
 }
 
 .banner-div {
-  background-image: url("../public/mainbanner.gif");
+  background-image: url("../public/main.mp4");
 }
 
 .about-div,.glimpses-div {
@@ -32,4 +42,70 @@ body {
 
 .catering-div {
   background-image: url("../public/greenbg.jpg");
+}
+
+.aboutus {
+  background-image: url("../public/about.jpg");
+}
+
+.catering {
+  background-image: url("../public/catering.jpg");
+}
+
+/* Specialities */
+.dish1:hover::before {
+    content: "CHICKEN DUM BIRYANI";
+    position: absolute;
+    bottom: 40px;
+    left: 0;
+    right: 0;
+    color: white;
+    font-size: 20px;
+    font-family: "BigCalson";
+    letter-spacing: 3px;
+    background-color: rgba(0, 0, 0, .6);
+    padding: 4px;
+    z-index: 1;
+}
+.dish2:hover::before {
+    content: "BUTTER CHICKEN";
+    position: absolute;
+    bottom: 40px;
+    left: 0;
+    right: 0;
+    color: white;
+    font-size: 20px;
+    font-family: "BigCalson";
+    letter-spacing: 3px;
+    background-color: rgba(0, 0, 0, .6);
+    padding: 4px;
+    z-index: 1;
+}
+.dish3:hover::before {
+    content: "LAMB CHOPS";
+    position: absolute;
+    bottom: 40px;
+    left: 0;
+    right: 0;
+    color: white;
+    font-size: 20px;
+    font-family: "BigCalson";
+    letter-spacing: 3px;
+    background-color: rgba(0, 0, 0, .6);
+    padding: 4px;
+    z-index: 1;
+}
+.dish4:hover::before {
+    content: "MUSHROOM PEPPER SALT";
+    position: absolute;
+    bottom: 40px;
+    left: 0;
+    right: 0;
+    color: white;
+    font-size: 20px;
+    font-family: "BigCalson";
+    letter-spacing: 3px;
+    background-color: rgba(0, 0, 0, .6);
+    padding: 4px;
+    z-index: 1;
 }

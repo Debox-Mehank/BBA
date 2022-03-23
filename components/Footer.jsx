@@ -19,7 +19,7 @@ const Footer = () => {
                         Menu
                     </a>
                 </Link>
-                <Link href={"/"}>
+                <Link href={"#catering"}>
                     <a
                         className={`px-4 py-2 font-bold items-center justify-center text-primary uppercase text-xs`}>
                         Catering
@@ -31,7 +31,7 @@ const Footer = () => {
                         Promotions
                     </a>
                 </Link>
-                <Link href={"/"}>
+                <Link href={"https://www.clover.com/online-ordering/bawarchi-biryanis-atlanta"}>
                     <a
                         className={`px-4 py-2 font-bold items-center justify-center text-primary uppercase text-xs`}>
                         Online Ordering
@@ -39,12 +39,12 @@ const Footer = () => {
                 </Link>
             </ul>
             <div className="w-48 p-12">
-                <Link href="/">
+                <Link href="https://www.facebook.com/bawarchibiryanisandysprings">
                     <a className="items-center mx-3 inline-flex">
                         <FontAwesomeIcon icon={faFacebookSquare} size={"lg"} className="text-primary" />
                     </a>
                 </Link>
-                <Link href="/">
+                <Link href="https://www.instagram.com/bawarchibiryanisatlanta/">
                     <a className="items-center mx-3 inline-flex">
                         <FontAwesomeIcon icon={faInstagramSquare} size={"lg"} className="text-primary" />
                     </a>

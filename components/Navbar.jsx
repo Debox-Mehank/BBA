@@ -1,12 +1,27 @@
-import logo from "../assets/logo.png"
+import { useState, useEffect } from "react"
 import Router, { useRouter } from "next/router";
 import Link from "next/link";
 import Image from "next/image";
+import logo from "../assets/logo.png"
 
 const Navbar = () => {
     const router = useRouter();
+    const [isOpen, setIsOpen] = useState(false);
+
+    useEffect(() => {
+        const doMagic = () => {
+            setIsOpen(false);
+        };
+
+        Router.events.on("routeChangeStart", doMagic); // add listener
+
+        return () => {
+            Router.events.off("routeChangeStart", doMagic); // remove listener
+        };
+    }, []);
+
     return (
-        <nav className="flex justify-around items-center flex-wrap h-auto w-full z-50 fixed top-0 left-0 p-6 bg-white">
+        <nav className="flex justify-between md:justify-around lg:justify-around xl:justify-around items-center flex-wrap h-auto w-full z-40 fixed top-0 left-0 p-6 bg-white">
             <div className="w-48">
                 <Link href="/">
                     <a className="items-center mx-3 inline-flex">
@@ -42,34 +57,81 @@ const Navbar = () => {
                         Promotions
                     </a>
                 </Link>
-                <Link href={"/"}>
+                <Link href={"https://www.clover.com/online-ordering/bawarchi-biryanis-atlanta"}>
                     <a
                         className={`px-4 py-2 font-bold items-center justify-center hover:text-primary uppercase text-xs md:text-base text-black`}>
                         Online Ordering
                     </a>
                 </Link>
             </ul>
-            {/* <div class="block lg:hidden">
-                <button class="flex items-center px-3 py-2 border rounded text-teal-200 border-teal-400 hover:text-white hover:border-white">
-                    <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Menu</title><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" /></svg>
+            <div className={`${isOpen ? 'block' : 'hidden'} fixed transition-all top-0 left-0 w-full h-full z-50 bg-black`}>
+                <button
+                    onClick={() => setIsOpen((prev) => !prev)}
+                    className="absolute top-6 right-6 text-white text-6xl"
+                    aria-label="Menu Mobile Button">
+                    &times;
                 </button>
+                <ul className="flex flex-col justify-center items-center gap-4 h-full">
+                    <a
+                        onClick={() => {
+                            setIsOpen((prev) => !prev)
+                            router.push("/")
+                        }}
+                        className={`px-4 py-2 font-bold items-center justify-center hover:text-primary uppercase text-2xl text-white`}>
+                        Home
+                    </a>
+                    <a
+                        onClick={() => {
+                            setIsOpen((prev) => !prev)
+                            router.push("/")
+                        }}
+                        className={`px-4 py-2 font-bold items-center justify-center hover:text-primary uppercase text-2xl text-white`}>
+                        Menu
+                    </a>
+                    <a
+                        onClick={() => {
+                            setIsOpen((prev) => !prev)
+                            router.push("#catering")
+                        }}
+                        className={`px-4 py-2 font-bold items-center justify-center hover:text-primary uppercase text-2xl text-white`}>
+                        Catering
+                    </a>
+                    <a
+                        onClick={() => {
+                            setIsOpen((prev) => !prev)
+                            router.push("/")
+                        }}
+                        className={`px-4 py-2 font-bold items-center justify-center hover:text-primary uppercase text-2xl text-white`}>
+                        Promotions
+                    </a>
+                    <a
+                        onClick={() => {
+                            setIsOpen((prev) => !prev)
+                            router.push("https://www.clover.com/online-ordering/bawarchi-biryanis-atlanta")
+                        }}
+                        className={`px-4 py-2 font-bold items-center justify-center hover:text-primary uppercase text-2xl text-white`}>
+                        Online Ordering
+                    </a>
+                </ul>
             </div>
-            <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
-                <div class="text-sm lg:flex-grow">
-                    <a href="#responsive-header" class="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4">
-                        Docs
-                    </a>
-                    <a href="#responsive-header" class="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white mr-4">
-                        Examples
-                    </a>
-                    <a href="#responsive-header" class="block mt-4 lg:inline-block lg:mt-0 text-teal-200 hover:text-white">
-                        Blog
-                    </a>
-                </div>
-                <div>
-                    <a href="#" class="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-teal-500 hover:bg-white mt-4 lg:mt-0">Download</a>
-                </div>
-            </div> */}
+            <button
+                onClick={() => setIsOpen((prev) => !prev)}
+                className="inline-flex p-3 md:hidden text-black ml-auto"
+                aria-label="Menu Mobile Button">
+                <svg
+                    className="w-6 h-6"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M4 6h16M4 12h16M4 18h16"
+                    />
+                </svg>
+            </button>
         </nav>
     )
 }
