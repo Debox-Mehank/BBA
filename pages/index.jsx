@@ -1,8 +1,8 @@
 import Image from "next/image"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPhone, faLocationDot, faClock } from "@fortawesome/free-solid-svg-icons";
-// import about from "../assets/about.jpg"
-// import catering from "../assets/catering.jpg"
+import about from "../assets/about.jpg"
+import catering from "../assets/catering.jpg"
 import dish1 from "../assets/dish1.png"
 import dish2 from "../assets/dish2.png"
 import dish3 from "../assets/dish3.png"
@@ -12,13 +12,13 @@ export default function Home() {
   return (
     <div className="w-full">
       {/* <div className="w-full h-screen bg-cover bg-center banner-div" /> */}
-      <video autoPlay muted loop className="w-full h-screen bg-cover bg-center object-cover">
+      <video autoPlay muted loop playsInline className="w-full h-screen bg-cover bg-center object-cover">
         <source src="./main.mp4" type="video/mp4" />
       </video>
       <br />
       <div id="aboutus" className="grid grid-cols-1 md:grid-cols-2">
-        <div className="w-full flex justify-center items-stretch bg-fixed aboutus bg-cover bg-center">
-          {/* <Image src={about} alt="" objectFit="cover" /> */}
+        <div className="w-full flex justify-center items-stretch">
+          <Image src={about} alt="" objectFit="cover" />
         </div>
         <div className="w-full bg-cover bg-center about-div p-6 flex flex-col justify-center">
           <h3 className="font-bold text-3xl lg:text-4xl xl:text-4xl mb-4 font-big_calson">About Bawarchi</h3>
@@ -33,14 +33,14 @@ export default function Home() {
           <h3 className="font-bold text-3xl lg:text-4xl xl:text-4xl mb-4 text-primary font-big_calson">Catering</h3>
           <p className="text-white text-sm my-2">{"Let us Cater your next Event. We are ready to cater to you. We cook for you and your loved ones, co-workers and friends. We cater all groups, from a 20 people office lunch gathering to a 1000 people wedding party. Contact us today to set-up your menu for your next special event. In fact Delivery is on us. We offer multiple options including Party Trays to take to a party, Packed Lunch Boxes for Corporate setting, Live Onsite Catering, Buffet Catering, Set Menu's for large dinner parties. We will take your worry away about food and let you focus on celebrating the special occasion."}</p>
         </div>
-        <div className="w-full flex justify-center items-stretch bg-fixed catering bg-cover bg-center">
-          {/* <Image src={catering} alt="" objectFit="cover" /> */}
+        <div className="w-full flex justify-center items-stretch">
+          <Image src={catering} alt="" objectFit="cover" />
         </div>
       </div>
       <br />
       <div id="glimpses" className="grid grid-cols-1 md:grid-cols-2">
         <div className="w-full flex justify-center items-stretch">
-          <video autoPlay muted loop className="object-cover">
+          <video autoPlay muted loop playsInline className="object-cover">
             <source src="./catering.mp4" type="video/mp4" />
           </video>
           {/* <Image src={glimpses} alt="" objectFit="cover" /> */}
