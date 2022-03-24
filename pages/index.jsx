@@ -1,4 +1,8 @@
+import { useState } from "react"
 import Image from "next/image"
+import Link from "next/link"
+import { Swiper, SwiperSlide } from "swiper/react"
+import { Autoplay } from "swiper";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPhone, faLocationDot, faClock } from "@fortawesome/free-solid-svg-icons";
 import about from "../assets/about.jpg"
@@ -8,7 +12,31 @@ import dish2 from "../assets/dish2.png"
 import dish3 from "../assets/dish3.png"
 import dish4 from "../assets/dish4.png"
 
+const SpecialitiesData = [
+  {
+    img: dish1,
+    className: "dish1Mobile",
+    alt: "Chicken dum biryani"
+  },
+  {
+    img: dish2,
+    className: "dish2Mobile",
+    alt: "Butter Chicker"
+  },
+  {
+    img: dish3,
+    className: "dish3Mobile",
+    alt: "Lamb Chops"
+  },
+  {
+    img: dish4,
+    className: "dish4Mobile",
+    alt: "Mushroom Pepper Salt"
+  }
+]
+
 export default function Home() {
+  const [swiper, setSwiper] = useState();
   return (
     <div className="w-full">
       {/* <div className="w-full h-screen bg-cover bg-center banner-div" /> */}
@@ -17,9 +45,10 @@ export default function Home() {
       </video>
       <br />
       <div id="aboutus" className="grid grid-cols-1 md:grid-cols-2">
-        <div className="w-full flex justify-center items-stretch">
+        <div className="w-full flex justify-center items-stretch md:hidden">
           <Image src={about} alt="" objectFit="cover" />
         </div>
+        <div className="w-full hidden justify-center items-stretch aboutus bg-cover bg-fixed bg-center md:flex" />
         <div className="w-full bg-cover bg-center about-div p-6 flex flex-col justify-center">
           <h3 className="font-bold text-3xl lg:text-4xl xl:text-4xl mb-4 font-big_calson">About Bawarchi</h3>
           <p className="text-black text-sm my-2">{"Bawarchi Biryanis, isn't just about food. It's about the generations of chefs who kept the cooking traditions alive and are behind the delicious dishes we serve in our establishment."}</p>
@@ -29,13 +58,17 @@ export default function Home() {
       </div>
       <br />
       <div id="catering" className="grid grid-cols-1 md:grid-cols-2">
+        <div className="w-full flex justify-center items-stretch md:hidden lg:hidden xl:hidden">
+          <Image src={catering} alt="" objectFit="cover" />
+        </div>
         <div className="w-full bg-cover bg-center catering-div p-6 flex flex-col justify-center">
           <h3 className="font-bold text-3xl lg:text-4xl xl:text-4xl mb-4 text-primary font-big_calson">Catering</h3>
           <p className="text-white text-sm my-2">{"Let us Cater your next Event. We are ready to cater to you. We cook for you and your loved ones, co-workers and friends. We cater all groups, from a 20 people office lunch gathering to a 1000 people wedding party. Contact us today to set-up your menu for your next special event. In fact Delivery is on us. We offer multiple options including Party Trays to take to a party, Packed Lunch Boxes for Corporate setting, Live Onsite Catering, Buffet Catering, Set Menu's for large dinner parties. We will take your worry away about food and let you focus on celebrating the special occasion."}</p>
+          <Link href={"/catering"}>
+            <a className="px-3 py-2 font-bold font-big_calson text-primary bg-black rounded-md w-max text-sm">Learn More</a>
+          </Link>
         </div>
-        <div className="w-full flex justify-center items-stretch">
-          <Image src={catering} alt="" objectFit="cover" />
-        </div>
+        <div className="w-full hidden justify-center items-stretch catering bg-cover bg-fixed bg-center md:flex" />
       </div>
       <br />
       <div id="glimpses" className="grid grid-cols-1 md:grid-cols-2">
@@ -55,7 +88,7 @@ export default function Home() {
       <br />
       <div id="specialities" className="w-full bg-cover bg-center bg-pri_green p-6 lg:p-10 xl:p-10">
         <h3 className="font-normal text-3xl lg:text-4xl xl:text-4xl text-center font-big_calson text-primary">Our Specialities</h3>
-        <div className="grid grid-cols-1 lg:grid-cols-4 xl:grid-cols-4 text-center mt-8 px-2 lg:px-10 xl:px-10 gap-12 lg:gap-18 xl:gap-24">
+        <div className="hidden md:grid grid-cols-1 md:grid-cols-4 lg:grid-cols-4 xl:grid-cols-4 text-center mt-8 px-2 lg:px-10 xl:px-10 gap-12 lg:gap-18 xl:gap-24">
           <div className="w-full hover:shadow-specialities hover:scale-105 transition-all dish1">
             <Image src={dish1} alt="Chicken dum biryani" objectFit={"cover"} />
           </div>
@@ -68,6 +101,83 @@ export default function Home() {
           <div className="w-full hover:shadow-specialities hover:scale-105 transition-all dish4">
             <Image src={dish4} alt="Mushroom Pepper Salt" objectFit={"cover"} />
           </div>
+        </div>
+        <div className="text-center mt-8 px-8 md:hidden relative">
+          <div className="absolute -left-2 lg:left-48 xl:left-48 z-10 top-0 bottom-0 flex justify-center items-center">
+            <div
+              onClick={() => {
+                if (swiper.activeIndex > 0) {
+                  swiper.slideTo(swiper.activeIndex - 1)
+                }
+              }}
+              className="bg-primary rounded-full p-2 hover:bg-primary text-pri_green w-7 h-7 lg:w-10 lg:h-10 md:w-10 md:h-10 cursor-pointer"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-3 w-3 lg:w-6 lg:h-6 md:w-6 md:h-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={4}
+                  d="M15 19l-7-7 7-7"
+                />
+              </svg>
+            </div>
+          </div>
+          <div className="absolute -right-2 lg:right-48 xl:right-48 z-10 top-0 bottom-0 flex justify-center items-center">
+            <div
+              onClick={() => {
+                if (swiper.activeIndex < SpecialitiesData.length) {
+                  swiper.slideTo(swiper.activeIndex + 1)
+                }
+              }}
+              className="bg-primary rounded-full p-2 hover:primary text-pri_green w-7 h-7 lg:w-10 lg:h-10 md:w-10 md:h-10 cursor-pointer"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-3 w-3 lg:w-6 lg:h-6 md:w-6 md:h-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={4}
+                  d="M9 5l7 7-7 7"
+                />
+              </svg>
+            </div>
+          </div>
+          <Swiper
+            navigation={false}
+            pagination={false}
+            centeredSlides={true}
+            spaceBetween={12}
+            slidesPerView={1}
+            onSwiper={(s) => setSwiper(s)}
+            autoHeight={true}
+            loop={true}
+            autoplay={{
+              delay: 2000,
+              disableOnInteraction: false
+            }}
+            modules={[Autoplay]}
+          >
+            {SpecialitiesData.map((d, idx) => {
+              return (
+                <SwiperSlide key={idx}>
+                  <div className={`w-full hover:shadow-specialities hover:scale-105 transition-all ${d.className}`}>
+                    <Image src={d.img} alt={d.alt} objectFit={"cover"} />
+                  </div>
+                </SwiperSlide>
+              );
+            })}
+          </Swiper>
         </div>
       </div>
       <br />

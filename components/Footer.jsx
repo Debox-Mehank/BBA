@@ -5,7 +5,7 @@ import { faFacebookSquare, faInstagramSquare } from '@fortawesome/free-brands-sv
 
 const Footer = () => {
     return (
-        <nav className="flex justify-around items-center flex-wrap h-auto w-full z-50 p-6 bg-pri_green">
+        <footer className="flex justify-around items-center flex-wrap h-auto w-full z-50 p-6 bg-pri_green mt-auto">
             <ul className='grid grid-cols-3 lg:block'>
                 <Link href={"/"}>
                     <a
@@ -19,7 +19,7 @@ const Footer = () => {
                         Menu
                     </a>
                 </Link>
-                <Link href={"#catering"}>
+                <Link href={"/catering"}>
                     <a
                         className={`px-4 py-2 font-bold items-center justify-center text-primary uppercase text-xs`}>
                         Catering
@@ -50,7 +50,7 @@ const Footer = () => {
                     </a>
                 </Link>
             </div>
-        </nav>
+        </footer>
     )
 }
 

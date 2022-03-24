@@ -53,7 +53,7 @@ body {
 }
 
 /* Specialities */
-.dish1:hover::before {
+.dish1:hover::before, .dish1Mobile::before {
     content: "CHICKEN DUM BIRYANI";
     position: absolute;
     bottom: 40px;
@@ -67,7 +67,7 @@ body {
     padding: 4px;
     z-index: 1;
 }
-.dish2:hover::before {
+.dish2:hover::before, .dish2Mobile::before {
     content: "BUTTER CHICKEN";
     position: absolute;
     bottom: 40px;
@@ -81,7 +81,7 @@ body {
     padding: 4px;
     z-index: 1;
 }
-.dish3:hover::before {
+.dish3:hover::before, .dish3Mobile::before {
     content: "LAMB CHOPS";
     position: absolute;
     bottom: 40px;
@@ -95,7 +95,7 @@ body {
     padding: 4px;
     z-index: 1;
 }
-.dish4:hover::before {
+.dish4:hover::before, .dish4Mobile::before {
     content: "MUSHROOM PEPPER SALT";
     position: absolute;
     bottom: 40px;
@@ -108,4 +108,10 @@ body {
     background-color: rgba(0, 0, 0, .6);
     padding: 4px;
     z-index: 1;
+}
+
+/* Catering Hover Effects */
+.catering-card:hover > .catering-card-info {
+  display: flex;
+  align-items: stretch;
 }
