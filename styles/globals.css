@@ -40,7 +40,7 @@ body {
   background-image: url("../public/lightbg.jpg");
 }
 
-.catering-div {
+.catering-div, .greenbox {
   background-image: url("../public/greenbg.jpg");
 }
 
