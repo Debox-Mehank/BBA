@@ -13,12 +13,6 @@ const Footer = () => {
                         Home
                     </a>
                 </Link>
-                <Link href={"/"}>
-                    <a
-                        className={`px-4 py-2 font-bold items-center justify-center text-primary uppercase text-xs`}>
-                        Menu
-                    </a>
-                </Link>
                 <Link href={"/catering"}>
                     <a
                         className={`px-4 py-2 font-bold items-center justify-center text-primary uppercase text-xs`}>
