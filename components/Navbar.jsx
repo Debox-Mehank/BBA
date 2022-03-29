@@ -39,30 +39,30 @@ const Navbar = () => {
                         Home
                     </a>
                 </Link>
-                <Link href={"/"}>
+                {/* <Link href={"/"}>
                     <a
                         className={`px-4 py-2 font-bold items-center justify-center hover:text-primary uppercase text-xs md:text-base text-black`}>
                         Menu
                     </a>
-                </Link>
+                </Link> */}
                 <Link href={"#catering"}>
                     <a
                         className={`px-4 py-2 font-bold items-center justify-center hover:text-primary uppercase text-xs md:text-base text-black`}>
                         Catering
                     </a>
                 </Link>
-                <Link href={"/"}>
+                {/* <Link href={"/"}>
                     <a
                         className={`px-4 py-2 font-bold items-center justify-center hover:text-primary uppercase text-xs md:text-base text-black`}>
                         Promotions
                     </a>
-                </Link>
-                <Link href={"https://www.clover.com/online-ordering/bawarchi-biryanis-atlanta"}>
-                    <a
-                        className={`px-4 py-2 font-bold items-center justify-center hover:text-primary uppercase text-xs md:text-base text-black`}>
-                        Online Ordering
-                    </a>
-                </Link>
+                </Link> */}
+                <a
+                    href="https://www.clover.com/online-ordering/bawarchi-biryanis-atlanta"
+                    target={"_blank"}
+                    className={`px-4 py-2 font-bold items-center justify-center hover:text-primary uppercase text-xs md:text-base text-black cursor-pointer`}>
+                    Online Ordering
+                </a>
             </ul>
             <div className={`${isOpen ? 'block' : 'hidden'} fixed transition-all top-0 left-0 w-full h-full z-50 bg-black`}>
                 <button
@@ -87,14 +87,6 @@ const Navbar = () => {
                         }}
                         className={`px-4 py-2 font-bold items-center justify-center hover:text-primary uppercase text-2xl text-white`}>
                         Catering
-                    </a>
-                    <a
-                        onClick={() => {
-                            setIsOpen((prev) => !prev)
-                            router.push("/")
-                        }}
-                        className={`px-4 py-2 font-bold items-center justify-center hover:text-primary uppercase text-2xl text-white`}>
-                        Promotions
                     </a>
                     <a
                         onClick={() => {
