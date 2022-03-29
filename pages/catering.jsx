@@ -131,6 +131,108 @@ const Catering = () => {
                     </div>
                 </div>
             </div>
+            {/* Forms */}
+            <div className="w-full">
+                <h3 className="font-bold text-3xl lg:text-4xl xl:text-4xl mb-4 text-black text-center font-big_calson">Catering Request Form</h3>
+                <form name="catering_request_form" data-netlify="true" action="/catering?submit=true" method="POST" className="w-11/12 lg:w-3/4 xl:w-3/4 mx-auto p-2 lg:p-6 xl:p-6 flex flex-col justify-center gap-6">
+                    <input type="hidden" name="form-name" value="catering_request_form" />
+                    <div className="flex flex-col gap-1">
+                        <label htmlFor="firstname" className="text-xs md:text-sm lg:text-sm xl:text-sm font-big_calson font-bold">First Name</label>
+                        <input required id="firstname" name="firstname" type="text" className="bg-white p-2 rounded text-sm md:text-base lg:text-base xl:text-base" />
+                    </div>
+                    <div className="flex flex-col gap-1">
+                        <label htmlFor="lastname" className="text-xs md:text-sm lg:text-sm xl:text-sm font-big_calson font-bold">Last Name</label>
+                        <input required id="lastname" name="lastname" type="text" className="bg-white p-2 rounded text-sm md:text-base lg:text-base xl:text-base" />
+                    </div>
+                    <div className="flex flex-col gap-1">
+                        <label htmlFor="email" className="text-xs md:text-sm lg:text-sm xl:text-sm font-big_calson font-bold">Email</label>
+                        <input required id="email" name="email" type="email" className="bg-white p-2 rounded text-sm md:text-base lg:text-base xl:text-base" />
+                    </div>
+                    <div className="flex flex-col gap-1">
+                        <label htmlFor="phonenumber" className="text-xs md:text-sm lg:text-sm xl:text-sm font-big_calson font-bold">Phone Number</label>
+                        <input required id="phonenumber" name="phonenumber" type="number" className="bg-white p-2 rounded text-sm md:text-base lg:text-base xl:text-base" />
+                    </div>
+                    <div className="flex flex-col gap-1">
+                        <label className="text-xs md:text-sm lg:text-sm xl:text-sm font-big_calson font-bold">Type of Catering</label>
+                        <div className="grid grid-cols-2 lg:grid-cols-8 gap-4">
+                            <div className="flex items-center justify-start gap-2">
+                                <input required type="radio" name="catering_type" id="box_lunches" value={"Box Lunches"} />
+                                <label htmlFor="box_lunches" className="text-xs md:text-sm lg:text-sm xl:text-sm">Box Lunches</label>
+                            </div>
+                            <div className="flex items-center justify-start gap-2">
+                                <input required type="radio" name="catering_type" id="party_trays" value={"Party Trays"} />
+                                <label htmlFor="party_trays" className="text-xs md:text-sm lg:text-sm xl:text-sm">Party Trays</label>
+                            </div>
+                            <div className="flex items-center justify-start gap-2">
+                                <input required type="radio" name="catering_type" id="buffet_catering" value={"Buffet Catering"} />
+                                <label htmlFor="buffet_catering" className="text-xs md:text-sm lg:text-sm xl:text-sm">Buffet Catering</label>
+                            </div>
+                            <div className="flex items-center justify-start gap-2">
+                                <input required type="radio" name="catering_type" id="weddings" value={"Weddings"} />
+                                <label htmlFor="weddings" className="text-xs md:text-sm lg:text-sm xl:text-sm">Weddings</label>
+                            </div>
+                            <div className="flex items-center justify-start gap-2">
+                                <input required type="radio" name="catering_type" id="large_celeb" value={"Large Celebration"} />
+                                <label htmlFor="large_celeb" className="text-xs md:text-sm lg:text-sm xl:text-sm">Large Celebration</label>
+                            </div>
+                            <div className="flex items-center justify-start gap-2">
+                                <input required type="radio" name="catering_type" id="private_dining" value={"Private Dining"} />
+                                <label htmlFor="private_dining" className="text-xs md:text-sm lg:text-sm xl:text-sm">Private Dining</label>
+                            </div>
+                            <div className="flex items-center justify-start gap-2">
+                                <input required type="radio" name="catering_type" id="live_counter" value={"Live Counter"} />
+                                <label htmlFor="live_counter" className="text-xs md:text-sm lg:text-sm xl:text-sm">Live Counter</label>
+                            </div>
+                            <div className="flex items-center justify-start gap-2">
+                                <input required type="radio" name="catering_type" id="catering_others" value={"Others"} />
+                                <label htmlFor="catering_others" className="text-xs md:text-sm lg:text-sm xl:text-sm">Others</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="flex flex-col gap-1">
+                        <label className="text-xs md:text-sm lg:text-sm xl:text-sm font-big_calson font-bold">Time of Event</label>
+                        <div className="grid grid-cols-2 lg:grid-cols-8 gap-4">
+                            <div className="flex items-center justify-start gap-2">
+                                <input required type="radio" name="event_type" id="lunch" value={"Lunch"} />
+                                <label htmlFor="lunch" className="text-xs md:text-sm lg:text-sm xl:text-sm">Lunch</label>
+                            </div>
+                            <div className="flex items-center justify-start gap-2">
+                                <input required type="radio" name="event_type" id="dinner" value={"Dinner"} />
+                                <label htmlFor="dinner" className="text-xs md:text-sm lg:text-sm xl:text-sm">Dinner</label>
+                            </div>
+                            <div className="flex items-center justify-start gap-2">
+                                <input required type="radio" name="event_type" id="breakfast" value={"Breakfast"} />
+                                <label htmlFor="breakfast" className="text-xs md:text-sm lg:text-sm xl:text-sm">Breakfast</label>
+                            </div>
+                            <div className="flex items-center justify-start gap-2">
+                                <input required type="radio" name="event_type" id="event_others" value={"Others"} />
+                                <label htmlFor="event_others" className="text-xs md:text-sm lg:text-sm xl:text-sm">Others</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="flex flex-col gap-1">
+                        <label htmlFor="pickuptime" className="text-xs md:text-sm lg:text-sm xl:text-sm font-big_calson font-bold">Pickup/Delivery Time</label>
+                        <input required id="pickuptime" name="pickuptime" type="time" className="bg-white p-2 rounded text-sm md:text-base lg:text-base xl:text-base" />
+                    </div>
+                    <div className="flex flex-col gap-1">
+                        <label htmlFor="noofpeople" className="text-xs md:text-sm lg:text-sm xl:text-sm font-big_calson font-bold">No of People</label>
+                        <input required id="noofpeople" name="noofpeople" type="number" className="bg-white p-2 rounded text-sm md:text-base lg:text-base xl:text-base" />
+                    </div>
+                    <div className="flex flex-col gap-1">
+                        <label htmlFor="management_message" className="text-xs md:text-sm lg:text-sm xl:text-sm">Message to Management</label>
+                        <textarea required rows={4} id="management_message" name="management_message" placeholder="Spicy Level, Delivery Contact, etc..." className="bg-white p-2 rounded text-sm md:text-base lg:text-base xl:text-base" />
+                    </div>
+                    <div className="flex flex-col gap-1">
+                        <label htmlFor="eventdate" className="text-xs md:text-sm lg:text-sm xl:text-sm font-big_calson font-bold">Event Date</label>
+                        <input required id="eventdate" name="eventdate" type="date" className="bg-white p-2 rounded text-sm md:text-base lg:text-base xl:text-base" />
+                    </div>
+                    <div className="w-full">
+                        <input type="submit" value="Submit" className="text-primary bg-pri_green font-semibold text-sm shadow-md cursor-pointer rounded py-1.5 px-4 mt-3 lg:py-2 hover:text-black hover:bg-gray-300 w-max uppercase" />
+                        <input type="reset" value="Reset" className="text-primary bg-pri_green font-semibold text-sm shadow-md cursor-pointer rounded py-1.5 px-4 mt-3 lg:py-2 hover:text-black hover:bg-gray-300 w-max uppercase ml-4" />
+                    </div>
+                </form>
+            </div>
+            <br />
         </div>
     )
 }
