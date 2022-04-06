@@ -1,9 +1,29 @@
+import { useEffect } from "react"
 import Image from "next/image"
+import { useRouter } from "next/router";
+import Swal from 'sweetalert2'
+import withReactContent from 'sweetalert2-react-content'
 import catering from "../assets/catering.jpg"
-import live_catering from "../assets/live_catering.jpeg"
-import events from "../assets/glimpses.gif"
+
+const MySwal = withReactContent(Swal)
 
 const Catering = () => {
+    const router = useRouter();
+    const query = router.query
+
+    useEffect(() => {
+        console.log(query);
+        if (query && query.submit === "true") {
+            MySwal.fire({
+                icon: "success",
+                titleText: "Success",
+                text: "Thank you for submitting your query, our catering specialist will get in touch with you shortly.",
+                timer: 3500,
+                showConfirmButton: false
+            })
+        }
+    }, [query]);
+
     return (
         <div className="w-full mt-24">
             <div className="grid grid-cols-1 md:grid-cols-2 m-4 p-2 lg:m-6 xl:m-6 lg:p-6 xl:p-6">
