@@ -60,6 +60,7 @@ const Navbar = () => {
                 <a
                     href="https://www.clover.com/online-ordering/bawarchi-biryanis-atlanta"
                     target={"_blank"}
+                    rel="noreferrer"
                     className={`px-4 py-2 font-bold items-center justify-center hover:text-primary uppercase text-xs md:text-base text-black cursor-pointer`}>
                     Online Ordering
                 </a>
