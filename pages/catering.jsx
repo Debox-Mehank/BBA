@@ -231,6 +231,10 @@ const Catering = () => {
                         </div>
                     </div>
                     <div className="flex flex-col gap-1">
+                        <label htmlFor="eventdate" className="text-xs md:text-sm lg:text-sm xl:text-sm font-big_calson font-bold">Event Date</label>
+                        <input required id="eventdate" name="eventdate" type="date" className="bg-white p-2 rounded text-sm md:text-base lg:text-base xl:text-base" />
+                    </div>
+                    <div className="flex flex-col gap-1">
                         <label htmlFor="pickuptime" className="text-xs md:text-sm lg:text-sm xl:text-sm font-big_calson font-bold">Pickup/Delivery Time</label>
                         <input required id="pickuptime" name="pickuptime" type="time" className="bg-white p-2 rounded text-sm md:text-base lg:text-base xl:text-base" />
                     </div>
@@ -241,10 +245,6 @@ const Catering = () => {
                     <div className="flex flex-col gap-1">
                         <label htmlFor="management_message" className="text-xs md:text-sm lg:text-sm xl:text-sm">Message to Management</label>
                         <textarea required rows={4} id="management_message" name="management_message" placeholder="Spicy Level, Delivery Contact, etc..." className="bg-white p-2 rounded text-sm md:text-base lg:text-base xl:text-base" />
-                    </div>
-                    <div className="flex flex-col gap-1">
-                        <label htmlFor="eventdate" className="text-xs md:text-sm lg:text-sm xl:text-sm font-big_calson font-bold">Event Date</label>
-                        <input required id="eventdate" name="eventdate" type="date" className="bg-white p-2 rounded text-sm md:text-base lg:text-base xl:text-base" />
                     </div>
                     <div className="w-full">
                         <input type="submit" value="Submit" className="text-primary bg-pri_green font-semibold text-sm shadow-md cursor-pointer rounded py-1.5 px-4 mt-3 lg:py-2 hover:text-black hover:bg-gray-300 w-max uppercase" />

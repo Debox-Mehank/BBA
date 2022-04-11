@@ -40,7 +40,7 @@ export default function Home() {
   return (
     <div className="w-full">
       {/* <div className="w-full h-screen bg-cover bg-center banner-div" /> */}
-      <video autoPlay muted loop playsInline className="w-full h-screen bg-cover bg-center object-cover">
+      <video autoPlay muted loop playsInline className="w-full h-screen bg-cover bg-center object-cover banner-video">
         <source src="./main.mp4" type="video/mp4" />
       </video>
       <br />
@@ -191,10 +191,12 @@ export default function Home() {
             <h3 className="font-extrabold text-sm uppercase">
               Address
             </h3>
-            <p className="font-bold text-xs whitespace-pre-line">
-              6627-A ROSWELL ROAD,{"\n"}
-              SANDY SPRINGS, GA - 30328
-            </p>
+            <a href="https://g.page/bawarchibiryanisatlanta?share" target="_blank" rel="noopener noreferrer">
+              <p className="font-bold text-xs whitespace-pre-line">
+                6627-A ROSWELL ROAD,{"\n"}
+                SANDY SPRINGS, GA - 30328
+              </p>
+            </a>
           </div>
           <div className="flex justify-start items-center flex-col gap-2">
             <FontAwesomeIcon icon={faPhone} size="2x" />

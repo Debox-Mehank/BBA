@@ -21,7 +21,7 @@ const Navbar = () => {
     }, []);
 
     return (
-        <nav className="flex justify-between md:justify-around lg:justify-around xl:justify-around items-center flex-wrap h-auto w-full z-40 fixed top-0 left-0 p-6 bg-white">
+        <nav className="flex justify-between items-center flex-wrap h-auto w-full z-40 fixed top-0 left-0 p-6 bg-white">
             <div className="w-48">
                 <Link href="/">
                     <a className="items-center mx-3 inline-flex">
