@@ -32,7 +32,7 @@ const Catering = () => {
                 </div>
                 <div className="w-full bg-cover bg-center catering-div p-6 flex flex-col justify-center">
                     <h3 className="font-bold text-3xl lg:text-4xl xl:text-4xl mb-4 text-primary font-big_calson">Catering</h3>
-                    <p className="text-white text-sm my-2">{"Let us Cater your next Event. We are ready to cater to you. We cook for you and your loved ones, co-workers and friends. We cater all groups, from a 20 people office lunch gathering to a 1000 people wedding party. Contact us today to set-up your menu for your next special event. In fact Delivery is on us. We offer multiple options including Party Trays to take to a party, Packed Lunch Boxes for Corporate setting, Live Onsite Catering, Buffet Catering, Set Menu's for large dinner parties. We will take your worry away about food and let you focus on celebrating the special occasion."}</p>
+                    <p className="text-white text-sm my-2">{"Let us Cater your next Event. We are ready to cater to you. We cook for you and your loved ones, co-workers and friends. We cater all groups, from a 20 people office lunch gathering to a 1000 people wedding party. Contact us today to set-up your menu for your next special event. In fact Delivery is on us. We offer multiple options including Party Trays to take to a party, Live Onsite Catering, Buffet Catering, Set Menu's for large dinner parties. We will take your worry away about food and let you focus on celebrating the special occasion."}</p>
                 </div>
             </div>
             <div className="w-full">
@@ -176,10 +176,6 @@ const Catering = () => {
                         <label className="text-xs md:text-sm lg:text-sm xl:text-sm font-big_calson font-bold">Type of Catering</label>
                         <div className="grid grid-cols-2 lg:grid-cols-8 gap-4">
                             <div className="flex items-center justify-start gap-2">
-                                <input required type="radio" name="catering_type" id="box_lunches" value={"Box Lunches"} />
-                                <label htmlFor="box_lunches" className="text-xs md:text-sm lg:text-sm xl:text-sm">Box Lunches</label>
-                            </div>
-                            <div className="flex items-center justify-start gap-2">
                                 <input required type="radio" name="catering_type" id="party_trays" value={"Party Trays"} />
                                 <label htmlFor="party_trays" className="text-xs md:text-sm lg:text-sm xl:text-sm">Party Trays</label>
                             </div>
@@ -194,10 +190,6 @@ const Catering = () => {
                             <div className="flex items-center justify-start gap-2">
                                 <input required type="radio" name="catering_type" id="large_celeb" value={"Large Celebration"} />
                                 <label htmlFor="large_celeb" className="text-xs md:text-sm lg:text-sm xl:text-sm">Large Celebration</label>
-                            </div>
-                            <div className="flex items-center justify-start gap-2">
-                                <input required type="radio" name="catering_type" id="private_dining" value={"Private Dining"} />
-                                <label htmlFor="private_dining" className="text-xs md:text-sm lg:text-sm xl:text-sm">Private Dining</label>
                             </div>
                             <div className="flex items-center justify-start gap-2">
                                 <input required type="radio" name="catering_type" id="live_counter" value={"Live Counter"} />

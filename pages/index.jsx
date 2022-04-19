@@ -40,8 +40,11 @@ export default function Home() {
   return (
     <div className="w-full">
       {/* <div className="w-full h-screen bg-cover bg-center banner-div" /> */}
-      <video autoPlay muted loop playsInline className="w-full h-screen bg-cover bg-center object-cover banner-video">
+      <video autoPlay muted loop playsInline className="w-full h-screen bg-cover bg-center object-cover banner-video hidden lg:block">
         <source src="./main.mp4" type="video/mp4" />
+      </video>
+      <video autoPlay muted loop playsInline className="w-full h-screen bg-cover bg-center object-cover banner-video block lg:hidden">
+        <source src="./main_mobile.mp4" type="video/mp4" />
       </video>
       <br />
       <div id="aboutus" className="grid grid-cols-1 md:grid-cols-2">
@@ -67,7 +70,7 @@ export default function Home() {
           <p className="text-white text-sm mt-2">Enquire Now!</p>
           <a href="https://api.whatsapp.com/send?phone=14702652768" target={"_blank"} rel="noopener noreferrer" className="py-2 font-bold font-big_calson text-primary rounded-md w-max text-sm mb-2 hover:underline">Whatsapp Us</a>
           <Link href={"/catering"}>
-            <a className="px-3 py-2 font-bold font-big_calson text-primary bg-black rounded-md w-max text-sm">Learn More</a>
+            <a className="px-3 py-2 font-bold font-big_calson text-primary bg-black rounded-md w-max text-sm">Submit Catering Enquiry</a>
           </Link>
         </div>
         <div className="w-full hidden justify-center items-stretch catering bg-cover bg-fixed bg-center md:flex" />
