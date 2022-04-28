@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { useEffect, useState } from "react";
-
+import useMediaQuery from "../hooks/useMediaQuery";
 // Data
 import imageData from "../utils/imageData";
 
@@ -14,6 +14,8 @@ export default function OurGallery() {
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [modalImgIndex, setModalImgIndex] = useState(null);
   const [modalImgData, setModalImgData] = useState([]);
+
+  const isDesktop = useMediaQuery('(min-width: 500px)');
 
   // Filtering Images for the Modal based on user input
 
@@ -95,7 +97,7 @@ export default function OurGallery() {
           nextSrc={modalImgData[(modalImgIndex + 1) % modalImgData.length]}
           prevSrc={
             modalImgData[
-              (modalImgIndex + modalImgData.length - 1) % modalImgData.length
+            (modalImgIndex + modalImgData.length - 1) % modalImgData.length
             ]
           }
           onMoveNextRequest={() =>
@@ -107,7 +109,7 @@ export default function OurGallery() {
             )
           }
           onCloseRequest={() => setModalIsOpen(false)}
-          imagePadding="150"
+          imagePadding={isDesktop ? "100" : "40"}
         />
       )}
     </div>
