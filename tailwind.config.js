@@ -14,7 +14,10 @@ module.exports = {
         big_calson: "BigCalson"
       },
       boxShadow: {
-        "specialities": "10px 10px #EACB7D;"
+        "specialities": "10px 10px #EACB7D;",
+      },
+      dropShadow: {
+        'gallery': '0 35px 35px #EACB7D;'
       }
     },
   },
