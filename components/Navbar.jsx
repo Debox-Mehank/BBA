@@ -21,8 +21,8 @@ const Navbar = () => {
   }, []);
 
   return (
-    <nav className="flex justify-between items-center flex-wrap h-auto w-full z-40 fixed top-0 left-0 p-6 bg-white">
-      <div className="w-48">
+    <nav className="flex justify-between items-center flex-wrap h-auto w-full z-40 fixed top-0 left-0 px-6 pt-3 pb-2 bg-white">
+      <div className="w-48 sm:w-60">
         <Link href="/">
           <a className="items-center mx-3 inline-flex">
             <Image src={logo} alt="Bawarchi Biryanis Atlanta" />
@@ -73,9 +73,8 @@ const Navbar = () => {
                 </Link> */}
       </ul>
       <div
-        className={`${
-          isOpen ? "block" : "hidden"
-        } fixed transition-all top-0 left-0 w-full h-full z-50 bg-black`}
+        className={`${isOpen ? "block" : "hidden"
+          } fixed transition-all top-0 left-0 w-full h-full z-50 bg-black`}
       >
         <button
           onClick={() => setIsOpen((prev) => !prev)}

@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import useMediaQuery from "../hooks/useMediaQuery";
 // Data
 import imageData from "../utils/imageData";
-
+s
 // Lib for Gallery
 import Lightbox from "react-image-lightbox";
 import "react-image-lightbox/style.css";
