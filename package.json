@@ -18,6 +18,7 @@
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "react-image-lightbox": "^5.1.4",
+    "react-phone-number-input": "^3.1.51",
     "sweetalert2": "^11.4.8",
     "sweetalert2-react-content": "^4.2.0",
     "swiper": "^8.0.7"

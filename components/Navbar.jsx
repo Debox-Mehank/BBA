@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import Router, { useRouter } from "next/router";
 import Link from "next/link";
 import Image from "next/image";
-import logo from "../assets/logo.png";
+import logo from "../assets/bba_logo.png";
 
 const Navbar = () => {
   const router = useRouter();

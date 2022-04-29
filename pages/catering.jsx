@@ -4,12 +4,16 @@ import { useRouter } from "next/router";
 import Swal from 'sweetalert2'
 import withReactContent from 'sweetalert2-react-content'
 import catering from "../assets/catering.jpg"
+import 'react-phone-number-input/style.css'
+import PhoneInput, { isValidPhoneNumber } from 'react-phone-number-input'
+import { useState } from "react";
 
 const MySwal = withReactContent(Swal)
 
 const Catering = () => {
     const router = useRouter();
     const query = router.query
+    const [phoneNum, setPhoneNum] = useState(null)
 
     useEffect(() => {
         console.log(query);
@@ -154,7 +158,8 @@ const Catering = () => {
             {/* Forms */}
             <div className="w-full">
                 <h3 className="font-bold text-3xl lg:text-4xl xl:text-4xl mb-4 text-black text-center font-big_calson">Catering Request Form</h3>
-                <form name="catering_request_form" data-netlify="true" action="/catering?submit=true" method="POST" className="w-11/12 lg:w-3/4 xl:w-3/4 mx-auto p-2 lg:p-6 xl:p-6 flex flex-col justify-center gap-6">
+                <form name="catering_request_form" data-netlify="true" action="/catering?submit=true" method="POST"
+                    className="w-11/12 lg:w-3/4 xl:w-3/4 mx-auto p-2 lg:p-6 xl:p-6 flex flex-col justify-center gap-6">
                     <input type="hidden" name="form-name" value="catering_request_form" />
                     <div className="flex flex-col gap-1">
                         <label htmlFor="firstname" className="text-xs md:text-sm lg:text-sm xl:text-sm font-big_calson font-bold">First Name</label>
@@ -169,9 +174,16 @@ const Catering = () => {
                         <input required id="email" name="email" type="email" className="bg-white p-2 rounded text-sm md:text-base lg:text-base xl:text-base" />
                     </div>
                     <div className="flex flex-col gap-1">
+                        <label htmlFor="phonenumber" className="text-xs md:text-sm lg:text-sm xl:text-sm font-big_calson font-bold">Phone Number
+                        </label>
+                        <PhoneInput className="bg-white p-2 rounded text-sm md:text-base lg:text-base xl:text-base"
+                            id="phonenumber" defaultCountry="US" countryCallingCodeEditable={false} onChange={_ => null} />
+                    </div>
+
+                    {/* <div className="flex flex-col gap-1">
                         <label htmlFor="phonenumber" className="text-xs md:text-sm lg:text-sm xl:text-sm font-big_calson font-bold">Phone Number</label>
                         <input required id="phonenumber" name="phonenumber" type="number" className="bg-white p-2 rounded text-sm md:text-base lg:text-base xl:text-base" />
-                    </div>
+                    </div> */}
                     <div className="flex flex-col gap-1">
                         <label className="text-xs md:text-sm lg:text-sm xl:text-sm font-big_calson font-bold">Type of Catering</label>
                         <div className="grid grid-cols-2 lg:grid-cols-8 gap-4">
@@ -235,7 +247,7 @@ const Catering = () => {
                         <input required id="noofpeople" name="noofpeople" type="number" className="bg-white p-2 rounded text-sm md:text-base lg:text-base xl:text-base" />
                     </div>
                     <div className="flex flex-col gap-1">
-                        <label htmlFor="management_message" className="text-xs md:text-sm lg:text-sm xl:text-sm">Message to Management</label>
+                        <label htmlFor="management_message" className="text-xs md:text-sm lg:text-sm xl:text-sm font-big_calson font-bold">Message to Management</label>
                         <textarea required rows={4} id="management_message" name="management_message" placeholder="Spicy Level, Delivery Contact, etc..." className="bg-white p-2 rounded text-sm md:text-base lg:text-base xl:text-base" />
                     </div>
                     <div className="w-full">
