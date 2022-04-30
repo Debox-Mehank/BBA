@@ -5,7 +5,7 @@ import Swal from 'sweetalert2'
 import withReactContent from 'sweetalert2-react-content'
 import catering from "../assets/catering.jpg"
 import 'react-phone-number-input/style.css'
-import PhoneInput, { isValidPhoneNumber } from 'react-phone-number-input'
+import Input from 'react-phone-number-input/input'
 import { useState } from "react";
 
 const MySwal = withReactContent(Swal)
@@ -176,8 +176,11 @@ const Catering = () => {
                     <div className="flex flex-col gap-1">
                         <label htmlFor="phonenumber" className="text-xs md:text-sm lg:text-sm xl:text-sm font-big_calson font-bold">Phone Number
                         </label>
-                        <PhoneInput className="bg-white p-2 rounded text-sm md:text-base lg:text-base xl:text-base"
-                            id="phonenumber" defaultCountry="US" countryCallingCodeEditable={false} onChange={_ => null} />
+                        <Input
+                            className="bg-white p-2 rounded text-sm md:text-base lg:text-base xl:text-base"
+                            country="US"
+                            onChange={_ => null} />
+
                     </div>
 
                     {/* <div className="flex flex-col gap-1">
