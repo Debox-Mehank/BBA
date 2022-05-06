@@ -1,12 +1,12 @@
 import { useEffect } from "react"
-import Image from "next/image"
 import { useRouter } from "next/router";
+import { useState } from "react";
+import Image from "next/image"
 import Swal from 'sweetalert2'
 import withReactContent from 'sweetalert2-react-content'
 import catering from "../assets/catering.jpg"
 import 'react-phone-number-input/style.css'
 import Input from 'react-phone-number-input/input'
-import { useState } from "react";
 
 const MySwal = withReactContent(Swal)
 
