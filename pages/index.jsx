@@ -68,7 +68,7 @@ export default function Home() {
           <Image src={about} alt="" objectFit="cover" />
         </div>
         <div className="w-full hidden justify-center items-stretch aboutus bg-cover bg-fixed bg-center md:flex" />
-        <div className="w-full h-auto xl:h-[50vh] bg-cover bg-center about-div p-6 flex flex-col justify-center">
+        <div className="w-full h-auto xl:h-[50vh] md:min-h-[500px] bg-cover bg-center about-div p-6 flex flex-col justify-center">
           <h3 className="font-bold text-3xl lg:text-4xl xl:text-4xl mb-4 font-big_calson">
             About Bawarchi
           </h3>
@@ -90,7 +90,7 @@ export default function Home() {
           <Image src={catering} alt="" objectFit="cover" />
         </div>
         {/* Catering */}
-        <div className="w-full h-auto xl:h-[50vh] bg-cover bg-center catering-div p-6 flex flex-col justify-center">
+        <div className="w-full h-auto xl:h-[50vh] md:min-h-[500px] bg-cover bg-center catering-div p-6 flex flex-col justify-center">
           <h3 className="font-bold text-3xl lg:text-4xl xl:text-4xl mb-4 text-primary font-big_calson">
             Catering
           </h3>
