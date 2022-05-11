@@ -11,6 +11,7 @@ config.autoAddCss = false;
 // 
 
 function MyApp({ Component, pageProps }) {
+  console.log(process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS)
   return (
     <Layout>
       <Head>
@@ -33,28 +34,22 @@ Serving the finest Indian food in Atlanta." />
 Serving the finest Indian food in Atlanta." />
         <meta property="twitter:image" content={image} />
 
-
       </Head>
       <Component {...pageProps} />
       {/* Google Analytics */}
-      <Script strategy="lazyOnload" src={`https://www.googletagmanager.com/gtag/js?id=${process.env.ANALYTICS_ID}`} />
-      <Script strategy="lazyOnload">
+      <Script strategy="lazyOnload" id="analytics" src={`https://www.googletagmanager.com/gtag/js?id=UA-228506755-1`} />
+      <Script strategy="lazyOnload" id="analytics2">
         {
           `            window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
 
-            gtag('config', ${process.env.ANALYTICS_ID});`
+            gtag('config', UA-228506755-1);`
         }
       </Script>
     </Layout>
   )
 }
 
-// < !--Global site tag(gtag.js) - Google Analytics-- >
-// <script async src="https://www.googletagmanager.com/gtag/js?id=UA-228506755-1"></script>
-// <script>
-
-// </script>
 
 export default MyApp
