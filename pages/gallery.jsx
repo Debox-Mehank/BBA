@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import useMediaQuery from "../hooks/useMediaQuery";
+import Head from "next/dist/shared/lib/head";
 // Data
 import imageData from "../utils/imageData";
 
@@ -25,6 +26,10 @@ export default function OurGallery() {
 
   return (
     <div className="mt-28 md:p-20 glimpses-div">
+      <Head>
+        <title>Bawarchi Atlanta Gallery - A glimpse of our ambience, food and events!</title>
+        <meta name="description" content="Glimpses of Bawarchi Atlanta Sandy Springs' events, our food dishes and ambience" />
+      </Head>
       <h1 className="font-bold font-big_calson text-5xl mb-12 text-center">
         Our Gallery
       </h1>

@@ -7,6 +7,7 @@ import withReactContent from 'sweetalert2-react-content'
 import catering from "../assets/catering.jpg"
 import 'react-phone-number-input/style.css'
 import Input from 'react-phone-number-input/input'
+import Head from "next/head";
 
 const MySwal = withReactContent(Swal)
 
@@ -30,12 +31,16 @@ const Catering = () => {
 
     return (
         <div className="w-full mt-24">
+            <Head>
+                <title>Bawarchi Atlanta Catering - Live Onsite Catering, Buffets and more!</title>
+                <meta name="description" content="From a 20 people office lunch gathering to a 1000 people wedding party, we cater all types of events at Bawarchi Atlanta." />
+            </Head>
             <div className="grid grid-cols-1 md:grid-cols-2 m-4 p-2 lg:m-6 xl:m-6 lg:p-6 xl:p-6">
                 <div className="w-full flex justify-center items-stretch">
                     <Image src={catering} alt="" objectFit="cover" />
                 </div>
                 <div className="w-full bg-cover bg-center catering-div p-6 flex flex-col justify-center">
-                    <h3 className="font-bold text-3xl lg:text-4xl xl:text-4xl mb-4 text-primary font-big_calson">Catering</h3>
+                    <h1 className="font-bold text-3xl lg:text-4xl xl:text-4xl mb-4 text-primary font-big_calson">Catering</h1>
                     <p className="text-white text-sm my-2">{"Let us Cater your next Event. We are ready to cater to you. We cook for you and your loved ones, co-workers and friends. We cater all groups, from a 20 people office lunch gathering to a 1000 people wedding party. Contact us today to set-up your menu for your next special event. In fact Delivery is on us. We offer multiple options including Party Trays to take to a party, Live Onsite Catering, Buffet Catering, Set Menu's for large dinner parties. We will take your worry away about food and let you focus on celebrating the special occasion."}</p>
                 </div>
             </div>

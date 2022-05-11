@@ -69,9 +69,9 @@ export default function Home() {
         </div>
         <div className="w-full hidden justify-center items-stretch aboutus bg-cover bg-fixed bg-center md:flex" />
         <div className="w-full h-auto xl:h-[50vh] md:min-h-[500px] bg-cover bg-center about-div p-6 flex flex-col justify-center">
-          <h3 className="font-bold text-3xl lg:text-4xl xl:text-4xl mb-4 font-big_calson">
+          <h1 className="font-bold text-3xl lg:text-4xl xl:text-4xl mb-4 font-big_calson">
             About Bawarchi
-          </h3>
+          </h1>
           <p className="text-black text-sm my-2">
             {
               "Bawarchi Biryanis, isn't just about food. It's about the generations of chefs who kept the cooking traditions alive and are behind the delicious dishes we serve in our establishment."
