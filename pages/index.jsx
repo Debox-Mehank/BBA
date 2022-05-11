@@ -20,12 +20,12 @@ const SpecialitiesData = [
   {
     img: dish1,
     className: "dish1Mobile",
-    alt: "Chicken dum biryani",
+    alt: "Chicken Dum Biryani",
   },
   {
     img: dish2,
     className: "dish2Mobile",
-    alt: "Butter Chicker",
+    alt: "Butter Chicken",
   },
   {
     img: dish3,
@@ -65,7 +65,7 @@ export default function Home() {
       <br />
       <div id="aboutus" className="grid grid-cols-1 md:grid-cols-2">
         <div className="w-full flex justify-center items-stretch md:hidden">
-          <Image src={about} alt="" objectFit="cover" />
+          <Image src={about} alt="Bawarchi Sandy Springs Atlanta Interior " objectFit="cover" />
         </div>
         <div className="w-full hidden justify-center items-stretch aboutus bg-cover bg-fixed bg-center md:flex" />
         <div className="w-full h-auto xl:h-[50vh] md:min-h-[500px] bg-cover bg-center about-div p-6 flex flex-col justify-center">
@@ -87,7 +87,7 @@ export default function Home() {
       <br />
       <div id="catering" className="grid grid-cols-1 md:grid-cols-2">
         <div className="w-full flex justify-center items-stretch md:hidden lg:hidden xl:hidden">
-          <Image src={catering} alt="" objectFit="cover" />
+          <Image src={catering} alt="Bawarchi Atlanta Catering Buffet" objectFit="cover" />
         </div>
         {/* Catering */}
         <div className="w-full h-auto xl:h-[50vh] md:min-h-[500px] bg-cover bg-center catering-div p-6 flex flex-col justify-center">

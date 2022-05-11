@@ -37,7 +37,7 @@ const Catering = () => {
             </Head>
             <div className="grid grid-cols-1 md:grid-cols-2 m-4 p-2 lg:m-6 xl:m-6 lg:p-6 xl:p-6">
                 <div className="w-full flex justify-center items-stretch">
-                    <Image src={catering} alt="" objectFit="cover" />
+                    <Image src={catering} alt="Bawarchi Atlanta's Catering Buffet" objectFit="cover" />
                 </div>
                 <div className="w-full bg-cover bg-center catering-div p-6 flex flex-col justify-center">
                     <h1 className="font-bold text-3xl lg:text-4xl xl:text-4xl mb-4 text-primary font-big_calson">Catering</h1>
