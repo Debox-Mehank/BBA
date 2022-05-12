@@ -4,6 +4,14 @@ const nextConfig = {
   images: {
     domains: ['res.cloudinary.com'],
   },
+  redirects: async () => {
+    return [
+      ...['/menu', '/SecondaryPage', '/contactus'].map(source => ({ source, destination: '/', permanent: true }))
+    ]
+  },
+  env: {
+    GOOGLE_ANALYTICS: process.env.GOOGLE_ANALYTICS,
+  },
 }
 
 module.exports = nextConfig

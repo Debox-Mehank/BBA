@@ -11,7 +11,6 @@ config.autoAddCss = false;
 // 
 
 function MyApp({ Component, pageProps }) {
-  console.log(process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS)
   return (
     <Layout>
       <Head>
@@ -37,14 +36,14 @@ Serving the finest Indian food in Atlanta." />
       </Head>
       <Component {...pageProps} />
       {/* Google Analytics */}
-      <Script strategy="lazyOnload" id="analytics" src={`https://www.googletagmanager.com/gtag/js?id=UA-228506755-1`} />
+      <Script strategy="lazyOnload" id="analytics" src={`https://www.googletagmanager.com/gtag/js?id=${process.env.GOOGLE_ANALYTICS}`} />
       <Script strategy="lazyOnload" id="analytics2">
         {
           `            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
 
-            gtag('config', UA-228506755-1);`
+      gtag('config', '${process.env.GOOGLE_ANALYTICS}');`
         }
       </Script>
     </Layout>
@@ -53,3 +52,14 @@ Serving the finest Indian food in Atlanta." />
 
 
 export default MyApp
+
+{/* <Script strategy="lazyOnload" id="analytics" src={`https://www.googletagmanager.com/gtag/js?id=UA-228506755-1`} />
+<Script strategy="lazyOnload" id="analytics2">
+  {
+    `            window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', UA-228506755-1);`
+  }
+</Script> */}
