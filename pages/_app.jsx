@@ -11,7 +11,6 @@ config.autoAddCss = false;
 //
 
 function MyApp({ Component, pageProps }) {
-  console.log(process.env.GOOGLE_ANALYTICS);
   return (
     <Layout>
       <Head>
