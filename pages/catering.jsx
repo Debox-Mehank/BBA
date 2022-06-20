@@ -184,8 +184,8 @@ const Catering = () => {
                         <Input
                             className="bg-white p-2 rounded text-sm md:text-base lg:text-base xl:text-base"
                             country="US"
+                            name="phonenumber"
                             onChange={_ => null} />
-
                     </div>
 
                     {/* <div className="flex flex-col gap-1">
