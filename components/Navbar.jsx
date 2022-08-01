@@ -37,15 +37,31 @@ const Navbar = () => {
             Home
           </a>
         </Link>
+        {/* // href="https://www.clover.com/online-ordering/bawarchi-biryanis-atlanta-atlanta"
+            // target={"_blank"}
+            // rel="noreferrer" */}
 
-        <a
-          href="https://www.clover.com/online-ordering/bawarchi-biryanis-atlanta-atlanta"
-          target={"_blank"}
-          rel="noreferrer"
-          className={`px-4 py-2 font-bold items-center justify-center hover:text-primary uppercase text-xs md:text-base text-black cursor-pointer`}
-        >
-          Online Ordering
-        </a>
+        <div className="inline px-4 py-2 font-bold items-center justify-center uppercase text-xs md:text-base text-black relative has_dropdown">
+          <span className="cursor-pointer hover:text-prim">
+            Online Ordering
+          </span>
+          <div className="absolute right-0 top-8 left-0 dropdown opacity-0 invisible translate-y-8">
+            <ul className="bg-white shadow-md border-collapse w-full border-gray-400 flex justify-evenly items-center flex-col">
+              <li className="w-full p-3 text-sm border border-collapse border-gray-400 hover:bg-greyButtonBg cursor-pointer hover:text-primary">
+                <a href="https://order.online/business/bawarchi-biryanis-46928/" target={"_blank"} rel="noreferrer">
+                  Delivery
+                </a>
+              </li>
+              <li className="w-full p-3 text-sm border border-collapse border-gray-400 hover:bg-greyButtonBg cursor-pointer hover:text-primary">
+                <a href="https://www.clover.com/online-ordering/bawarchi-biryanis-atlanta-atlanta" target={"_blank"} rel="noreferrer">
+                  Takeaway
+                </a>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+
         {/* <Link href={"/"}>
                     <a
                         className={`px-4 py-2 font-bold items-center justify-center hover:text-primary uppercase text-xs md:text-base text-black`}>
@@ -73,6 +89,7 @@ const Navbar = () => {
                     </a>
                 </Link> */}
       </ul>
+      {/* Mobiel Nav */}
       <div
         className={`${isOpen ? "block" : "hidden"
           } fixed transition-all top-0 left-0 w-full h-full z-50 bg-black`}
@@ -98,12 +115,23 @@ const Navbar = () => {
             onClick={() => {
               setIsOpen((prev) => !prev);
               router.push(
+                "https://order.online/business/bawarchi-biryanis-46928/"
+              );
+            }}
+            className={`px-4 py-2 font-bold items-center justify-center hover:text-primary uppercase text-2xl text-white`}
+          >
+            Delivery
+          </a>
+          <a
+            onClick={() => {
+              setIsOpen((prev) => !prev);
+              router.push(
                 "https://www.clover.com/online-ordering/bawarchi-biryanis-atlanta-atlanta"
               );
             }}
             className={`px-4 py-2 font-bold items-center justify-center hover:text-primary uppercase text-2xl text-white`}
           >
-            Online Ordering
+            Takeaway
           </a>
           <a
             onClick={() => {
