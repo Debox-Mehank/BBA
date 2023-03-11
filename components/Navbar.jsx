@@ -48,18 +48,25 @@ const Navbar = () => {
           <div className="absolute right-0 top-8 left-0 dropdown opacity-0 invisible translate-y-8">
             <ul className="bg-white shadow-md border-collapse w-full border-gray-400 flex justify-evenly items-center flex-col">
               <li className="w-full p-3 text-sm border border-collapse border-gray-400 hover:bg-greyButtonBg cursor-pointer hover:text-primary">
-                <a href="https://order.online/business/bawarchi-biryanis-46928/" target={"_blank"} rel="noreferrer">
+                <a
+                  href="https://order.online/business/bawarchi-biryanis-46928/"
+                  target={"_blank"}
+                  rel="noreferrer"
+                >
                   Delivery
                 </a>
               </li>
               <li className="w-full p-3 text-sm border border-collapse border-gray-400 hover:bg-greyButtonBg cursor-pointer hover:text-primary">
-                <a href="https://www.clover.com/online-ordering/bawarchi-biryanis-atlanta-atlanta" target={"_blank"} rel="noreferrer">
+                <a
+                  href="https://www.clover.com/online-ordering/bawarchi-biryanis-atlanta-atlanta"
+                  target={"_blank"}
+                  rel="noreferrer"
+                >
                   Takeaway
                 </a>
               </li>
             </ul>
           </div>
-
         </div>
 
         {/* <Link href={"/"}>
@@ -68,7 +75,7 @@ const Navbar = () => {
                         Menu
                     </a>
                 </Link> */}
-        <Link href={"/#catering"}>
+        <Link href={"/catering"}>
           <a
             className={`px-4 py-2 font-bold items-center justify-center hover:text-primary uppercase text-xs md:text-base text-black`}
           >
@@ -91,8 +98,9 @@ const Navbar = () => {
       </ul>
       {/* Mobiel Nav */}
       <div
-        className={`${isOpen ? "block" : "hidden"
-          } fixed transition-all top-0 left-0 w-full h-full z-50 bg-black`}
+        className={`${
+          isOpen ? "block" : "hidden"
+        } fixed transition-all top-0 left-0 w-full h-full z-50 bg-black`}
       >
         <button
           onClick={() => setIsOpen((prev) => !prev)}
