@@ -160,3 +160,13 @@ body {
   border-radius: 0px;
   border: 0px solid #000000;
 }
+
+.banner-div {
+  background-image: url("/campaign.jpg");
+}
+
+@media only screen and (max-width: 768px) {
+  .banner-div {
+    background-image: url("/campaign-mob.jpg");
+  }
+}

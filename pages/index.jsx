@@ -43,8 +43,8 @@ export default function Home() {
   const [swiper, setSwiper] = useState();
   return (
     <div className="w-full">
-      {/* <div className="w-full h-screen bg-cover bg-center banner-div" /> */}
-      <video
+      <div className="w-full h-screen bg-cover bg-center banner-div" />
+      {/* <video
         autoPlay
         muted
         loop
@@ -61,7 +61,7 @@ export default function Home() {
         className="w-full h-screen bg-cover bg-center object-cover banner-video block lg:hidden"
       >
         <source src="./main_mobile.mp4" type="video/mp4" />
-      </video>
+      </video> */}
       <br />
       <div id="aboutus" className="grid grid-cols-1 md:grid-cols-2">
         <div className="w-full flex justify-center items-stretch md:hidden">
