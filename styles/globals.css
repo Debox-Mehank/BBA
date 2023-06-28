@@ -167,6 +167,6 @@ body {
 
 @media only screen and (max-width: 768px) {
   .banner-div {
-    background-image: url("/campaign-mob.jpg");
+    background-image: url("/campaign.jpg");
   }
 }
