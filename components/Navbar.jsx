@@ -24,18 +24,18 @@ const Navbar = () => {
     <nav className="flex justify-between items-center flex-wrap h-auto w-full z-40 fixed top-0 left-0 px-6 pt-3 pb-2 bg-white">
       <div className="w-48 sm:w-60">
         <Link href="/">
-          <a className="items-center mx-3 inline-flex">
+          <span className="items-center mx-3 inline-flex">
             <Image src={logo} alt="Bawarchi Biryanis Atlanta" />
-          </a>
+          </span>
         </Link>
       </div>
       <ul className="hidden md:block">
         <Link href={"/"}>
-          <a
+          <span
             className={`px-4 py-2 font-bold items-center justify-center hover:text-primary uppercase text-xs md:text-base text-black`}
           >
             Home
-          </a>
+          </span>
         </Link>
         {/* // href="https://www.clover.com/online-ordering/bawarchi-biryanis-atlanta-atlanta"
             // target={"_blank"}
@@ -47,7 +47,7 @@ const Navbar = () => {
           </span>
           <div className="absolute right-0 top-8 left-0 dropdown opacity-0 invisible translate-y-8">
             <ul className="bg-white shadow-md border-collapse w-full border-gray-400 flex justify-evenly items-center flex-col">
-              <li className="w-full p-3 text-sm border border-collapse border-gray-400 hover:bg-greyButtonBg cursor-pointer hover:text-primary">
+              <li className="w-full p-3  border border-collapse border-gray-400 hover:bg-greyButtonBg cursor-pointer hover:text-primary">
                 <a
                   href="https://order.online/business/bawarchi-biryanis-46928/"
                   target={"_blank"}
@@ -56,7 +56,7 @@ const Navbar = () => {
                   Delivery
                 </a>
               </li>
-              <li className="w-full p-3 text-sm border border-collapse border-gray-400 hover:bg-greyButtonBg cursor-pointer hover:text-primary">
+              <li className="w-full p-3  border border-collapse border-gray-400 hover:bg-greyButtonBg cursor-pointer hover:text-primary">
                 <a
                   href="https://www.clover.com/online-ordering/bawarchi-biryanis-atlanta-atlanta"
                   target={"_blank"}
@@ -76,18 +76,18 @@ const Navbar = () => {
                     </a>
                 </Link> */}
         <Link href={"/catering"}>
-          <a
+          <span
             className={`px-4 py-2 font-bold items-center justify-center hover:text-primary uppercase text-xs md:text-base text-black`}
           >
             Catering
-          </a>
+          </span>
         </Link>
         <Link href="/gallery">
-          <a
+          <span
             className={`px-4 py-2 font-bold items-center justify-center hover:text-primary uppercase text-xs md:text-base text-black`}
           >
             Our Gallery
-          </a>
+          </span>
         </Link>
         {/* <Link href={"/"}>
                     <a

@@ -45,7 +45,17 @@ Serving the finest Indian food in Atlanta."
         />
         <meta property="twitter:image" content={image} />
       </Head>
+
       <Component {...pageProps} />
+      <a
+        target="_blank"
+        rel="noreffer"
+        href="https://www.clover.com/online-ordering/bawarchi-biryanis-atlanta-atlanta"
+        className="bg-white/80 backdrop-blur-3xl fixed bottom-4 right-8 z-[100] hover:bg-white duration-200 py-2 px-5 rounded-lg drop-shadow-2xl"
+      >
+        Order Online
+      </a>
+
       {/* Google Analytics */}
       <Script
         strategy="lazyOnload"

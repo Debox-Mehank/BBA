@@ -14,9 +14,9 @@
     "@fortawesome/free-regular-svg-icons": "^6.1.1",
     "@fortawesome/free-solid-svg-icons": "^6.1.1",
     "@fortawesome/react-fontawesome": "^0.1.18",
-    "next": "12.1.0",
-    "react": "17.0.2",
-    "react-dom": "17.0.2",
+    "next": "^13.4.10",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "react-image-lightbox": "^5.1.4",
     "react-phone-number-input": "^3.1.51",
     "sweetalert2": "^11.4.8",
@@ -26,7 +26,7 @@
   "devDependencies": {
     "autoprefixer": "^10.4.4",
     "eslint": "8.11.0",
-    "eslint-config-next": "12.1.0",
+    "eslint-config-next": "^13.4.10",
     "postcss": "^8.4.12",
     "tailwindcss": "^3.0.23"
   }

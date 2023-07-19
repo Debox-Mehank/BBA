@@ -52,7 +52,7 @@ const Catering = () => {
           <h1 className="font-bold text-3xl lg:text-4xl xl:text-4xl mb-4 text-primary font-big_calson">
             Catering
           </h1>
-          <p className="text-white text-sm my-2">
+          <p className="text-white  my-2">
             {
               "Let us Cater your next Event. We are ready to cater to you. We cook for you and your loved ones, co-workers and friends. We cater all groups, from a 20 people office lunch gathering to a 1000 people wedding party. Contact us today to set-up your menu for your next special event. In fact Delivery is on us. We offer multiple options including Party Trays to take to a party, Live Onsite Catering, Buffet Catering, Set Menu's for large dinner parties. We will take your worry away about food and let you focus on celebrating the special occasion."
             }
@@ -69,30 +69,30 @@ const Catering = () => {
               Live Catering
             </h3>
             <ul className="list-inside list-disc">
-              <li className="text-white text-xs md:text-sm my-2">
+              <li className="text-white text-xs md: my-2">
                 {"Minimum 50 Guests"}
               </li>
-              <li className="text-white text-xs md:text-sm my-2">
+              <li className="text-white text-xs md: my-2">
                 {"Chef will be onsite for 2 hours."}
               </li>
-              <li className="text-white text-xs md:text-sm my-2">
+              <li className="text-white text-xs md: my-2">
                 {"Additional Hour $150"}
               </li>
             </ul>
             <br />
-            <h3 className="font-bold text-sm lg:text-lg xl:text-lg text-primary font-big_calson">
+            <h3 className="font-bold  lg:text-lg xl:text-lg text-primary font-big_calson">
               Onsite Dosa
             </h3>
-            <p className="text-white text-xs md:text-sm my-2">
+            <p className="text-white text-xs md: my-2">
               {
                 "We offer Live Dosa Counter with multiple types of Dosas made by our expert chefs on location. Contact us for the package prices."
               }
             </p>
             <br />
-            <h3 className="font-bold text-sm lg:text-lg xl:text-lg text-primary font-big_calson">
+            <h3 className="font-bold  lg:text-lg xl:text-lg text-primary font-big_calson">
               Live Skewers Station
             </h3>
-            <p className="text-white text-xs md:text-sm my-2">
+            <p className="text-white text-xs md: my-2">
               {
                 "Indulge in a succulent Kebab feast with our Live Skewer Station. From fiery Paneer Tikkas to flavorful Lamb Chops, we have got it all!"
               }
@@ -102,33 +102,33 @@ const Catering = () => {
             <h3 className="font-bold text-xl lg:text-2xl xl:text-2xl mb-4 text-primary font-big_calson text-center w-full">
               Special Events
             </h3>
-            <p className="text-white text-xs md:text-sm mb-2">
+            <p className="text-white text-xs md: mb-2">
               {
                 "We are here to make your special occasions a bit more special with our delicious Indian food. Contact us to get in touch with our catering specialists to add a zing to your special events."
               }
             </p>
-            <h3 className="font-bold text-sm lg:text-lg xl:text-lg text-primary font-big_calson">
+            <h3 className="font-bold  lg:text-lg xl:text-lg text-primary ">
               Weddings
             </h3>
-            <p className="text-white text-xs md:text-sm my-2">
+            <p className="text-white text-xs md: my-2">
               {
                 "We offer full range of catering services for large wedding events over multiple days. We send our experienced chefs and who are well versed in traditional recipes to meet your event needs."
               }
             </p>
             <br />
-            <h3 className="font-bold text-sm lg:text-lg xl:text-lg text-primary font-big_calson">
+            <h3 className="font-bold  lg:text-lg xl:text-lg text-primary font-big_calson">
               Entertainment Events and Celebrations
             </h3>
-            <p className="text-white text-xs md:text-sm my-2">
+            <p className="text-white text-xs md: my-2">
               {
                 "We can cater for large Events like a Live Entertainment show or any special festive occasion. Contact us to take care of your special event needs."
               }
             </p>
             <br />
-            <h3 className="font-bold text-sm lg:text-lg xl:text-lg text-primary font-big_calson">
+            <h3 className="font-bold  lg:text-lg xl:text-lg text-primary font-big_calson">
               Private Group Dining
             </h3>
-            <p className="text-white text-xs md:text-sm my-2">
+            <p className="text-white text-xs md: my-2">
               {
                 "For Parties of 30 or larger, we offer Set Menu Packages that will take away the hassle of ordering after you arrive and make your celebration memorable."
               }
@@ -141,27 +141,27 @@ const Catering = () => {
           Catering Packages
         </h3>
         <ul className="list-inside list-disc px-8 lg:px-20 xl:px-20">
-          <li className="text-pri_green font-bold text-xs md:text-sm">
+          <li className="text-pri_green font-bold text-xs md:">
             {"Prices are for 50 people & above"}
           </li>
-          <li className="text-pri_green font-bold text-xs md:text-sm">
+          <li className="text-pri_green font-bold text-xs md:">
             {"All extra items will be charged. Delivery & Setup Charge Extra."}
           </li>
-          <li className="text-pri_green font-bold text-xs md:text-sm">
+          <li className="text-pri_green font-bold text-xs md:">
             {
               "Less than 50 People this package is not offerred, but menu is available for take-out orders tray wise."
             }
           </li>
-          <li className="text-pri_green font-bold text-xs md:text-sm">
+          <li className="text-pri_green font-bold text-xs md:">
             {"We serve HALAL MEAT."}
           </li>
-          <li className="text-pri_green font-bold text-xs md:text-sm">
+          <li className="text-pri_green font-bold text-xs md:">
             {"Additional $1 Extra - GOAT / PANEER"}
           </li>
-          <li className="text-pri_green font-bold text-xs md:text-sm">
+          <li className="text-pri_green font-bold text-xs md:">
             {"Additional $2 Extra - GOAT BONELESS / FISH, $3 Extra - SHRIMP"}
           </li>
-          <li className="text-pri_green font-bold text-xs md:text-sm">
+          <li className="text-pri_green font-bold text-xs md:">
             {"50% ADVANCE PAYMENT ON ALL CATERING ORDERS"}
           </li>
         </ul>
@@ -171,7 +171,7 @@ const Catering = () => {
               Silver Package
             </h3>
             <br />
-            <h3 className="font-bold text-sm lg:text-lg xl:text-lg text-primary font-big_calson">
+            <h3 className="font-bold  lg:text-lg xl:text-lg text-primary font-big_calson">
               VEG / NON-VEG - $18
             </h3>
             <p className="text-white text-xs my-2">
@@ -186,7 +186,7 @@ const Catering = () => {
               Gold Package
             </h3>
             <br />
-            <h3 className="font-bold text-sm lg:text-lg xl:text-lg text-primary font-big_calson">
+            <h3 className="font-bold  lg:text-lg xl:text-lg text-primary font-big_calson">
               VEG / NON-VEG - $21
             </h3>
             <p className="text-white text-xs my-2">
@@ -201,7 +201,7 @@ const Catering = () => {
               Platinum Package
             </h3>
             <br />
-            <h3 className="font-bold text-sm lg:text-lg xl:text-lg text-primary font-big_calson">
+            <h3 className="font-bold  lg:text-lg xl:text-lg text-primary font-big_calson">
               VEG / NON-VEG - $24
             </h3>
             <p className="text-white text-xs my-2">
@@ -218,16 +218,16 @@ const Catering = () => {
           Dosa Party Packages
         </h3>
         <ul className="list-inside list-disc px-8 lg:px-20 xl:px-20">
-          <li className="text-pri_green font-bold text-xs md:text-sm">
+          <li className="text-pri_green font-bold text-xs md:">
             {"Prices are for 50 people & above"}
           </li>
-          <li className="text-pri_green font-bold text-xs md:text-sm">
+          <li className="text-pri_green font-bold text-xs md:">
             {"All extra items will be charged. Delivery & Setup Charge Extra."}
           </li>
-          <li className="text-pri_green font-bold text-xs md:text-sm">
+          <li className="text-pri_green font-bold text-xs md:">
             {"Tax Applicable for all items"}
           </li>
-          <li className="text-pri_green font-bold text-xs md:text-sm">
+          <li className="text-pri_green font-bold text-xs md:">
             {"Deposit required for Chaffing Dishes"}
           </li>
         </ul>
@@ -334,7 +334,7 @@ const Catering = () => {
           <div className="flex flex-col gap-1">
             <label
               htmlFor="firstname"
-              className="text-xs md:text-sm lg:text-sm xl:text-sm font-big_calson font-bold"
+              className="text-xs md: lg: xl: font-big_calson font-bold"
             >
               First Name
             </label>
@@ -343,13 +343,13 @@ const Catering = () => {
               id="firstname"
               name="firstname"
               type="text"
-              className="bg-white p-2 rounded text-sm md:text-base lg:text-base xl:text-base"
+              className="bg-white p-2 rounded  md:text-base lg:text-base xl:text-base"
             />
           </div>
           <div className="flex flex-col gap-1">
             <label
               htmlFor="lastname"
-              className="text-xs md:text-sm lg:text-sm xl:text-sm font-big_calson font-bold"
+              className="text-xs md: lg: xl: font-big_calson font-bold"
             >
               Last Name
             </label>
@@ -358,13 +358,13 @@ const Catering = () => {
               id="lastname"
               name="lastname"
               type="text"
-              className="bg-white p-2 rounded text-sm md:text-base lg:text-base xl:text-base"
+              className="bg-white p-2 rounded  md:text-base lg:text-base xl:text-base"
             />
           </div>
           <div className="flex flex-col gap-1">
             <label
               htmlFor="email"
-              className="text-xs md:text-sm lg:text-sm xl:text-sm font-big_calson font-bold"
+              className="text-xs md: lg: xl: font-big_calson font-bold"
             >
               Email
             </label>
@@ -373,18 +373,18 @@ const Catering = () => {
               id="email"
               name="email"
               type="email"
-              className="bg-white p-2 rounded text-sm md:text-base lg:text-base xl:text-base"
+              className="bg-white p-2 rounded  md:text-base lg:text-base xl:text-base"
             />
           </div>
           <div className="flex flex-col gap-1">
             <label
               htmlFor="phonenumber"
-              className="text-xs md:text-sm lg:text-sm xl:text-sm font-big_calson font-bold"
+              className="text-xs md: lg: xl: font-big_calson font-bold"
             >
               Phone Number
             </label>
             <Input
-              className="bg-white p-2 rounded text-sm md:text-base lg:text-base xl:text-base"
+              className="bg-white p-2 rounded  md:text-base lg:text-base xl:text-base"
               country="US"
               name="phonenumber"
               onChange={(_) => null}
@@ -392,11 +392,11 @@ const Catering = () => {
           </div>
 
           {/* <div className="flex flex-col gap-1">
-                        <label htmlFor="phonenumber" className="text-xs md:text-sm lg:text-sm xl:text-sm font-big_calson font-bold">Phone Number</label>
-                        <input required id="phonenumber" name="phonenumber" type="number" className="bg-white p-2 rounded text-sm md:text-base lg:text-base xl:text-base" />
+                        <label htmlFor="phonenumber" className="text-xs md: lg: xl: font-big_calson font-bold">Phone Number</label>
+                        <input required id="phonenumber" name="phonenumber" type="number" className="bg-white p-2 rounded  md:text-base lg:text-base xl:text-base" />
                     </div> */}
           <div className="flex flex-col gap-1">
-            <label className="text-xs md:text-sm lg:text-sm xl:text-sm font-big_calson font-bold">
+            <label className="text-xs md: lg: xl: font-big_calson font-bold">
               Type of Catering
             </label>
             <div className="grid grid-cols-2 lg:grid-cols-8 gap-4">
@@ -408,10 +408,7 @@ const Catering = () => {
                   id="party_trays"
                   value={"Party Trays"}
                 />
-                <label
-                  htmlFor="party_trays"
-                  className="text-xs md:text-sm lg:text-sm xl:text-sm"
-                >
+                <label htmlFor="party_trays" className="text-xs md: lg: xl:">
                   Party Trays
                 </label>
               </div>
@@ -425,7 +422,7 @@ const Catering = () => {
                 />
                 <label
                   htmlFor="buffet_catering"
-                  className="text-xs md:text-sm lg:text-sm xl:text-sm"
+                  className="text-xs md: lg: xl:"
                 >
                   Buffet Catering
                 </label>
@@ -438,10 +435,7 @@ const Catering = () => {
                   id="weddings"
                   value={"Weddings"}
                 />
-                <label
-                  htmlFor="weddings"
-                  className="text-xs md:text-sm lg:text-sm xl:text-sm"
-                >
+                <label htmlFor="weddings" className="text-xs md: lg: xl:">
                   Weddings
                 </label>
               </div>
@@ -453,10 +447,7 @@ const Catering = () => {
                   id="large_celeb"
                   value={"Large Celebration"}
                 />
-                <label
-                  htmlFor="large_celeb"
-                  className="text-xs md:text-sm lg:text-sm xl:text-sm"
-                >
+                <label htmlFor="large_celeb" className="text-xs md: lg: xl:">
                   Large Celebration
                 </label>
               </div>
@@ -468,10 +459,7 @@ const Catering = () => {
                   id="live_counter"
                   value={"Live Counter"}
                 />
-                <label
-                  htmlFor="live_counter"
-                  className="text-xs md:text-sm lg:text-sm xl:text-sm"
-                >
+                <label htmlFor="live_counter" className="text-xs md: lg: xl:">
                   Live Counter
                 </label>
               </div>
@@ -485,7 +473,7 @@ const Catering = () => {
                 />
                 <label
                   htmlFor="catering_others"
-                  className="text-xs md:text-sm lg:text-sm xl:text-sm"
+                  className="text-xs md: lg: xl:"
                 >
                   Others
                 </label>
@@ -493,7 +481,7 @@ const Catering = () => {
             </div>
           </div>
           <div className="flex flex-col gap-1">
-            <label className="text-xs md:text-sm lg:text-sm xl:text-sm font-big_calson font-bold">
+            <label className="text-xs md: lg: xl: font-big_calson font-bold">
               Time of Event
             </label>
             <div className="grid grid-cols-2 lg:grid-cols-8 gap-4">
@@ -505,10 +493,7 @@ const Catering = () => {
                   id="lunch"
                   value={"Lunch"}
                 />
-                <label
-                  htmlFor="lunch"
-                  className="text-xs md:text-sm lg:text-sm xl:text-sm"
-                >
+                <label htmlFor="lunch" className="text-xs md: lg: xl:">
                   Lunch
                 </label>
               </div>
@@ -520,10 +505,7 @@ const Catering = () => {
                   id="dinner"
                   value={"Dinner"}
                 />
-                <label
-                  htmlFor="dinner"
-                  className="text-xs md:text-sm lg:text-sm xl:text-sm"
-                >
+                <label htmlFor="dinner" className="text-xs md: lg: xl:">
                   Dinner
                 </label>
               </div>
@@ -535,10 +517,7 @@ const Catering = () => {
                   id="breakfast"
                   value={"Breakfast"}
                 />
-                <label
-                  htmlFor="breakfast"
-                  className="text-xs md:text-sm lg:text-sm xl:text-sm"
-                >
+                <label htmlFor="breakfast" className="text-xs md: lg: xl:">
                   Breakfast
                 </label>
               </div>
@@ -550,10 +529,7 @@ const Catering = () => {
                   id="event_others"
                   value={"Others"}
                 />
-                <label
-                  htmlFor="event_others"
-                  className="text-xs md:text-sm lg:text-sm xl:text-sm"
-                >
+                <label htmlFor="event_others" className="text-xs md: lg: xl:">
                   Others
                 </label>
               </div>
@@ -562,7 +538,7 @@ const Catering = () => {
           <div className="flex flex-col gap-1">
             <label
               htmlFor="eventdate"
-              className="text-xs md:text-sm lg:text-sm xl:text-sm font-big_calson font-bold"
+              className="text-xs md: lg: xl: font-big_calson font-bold"
             >
               Event Date
             </label>
@@ -571,13 +547,13 @@ const Catering = () => {
               id="eventdate"
               name="eventdate"
               type="date"
-              className="bg-white p-2 rounded text-sm md:text-base lg:text-base xl:text-base"
+              className="bg-white p-2 rounded  md:text-base lg:text-base xl:text-base"
             />
           </div>
           <div className="flex flex-col gap-1">
             <label
               htmlFor="pickuptime"
-              className="text-xs md:text-sm lg:text-sm xl:text-sm font-big_calson font-bold"
+              className="text-xs md: lg: xl: font-big_calson font-bold"
             >
               Pickup/Delivery Time
             </label>
@@ -586,13 +562,13 @@ const Catering = () => {
               id="pickuptime"
               name="pickuptime"
               type="time"
-              className="bg-white p-2 rounded text-sm md:text-base lg:text-base xl:text-base"
+              className="bg-white p-2 rounded  md:text-base lg:text-base xl:text-base"
             />
           </div>
           <div className="flex flex-col gap-1">
             <label
               htmlFor="noofpeople"
-              className="text-xs md:text-sm lg:text-sm xl:text-sm font-big_calson font-bold"
+              className="text-xs md: lg: xl: font-big_calson font-bold"
             >
               No of People
             </label>
@@ -601,13 +577,13 @@ const Catering = () => {
               id="noofpeople"
               name="noofpeople"
               type="number"
-              className="bg-white p-2 rounded text-sm md:text-base lg:text-base xl:text-base"
+              className="bg-white p-2 rounded  md:text-base lg:text-base xl:text-base"
             />
           </div>
           <div className="flex flex-col gap-1">
             <label
               htmlFor="management_message"
-              className="text-xs md:text-sm lg:text-sm xl:text-sm font-big_calson font-bold"
+              className="text-xs md: lg: xl: font-big_calson font-bold"
             >
               Message to Management
             </label>
@@ -617,19 +593,19 @@ const Catering = () => {
               id="management_message"
               name="management_message"
               placeholder="Spicy Level, Delivery Contact, etc..."
-              className="bg-white p-2 rounded text-sm md:text-base lg:text-base xl:text-base"
+              className="bg-white p-2 rounded  md:text-base lg:text-base xl:text-base"
             />
           </div>
           <div className="w-full">
             <input
               type="submit"
               value="Submit"
-              className="text-primary bg-pri_green font-semibold text-sm shadow-md cursor-pointer rounded py-1.5 px-4 mt-3 lg:py-2 hover:text-black hover:bg-gray-300 w-max uppercase"
+              className="text-primary bg-pri_green font-semibold  shadow-md cursor-pointer rounded py-1.5 px-4 mt-3 lg:py-2 hover:text-black hover:bg-gray-300 w-max uppercase"
             />
             <input
               type="reset"
               value="Reset"
-              className="text-primary bg-pri_green font-semibold text-sm shadow-md cursor-pointer rounded py-1.5 px-4 mt-3 lg:py-2 hover:text-black hover:bg-gray-300 w-max uppercase ml-4"
+              className="text-primary bg-pri_green font-semibold  shadow-md cursor-pointer rounded py-1.5 px-4 mt-3 lg:py-2 hover:text-black hover:bg-gray-300 w-max uppercase ml-4"
             />
           </div>
         </form>

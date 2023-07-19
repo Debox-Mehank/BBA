@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image from "next/legacy/image";
 import { useEffect, useState } from "react";
 import useMediaQuery from "../hooks/useMediaQuery";
 import Head from "next/dist/shared/lib/head";
@@ -16,7 +16,7 @@ export default function OurGallery() {
   const [modalImgIndex, setModalImgIndex] = useState(null);
   const [modalImgData, setModalImgData] = useState([]);
 
-  const isDesktop = useMediaQuery('(min-width: 500px)');
+  const isDesktop = useMediaQuery("(min-width: 500px)");
 
   // Filtering Images for the Modal based on user input
 
@@ -27,8 +27,13 @@ export default function OurGallery() {
   return (
     <div className="mt-28 md:p-20 glimpses-div">
       <Head>
-        <title>Bawarchi Atlanta Gallery - A glimpse of our ambience, food and events!</title>
-        <meta name="description" content="Glimpses of Bawarchi Atlanta Sandy Springs' events, our food dishes and ambience" />
+        <title>
+          Bawarchi Atlanta Gallery - A glimpse of our ambience, food and events!
+        </title>
+        <meta
+          name="description"
+          content="Glimpses of Bawarchi Atlanta Sandy Springs' events, our food dishes and ambience"
+        />
       </Head>
       <h1 className="font-bold font-big_calson text-5xl mb-12 text-center">
         Our Gallery
@@ -38,8 +43,8 @@ export default function OurGallery() {
 
       <div className="mx-auto grid grid-cols-2 gap-4 max-w-md w-11/12 sm:grid-cols-4 sm:max-w-xl md:max-w-none justify-between font-big_calson font-bold text-white">
         <button
-          className={`text-lg px-6 py-2 lg:text-2xl lg:py-3 w-full bg-black rounded-md hover:bg-primary transition 
-          ${selected === "All" && "bg-orange-300"}`}
+          className={`text-lg px-6 py-2 lg:text-2xl lg:py-3 w-full bg-black rounded-md hover:bg-pri_green duration-200 transition 
+          ${selected === "All" && "bg-orange-400"}`}
           onClick={() => {
             setViewData(imageData);
             setSelected("All");
@@ -48,8 +53,8 @@ export default function OurGallery() {
           All Images
         </button>
         <button
-          className={`text-lg px-6 py-2 lg:text-2xl lg:py-3 w-full bg-black rounded-md hover:bg-primary transition 
-          ${selected === "Ambience" && "bg-orange-300"}`}
+          className={`text-lg px-6 py-2 lg:text-2xl lg:py-3 w-full bg-black rounded-md hover:bg-pri_green duration-200 transition 
+          ${selected === "Ambience" && "bg-orange-400"}`}
           onClick={() => {
             setViewData(imageData.filter((img) => img.category === "ambience"));
             setSelected("Ambience");
@@ -58,8 +63,8 @@ export default function OurGallery() {
           Our Ambience
         </button>
         <button
-          className={`text-lg px-6 py-2 lg:text-2xl lg:py-3 w-full bg-black rounded-md hover:bg-primary transition 
-          ${selected === "Food" && "bg-orange-300"}`}
+          className={`text-lg px-6 py-2 lg:text-2xl lg:py-3 w-full bg-black rounded-md hover:bg-pri_green duration-200 transition 
+          ${selected === "Food" && "bg-orange-400"}`}
           onClick={() => {
             setViewData(imageData.filter((img) => img.category === "food"));
             setSelected("Food");
@@ -68,8 +73,8 @@ export default function OurGallery() {
           Our Food
         </button>
         <button
-          className={`text-lg px-6 py-2 lg:text-2xl lg:py-3 w-full bg-black rounded-md hover:bg-primary transition 
-          ${selected === "Events" && "bg-orange-300"}`}
+          className={`text-lg px-6 py-2 lg:text-2xl lg:py-3 w-full bg-black rounded-md hover:bg-pri_green duration-200 transition 
+          ${selected === "Events" && "bg-orange-400"}`}
           onClick={() => {
             setViewData(imageData.filter((img) => img.category === "events"));
             setSelected("Events");
@@ -102,7 +107,7 @@ export default function OurGallery() {
           nextSrc={modalImgData[(modalImgIndex + 1) % modalImgData.length]}
           prevSrc={
             modalImgData[
-            (modalImgIndex + modalImgData.length - 1) % modalImgData.length
+              (modalImgIndex + modalImgData.length - 1) % modalImgData.length
             ]
           }
           onMoveNextRequest={() =>
