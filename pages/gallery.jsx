@@ -26,14 +26,27 @@ export default function OurGallery() {
 
   return (
     <div className="mt-28 md:p-20 glimpses-div">
-      <Head>
-        <title>
-          Bawarchi Atlanta Gallery - A glimpse of our ambience, food and events!
-        </title>
-        <meta
-          name="description"
-          content="Glimpses of Bawarchi Atlanta Sandy Springs' events, our food dishes and ambience"
+       <Head>
+        <title>{`Bawarchi Biryanis Atlanta Gallery - Explore Our Ambience & Delectable Dishes`}</title>
+        <link
+          rel="canonical"
+          href={`https://bawarchiatlanta.com/gallery`}
         />
+        {/* <link rel="icon" href="/favicon.ico"/> */}
+        {/* OG Tags */}
+        <meta property="og:title" content={`Bawarchi Biryanis Atlanta Gallery - Explore Our Ambience & Delectable Dishes `} />
+        <meta property="og:image" content={"https://res.cloudinary.com/debox/image/upload/v1651053969/BBA/BBA_Website_Images/Our%20Ambience/OurAmbience7_gf4wyp.jpg"} />
+        <meta property="og:type" content="article" />
+        <meta property="og:description" content={"Feast your eyes on our culinary creations. Our gallery showcases the wide array of mouth-watering Indian dishes you can relish at Bawarchi Biryanis Atlanta."} />
+
+        <meta name="twitter:card" content="summary"/>
+        <meta property="twitter:title" content={"Bawarchi Biryanis Atlanta Gallery - Explore Our Ambience & Delectable Dishes"} />
+        <meta property="twitter:description" content={"Feast your eyes on our culinary creations. Our gallery showcases the wide array of mouth-watering Indian dishes you can relish at Bawarchi Biryanis Atlanta."} />
+        <meta
+          property="twitter:url"
+          content={`https://bawarchiatlanta.com/gallery`}
+        />
+        <meta property="twitter:image" content={"https://res.cloudinary.com/debox/image/upload/v1651053969/BBA/BBA_Website_Images/Our%20Ambience/OurAmbience7_gf4wyp.jpg"} />
       </Head>
       <h1 className="font-bold font-big_calson text-5xl mb-12 text-center">
         Our Gallery

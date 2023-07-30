@@ -13,37 +13,27 @@ config.autoAddCss = false;
 function MyApp({ Component, pageProps }) {
   return (
     <Layout>
-      <Head>
-        <title>Bawarchi Biryani - Best Indian Food in Atlanta </title>
-        <meta
-          name="description"
-          content="Bawarchi Biryanis, isn't just about food. It's about the generations of chefs who kept the cooking traditions alive and are behind the delicious dishes we serve in our establishment. 
-          Serving the finest Indian food in Atlanta."
+    <Head>
+        <title>{`Bawarchi Biryanis Atlanta - Authentic Indian Cuisine in a Fine Dine Setting`}</title>
+        <link
+          rel="canonical"
+          href={`https://bawarchiatlanta.com/`}
         />
-        {/* Facebook Tags */}
-        <meta property="og:type" content="website" />
+        <link rel="icon" href="/favicon.ico"/>
+        {/* OG Tags */}
+        <meta property="og:title" content={`Bawarchi Biryanis Atlanta - Authentic Indian Cuisine in a Fine Dine Setting `} />
+        <meta property="og:image" content={"/assets/dish1.png"} />
+        <meta property="og:type" content="article" />
+        <meta property="og:description" content={"Experience the richness of authentic Indian cuisine at Bawarchi Biryanis Atlanta. From Mughlai delights to South-Indian classics, our versatile menu celebrates India's culinary traditions."} />
+
+        <meta name="twitter:card" content="summary"/>
+        <meta property="twitter:title" content={"Bawarchi Biryanis Atlanta - Authentic Indian Cuisine in a Fine Dine Setting"} />
+        <meta property="twitter:description" content={"Experience the richness of authentic Indian cuisine at Bawarchi Biryanis Atlanta. From Mughlai delights to South-Indian classics, our versatile menu celebrates India's culinary traditions."} />
         <meta
-          property="og:title"
-          content="Bawarchi Biryani - Best Indian Food in Atlanta "
+          property="twitter:url"
+          content={`https://bawarchiatlanta.com/`}
         />
-        <meta
-          property="og:description"
-          content="Bawarchi Biryanis, isn't just about food. It's about the generations of chefs who kept the cooking traditions alive and are behind the delicious dishes we serve in our establishment. 
-Serving the finest Indian food in Atlanta."
-        />
-        <meta property="og:image" content={image} />
-        {/* Twitter Tags */}
-        <meta property="twitter:card" content="summary_large_image" />
-        <meta
-          property="twitter:title"
-          content="Bawarchi Biryani - Best Indian Food in Atlanta "
-        />
-        <meta
-          property="twitter:description"
-          content="Bawarchi Biryanis, isn't just about food. It's about the generations of chefs who kept the cooking traditions alive and are behind the delicious dishes we serve in our establishment. 
-Serving the finest Indian food in Atlanta."
-        />
-        <meta property="twitter:image" content={image} />
+        <meta property="twitter:image" content={"/assets/dish1.png"} />
       </Head>
 
       <Component {...pageProps} />

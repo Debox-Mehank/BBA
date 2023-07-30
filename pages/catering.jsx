@@ -17,7 +17,7 @@ const Catering = () => {
   const [phoneNum, setPhoneNum] = useState(null);
 
   useEffect(() => {
-    console.log(query);
+    // console.log(query);
     if (query && query.submit === "true") {
       MySwal.fire({
         icon: "success",
@@ -31,14 +31,27 @@ const Catering = () => {
 
   return (
     <div className="w-full mt-24">
-      <Head>
-        <title>
-          Bawarchi Atlanta Catering - Live Onsite Catering, Buffets and more!
-        </title>
-        <meta
-          name="description"
-          content="From a 20 people office lunch gathering to a 1000 people wedding party, we cater all types of events at Bawarchi Atlanta."
+       <Head>
+        <title>{`Indian Food Catering Services in Atlanta | Bawarchi Biryanis Atlanta`}</title>
+        <link
+          rel="canonical"
+          href={`https://bawarchiatlanta.com/catering`}
         />
+        {/* <link rel="icon" href="/favicon.ico"/> */}
+        {/* OG Tags */}
+        <meta property="og:title" content={`Indian Food Catering Services in Atlanta | Bawarchi Biryanis Atlanta `} />
+        <meta property="og:image" content={"/assets/catering.jpg"} />
+        <meta property="og:type" content="article" />
+        <meta property="og:description" content={"Make your events memorable with Bawarchi Biryanis Atlanta's exceptional Indian food catering. From intimate gatherings to large conferences, we cater to all, with custom menus to suit your budget and palate."} />
+
+        <meta name="twitter:card" content="summary"/>
+        <meta property="twitter:title" content={"Indian Food Catering Services in Atlanta | Bawarchi Biryanis Atlanta"} />
+        <meta property="twitter:description" content={"Make your events memorable with Bawarchi Biryanis Atlanta's exceptional Indian food catering. From intimate gatherings to large conferences, we cater to all, with custom menus to suit your budget and palate."} />
+        <meta
+          property="twitter:url"
+          content={`https://bawarchiatlanta.com/catering`}
+        />
+        <meta property="twitter:image" content={"/assets/catering.jpg"} />
       </Head>
       <div className="grid grid-cols-1 md:grid-cols-2 m-4 p-2 lg:m-6 xl:m-6 lg:p-6 xl:p-6">
         <div className="w-full flex justify-center items-stretch">
