@@ -43,30 +43,42 @@ export default function Home() {
   const [swiper, setSwiper] = useState();
   return (
     <div className="w-full">
-       <Head>
+      <Head>
         <title>{`Bawarchi Biryanis Atlanta - Authentic Indian Cuisine in a Fine Dine Setting`}</title>
-        <link
-          rel="canonical"
-          href={`https://bawarchiatlanta.com/`}
-        />
-        <link rel="icon" href="/favicon.ico"/>
+        <link rel="canonical" href={`https://bawarchiatlanta.com/`} />
+        <link rel="icon" href="/favicon.ico" />
         {/* OG Tags */}
-        <meta property="og:title" content={`Bawarchi Biryanis Atlanta - Authentic Indian Cuisine in a Fine Dine Setting `} />
+        <meta
+          property="og:title"
+          content={`Bawarchi Biryanis Atlanta - Authentic Indian Cuisine in a Fine Dine Setting `}
+        />
         <meta property="og:image" content={"/assets/dish1.png"} />
         <meta property="og:type" content="article" />
-        <meta property="og:description" content={"Experience the richness of authentic Indian cuisine at Bawarchi Biryanis Atlanta. From Mughlai delights to South-Indian classics, our versatile menu celebrates India's culinary traditions."} />
-
-        <meta name="twitter:card" content="summary"/>
-        <meta property="twitter:title" content={"Bawarchi Biryanis Atlanta - Authentic Indian Cuisine in a Fine Dine Setting"} />
-        <meta property="twitter:description" content={"Experience the richness of authentic Indian cuisine at Bawarchi Biryanis Atlanta. From Mughlai delights to South-Indian classics, our versatile menu celebrates India's culinary traditions."} />
         <meta
-          property="twitter:url"
-          content={`https://bawarchiatlanta.com/`}
+          property="og:description"
+          content={
+            "Experience the richness of authentic Indian cuisine at Bawarchi Biryanis Atlanta. From Mughlai delights to South-Indian classics, our versatile menu celebrates India's culinary traditions."
+          }
         />
+
+        <meta name="twitter:card" content="summary" />
+        <meta
+          property="twitter:title"
+          content={
+            "Bawarchi Biryanis Atlanta - Authentic Indian Cuisine in a Fine Dine Setting"
+          }
+        />
+        <meta
+          property="twitter:description"
+          content={
+            "Experience the richness of authentic Indian cuisine at Bawarchi Biryanis Atlanta. From Mughlai delights to South-Indian classics, our versatile menu celebrates India's culinary traditions."
+          }
+        />
+        <meta property="twitter:url" content={`https://bawarchiatlanta.com/`} />
         <meta property="twitter:image" content={"/assets/dish1.png"} />
       </Head>
-      {/* <div className="w-full h-screen bg-cover bg-center banner-div mt-24" /> */}
-      <video
+      <div className="w-full h-screen bg-cover bg-center banner-div  sm:mt-24" />
+      {/* <video
         autoPlay
         muted
         loop
@@ -74,8 +86,8 @@ export default function Home() {
         className="w-full h-screen bg-cover bg-center object-cover banner-video hidden lg:block"
       >
         <source src="./main_desktop.mp4" type="video/mp4" />
-      </video>
-      <video
+      </video> */}
+      {/* <video
         autoPlay
         muted
         loop
@@ -83,7 +95,7 @@ export default function Home() {
         className="w-full h-screen bg-cover bg-center object-cover banner-video block lg:hidden"
       >
         <source src="./main_mobile.mp4" type="video/mp4" />
-      </video>
+      </video> */}
       <br />
       <div id="aboutus" className="grid grid-cols-1 md:grid-cols-2">
         <div className="w-full flex justify-center items-stretch md:hidden">

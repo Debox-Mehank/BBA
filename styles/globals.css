@@ -152,11 +152,11 @@ body {
 }
 
 .banner-div {
-  background-image: url("/campaign.jpg");
+  background-image: url("/BBA_August_9-Years-biryani-campaign_Web-banner.jpg");
 }
 
 @media only screen and (max-width: 768px) {
   .banner-div {
-    background-image: url("/campaign.jpg");
+    background-image: url("/BBA_August_9-Years-biryani-campaign_Mobile-Banner.jpg");
   }
 }
