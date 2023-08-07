@@ -77,8 +77,9 @@ export default function Home() {
         <meta property="twitter:url" content={`https://bawarchiatlanta.com/`} />
         <meta property="twitter:image" content={"/assets/dish1.png"} />
       </Head>
-      <div className="w-full h-screen bg-cover bg-center banner-div  sm:mt-24" />
-      {/* <video
+      {/* Below div is for offers.  */}
+      {/* <div className="w-full h-screen bg-cover bg-center banner-div  sm:mt-24" /> */}
+      <video
         autoPlay
         muted
         loop
@@ -86,8 +87,8 @@ export default function Home() {
         className="w-full h-screen bg-cover bg-center object-cover banner-video hidden lg:block"
       >
         <source src="./main_desktop.mp4" type="video/mp4" />
-      </video> */}
-      {/* <video
+      </video>
+      <video
         autoPlay
         muted
         loop
@@ -95,7 +96,7 @@ export default function Home() {
         className="w-full h-screen bg-cover bg-center object-cover banner-video block lg:hidden"
       >
         <source src="./main_mobile.mp4" type="video/mp4" />
-      </video> */}
+      </video>
       <br />
       <div id="aboutus" className="grid grid-cols-1 md:grid-cols-2">
         <div className="w-full flex justify-center items-stretch md:hidden">
