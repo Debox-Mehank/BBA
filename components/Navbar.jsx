@@ -37,7 +37,7 @@ const Navbar = () => {
             Home
           </span>
         </Link>
-        {/* // href="https://www.clover.com/online-ordering/bawarchi-biryanis-atlanta-atlanta"
+        {/* // href="https://ordersave.com/partnersite/j5DgkW8FF1Nd/menu"
             // target={"_blank"}
             // rel="noreferrer" */}
 
@@ -58,7 +58,7 @@ const Navbar = () => {
               </li>
               <li className="w-full p-3  border border-collapse border-gray-400 hover:bg-greyButtonBg cursor-pointer hover:text-primary">
                 <a
-                  href="https://www.clover.com/online-ordering/bawarchi-biryanis-atlanta-atlanta"
+                  href="https://ordersave.com/partnersite/j5DgkW8FF1Nd/menu"
                   target={"_blank"}
                   rel="noreferrer"
                 >
@@ -134,7 +134,7 @@ const Navbar = () => {
             onClick={() => {
               setIsOpen((prev) => !prev);
               router.push(
-                "https://www.clover.com/online-ordering/bawarchi-biryanis-atlanta-atlanta"
+                "https://ordersave.com/partnersite/j5DgkW8FF1Nd/menu"
               );
             }}
             className={`px-4 py-2 font-bold items-center justify-center hover:text-primary uppercase text-2xl text-white`}
