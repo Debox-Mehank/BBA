@@ -42,10 +42,15 @@ const Navbar = () => {
             // rel="noreferrer" */}
 
         <div className="inline px-4 py-2 font-bold items-center justify-center uppercase text-xs md:text-base text-black relative has_dropdown">
-          <span className="cursor-pointer hover:text-prim">
+          <a
+            target="_blank"
+            rel="noreferrer"
+            href="https://ordersave.com/partnersite/j5DgkW8FF1Nd/menu"
+            className="cursor-pointer hover:text-primary"
+          >
             Online Ordering
-          </span>
-          <div className="absolute right-0 top-8 left-0 dropdown opacity-0 invisible translate-y-8">
+          </a>
+          {/* <div className="absolute right-0 top-8 left-0 dropdown opacity-0 invisible translate-y-8">
             <ul className="bg-white shadow-md border-collapse w-full border-gray-400 flex justify-evenly items-center flex-col">
               <li className="w-full p-3  border border-collapse border-gray-400 hover:bg-greyButtonBg cursor-pointer hover:text-primary">
                 <a
@@ -66,7 +71,7 @@ const Navbar = () => {
                 </a>
               </li>
             </ul>
-          </div>
+          </div> */}
         </div>
 
         {/* <Link href={"/"}>
