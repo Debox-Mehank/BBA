@@ -17,11 +17,7 @@ const Footer = () => {
             Home
           </span>
         </Link>
-        <Link
-          href={
-            "https://www.clover.com/online-ordering/bawarchi-biryanis-atlanta"
-          }
-        >
+        <Link href={"https://ordersave.com/partnersite/j5DgkW8FF1Nd/menu"}>
           <span
             className={`px-4 py-2 font-bold text-primary uppercase text-xs`}
           >
