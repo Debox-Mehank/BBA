@@ -43,7 +43,6 @@ const Navbar = () => {
 
         <div className="inline px-4 py-2 font-bold items-center justify-center uppercase text-xs md:text-base text-black relative has_dropdown">
           <a
-            target="_blank"
             rel="noreferrer"
             href="https://ordersave.com/partnersite/j5DgkW8FF1Nd/menu"
             className="cursor-pointer hover:text-primary"
