@@ -119,17 +119,7 @@ const Navbar = () => {
           >
             Home
           </a>
-          <a
-            onClick={() => {
-              setIsOpen((prev) => !prev);
-              router.push(
-                "https://order.online/business/bawarchi-biryanis-46928/"
-              );
-            }}
-            className={`px-4 py-2 font-bold items-center justify-center hover:text-primary uppercase text-2xl text-white`}
-          >
-            Delivery
-          </a>
+
           <a
             onClick={() => {
               setIsOpen((prev) => !prev);
@@ -139,7 +129,7 @@ const Navbar = () => {
             }}
             className={`px-4 py-2 font-bold items-center justify-center hover:text-primary uppercase text-2xl text-white`}
           >
-            Takeaway
+            Order Online
           </a>
           <a
             onClick={() => {
