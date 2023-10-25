@@ -22,7 +22,7 @@ body {
   background-color: #eacb7d;
 }
 
-. .about-div,
+.about-div,
 .glimpses-div {
   background-image: url("../public/lightbg.jpg");
 }
@@ -152,11 +152,11 @@ body {
 }
 
 .banner-div {
-  background-image: url("/BBA_August_9-Years-biryani-campaign_Web-banner.jpg");
+  background-image: url("/BBA_October_OFF_Webbanner.jpg");
 }
 
 @media only screen and (max-width: 768px) {
   .banner-div {
-    background-image: url("/BBA_August_9-Years-biryani-campaign_Mobile-Banner.jpg");
+    background-image: url("/BBA_October_OFF_Story.jpg");
   }
 }
