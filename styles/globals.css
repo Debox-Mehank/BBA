@@ -152,11 +152,12 @@ body {
 }
 
 .banner-div {
-  background-image: url("/BBA_October_OFF_Webbanner.jpg");
+  background-image: url("/web-banner.jpg");
 }
 
 @media only screen and (max-width: 768px) {
   .banner-div {
-    background-image: url("/BBA_October_OFF_Story.jpg");
+    margin-top: 30px;
+    background-image: url("/mob-banner.jpg");
   }
 }
