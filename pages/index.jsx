@@ -78,8 +78,8 @@ export default function Home() {
         <meta property="twitter:image" content={"/assets/dish1.png"} />
       </Head>
       {/* Below div is for offers.  */}
-      {/* <div className="w-full h-screen bg-cover bg-center banner-div  sm:mt-24" /> */}
-
+      {/* sm:mt-24 */}
+      {/* <div className="w-full h-screen bg-cover bg-center banner-div  " /> */}
       {/* hero section video */}
       <video
         autoPlay
