@@ -359,11 +359,12 @@ export default function Home({ data }) {
               <a href="tel:+14042555059">(404) 255-5059</a>
               {"\n"}
               <span className="font-extrabold">EMAIL :</span>{" "}
-              <a href="mailto:contact@bawarchiatlanta.com">
-                contact@bawarchi
-                <br className="sm:hidden block" />
-                atlanta.com
+              <a href="mailto:bawarchibiryaniatl@gmail.com">
+                bawarchibiryaniatl@gmail.com
               </a>
+              {/* <a href="mailto:contact@bawarchiatlanta.com">
+                contact@bawarchiatlanta.com
+              </a> */}
             </p>
           </div>
           <div className="flex justify-start items-center flex-col gap-2">
