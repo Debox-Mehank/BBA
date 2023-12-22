@@ -386,7 +386,7 @@ export default function Home({ data }) {
   );
 }
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
   const { data, error } = await client.query({
     query: gql`
       query MyQuery {
@@ -407,6 +407,7 @@ export async function getServerSideProps() {
     props: {
       data: data.homeBanners,
     },
+    revalidate: 60,
   };
 }
 
