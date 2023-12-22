@@ -85,10 +85,10 @@ export default function Home({ data }) {
         {data[1]?.webBanner && (
           <Image
             src={data[1]?.webBanner?.url}
-            width={1200}
-            height={800}
+            width={1400}
+            height={900}
             alt={data[1]?.bannerAlt}
-            className="w-full min-h-screen bg-cover  sm:pt-10 hidden sm:block"
+            className="w-full min-h-screen bg-cover sm:pt-10 hidden md:block"
           />
         )}
         {data[1]?.mobileBanner && (
@@ -97,7 +97,7 @@ export default function Home({ data }) {
             width={1200}
             height={800}
             alt={data[1]?.bannerAlt}
-            className="w-full min-h-screen bg-cover bg-center pt-14 block sm:hidden"
+            className="w-full min-h-screen bg-cover bg-center pt-14 block md:hidden"
           />
         )}
       </div>
@@ -108,7 +108,7 @@ export default function Home({ data }) {
           muted
           loop
           playsInline
-          className="w-full h-screen bg-cover bg-center object-cover banner-video hidden lg:block"
+          className="w-full h-screen bg-cover bg-center object-cover banner-video hidden md:block"
         >
           <source
             src={data[0]?.webBanner?.url ?? "./main_desktop.mp4"}
@@ -122,7 +122,7 @@ export default function Home({ data }) {
           muted
           loop
           playsInline
-          className="w-full h-screen bg-cover bg-center object-cover banner-video block lg:hidden"
+          className="w-full h-screen bg-cover bg-center object-cover banner-video block md:hidden"
         >
           <source
             src={data[0]?.mobileBanner?.url ?? "./main_mobile.mp4"}
