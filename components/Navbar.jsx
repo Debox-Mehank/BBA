@@ -21,7 +21,7 @@ const Navbar = () => {
   }, []);
 
   return (
-    <nav className="flex justify-between items-center flex-wrap h-auto w-full z-40 fixed top-0 left-0 px-6 pt-3 pb-2 bg-white">
+    <nav className="flex justify-between items-center h-auto w-full z-40 fixed top-0 left-0 sm:px-6 pt-3 pb-2 bg-white">
       <div className="w-48 sm:w-60">
         <Link href="/">
           <span className="items-center mx-3 inline-flex">
@@ -29,7 +29,7 @@ const Navbar = () => {
           </span>
         </Link>
       </div>
-      <ul className="hidden md:block">
+      <ul className="hidden lg:block">
         <Link href={"/"}>
           <span
             className={`px-4 py-2 font-bold items-center justify-center hover:text-primary uppercase text-xs md:text-base text-black`}
@@ -157,7 +157,7 @@ const Navbar = () => {
       </div>
       <button
         onClick={() => setIsOpen((prev) => !prev)}
-        className="inline-flex p-3 md:hidden text-black ml-auto"
+        className="inline-flex p-3 lg:hidden text-black ml-auto"
         aria-label="Menu Mobile Button"
       >
         <svg
