@@ -79,9 +79,9 @@ export default function Home() {
       </Head>
       {/* Below div is for offers.  */}
       {/* sm:mt-24 */}
-      {/* <div className="w-full h-screen bg-cover bg-center banner-div  " /> */}
+      <div className="w-full min-h-screen bg-cover bg-center banner-div  " />
       {/* hero section video */}
-      <video
+      {/* <video
         autoPlay
         muted
         loop
@@ -98,7 +98,7 @@ export default function Home() {
         className="w-full h-screen bg-cover bg-center object-cover banner-video block lg:hidden"
       >
         <source src="./main_mobile.mp4" type="video/mp4" />
-      </video>
+      </video> */}
       <br />
       <div id="aboutus" className="grid grid-cols-1 md:grid-cols-2">
         <div className="w-full flex justify-center items-stretch md:hidden">
@@ -327,7 +327,7 @@ export default function Home() {
               {"\n"}
               <span className="font-extrabold">EMAIL :</span>{" "}
               <a href="mailto:bawarchibiryaniatl@gmail.com">
-              bawarchibiryaniatl@gmail.com
+                {/* bawarchibiryaniatl@gmail.com */}
               </a>
               {/* <a href="mailto:contact@bawarchiatlanta.com">
                 contact@bawarchiatlanta.com

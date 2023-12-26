@@ -86,6 +86,13 @@ const Navbar = () => {
             Catering
           </span>
         </Link>
+        <Link href={"/blogs"}>
+          <span
+            className={`px-4 py-2 font-bold items-center justify-center hover:text-primary uppercase text-xs md:text-base text-black`}
+          >
+            Blogs
+          </span>
+        </Link>
         <Link href="/gallery">
           <span
             className={`px-4 py-2 font-bold items-center justify-center hover:text-primary uppercase text-xs md:text-base text-black`}
