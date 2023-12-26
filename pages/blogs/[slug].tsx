@@ -132,6 +132,7 @@ const BlogDetails = ({
             <div className="prose prose-teal leading-8 pb-8 font-">
               <RichText content={blog?.content?.raw?.children} />
             </div>
+            {!relatedBlogs.length && <hr className="bg-primary h-[2px]" />}
           </div>
           {relatedBlogs.length > 0 && (
             <div className="pb-12 bg-primary">
