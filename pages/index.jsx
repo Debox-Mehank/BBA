@@ -4,6 +4,8 @@ import Link from "next/link";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { gql } from "@apollo/client";
+import client from "../apolloClient";
 import {
   faPhone,
   faLocationDot,
@@ -39,7 +41,7 @@ const SpecialitiesData = [
   },
 ];
 
-export default function Home() {
+export default function Home({ data }) {
   const [swiper, setSwiper] = useState();
   return (
     <div className="w-full">
@@ -78,27 +80,58 @@ export default function Home() {
         <meta property="twitter:image" content={"/assets/dish1.png"} />
       </Head>
       {/* Below div is for offers.  */}
-      {/* sm:mt-24 */}
-      <div className="w-full min-h-screen bg-cover bg-center banner-div  " />
+      {/* <div className="w-full h-screen bg-cover bg-center banner-div sm:mt-24 " /> */}
+      <div>
+        {data[1]?.webBanner && (
+          <Image
+            src={data[1]?.webBanner?.url}
+            width={1400}
+            height={900}
+            alt={data[1]?.bannerAlt}
+            className="w-full min-h-screen bg-cover sm:pt-10 hidden md:block"
+          />
+        )}
+        {data[1]?.mobileBanner && (
+          <Image
+            src={data[1]?.mobileBanner?.url}
+            width={1200}
+            height={800}
+            alt={data[1]?.bannerAlt}
+            className="w-full min-h-screen bg-cover bg-center pt-14 block md:hidden"
+          />
+        )}
+      </div>
       {/* hero section video */}
-      {/* <video
-        autoPlay
-        muted
-        loop
-        playsInline
-        className="w-full h-screen bg-cover bg-center object-cover banner-video hidden lg:block"
-      >
-        <source src="./main_desktop.mp4" type="video/mp4" />
-      </video>
-      <video
-        autoPlay
-        muted
-        loop
-        playsInline
-        className="w-full h-screen bg-cover bg-center object-cover banner-video block lg:hidden"
-      >
-        <source src="./main_mobile.mp4" type="video/mp4" />
-      </video> */}
+      {!data[1]?.webBanner && (
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="w-full h-screen bg-cover bg-center object-cover banner-video hidden md:block"
+        >
+          <source
+            src={data[0]?.webBanner?.url ?? "./main_desktop.mp4"}
+            type="video/mp4"
+          />
+        </video>
+      )}
+      {!data[1]?.mobileBanner && (
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="w-full h-screen bg-cover bg-center object-cover banner-video block md:hidden"
+        >
+          <source
+            src={data[0]?.mobileBanner?.url ?? "./main_mobile.mp4"}
+            type="video/mp4"
+          />
+        </video>
+      )}
+
+      {/* hero section video  end*/}
       <br />
       <div id="aboutus" className="grid grid-cols-1 md:grid-cols-2">
         <div className="w-full flex justify-center items-stretch md:hidden">
@@ -327,7 +360,7 @@ export default function Home() {
               {"\n"}
               <span className="font-extrabold">EMAIL :</span>{" "}
               <a href="mailto:bawarchibiryaniatl@gmail.com">
-                {/* bawarchibiryaniatl@gmail.com */}
+                bawarchibiryaniatl@gmail.com
               </a>
               {/* <a href="mailto:contact@bawarchiatlanta.com">
                 contact@bawarchiatlanta.com
@@ -351,6 +384,31 @@ export default function Home() {
       <br />
     </div>
   );
+}
+
+export async function getStaticProps() {
+  const { data, error } = await client.query({
+    query: gql`
+      query MyQuery {
+        homeBanners {
+          bannerAlt
+          webBanner {
+            url
+          }
+          mobileBanner {
+            url
+          }
+        }
+      }
+    `,
+  });
+
+  return {
+    props: {
+      data: data.homeBanners,
+    },
+    revalidate: 60,
+  };
 }
 
 // time in minutes in design form daily tracker.

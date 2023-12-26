@@ -9,7 +9,7 @@ import {
 const Footer = () => {
   return (
     <footer className="flex gap-4 justify-around items-center flex-col flex-wrap h-auto w-full z-50 px-4 py-8 bg-pri_green mt-auto text-center">
-      <ul className="grid grid-cols-4 justify-center text-center mb-2">
+      <ul className="flex flex-wrap justify-center text-center mb-2">
         <Link href={"/"}>
           <span
             className={`px-4 py-2 font-bold text-primary uppercase text-xs`}
