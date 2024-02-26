@@ -1,13 +1,14 @@
 import Image from "next/legacy/image";
 import { useEffect, useState } from "react";
 import useMediaQuery from "../hooks/useMediaQuery";
-import Head from "next/dist/shared/lib/head";
+import Head from "next/head";
 // Data
 import imageData from "../utils/imageData";
 
 // Lib for Gallery
 import Lightbox from "react-image-lightbox";
 import "react-image-lightbox/style.css";
+// import { getPlaiceholder } from "plaiceholder";
 
 export default function OurGallery() {
   const [viewData, setViewData] = useState(imageData);
@@ -24,29 +25,57 @@ export default function OurGallery() {
     setModalImgData(viewData.map((img) => img.url));
   }, [viewData]);
 
+  // const buffer = Buffer.from(viewData.map((img) => img.url));
+  // const { base64 } = getPlaiceholder(buffer);
+  // console.log(base64, "BufferData @@@@@");
   return (
     <div className="mt-28 md:p-20 glimpses-div">
-       <Head>
+      <Head>
         <title>{`Bawarchi Biryanis Atlanta Gallery - Explore Our Ambience & Delectable Dishes`}</title>
-        <link
-          rel="canonical"
-          href={`https://bawarchiatlanta.com/gallery`}
-        />
+        <link rel="canonical" href={`https://bawarchiatlanta.com/gallery`} />
         {/* <link rel="icon" href="/favicon.ico"/> */}
         {/* OG Tags */}
-        <meta property="og:title" content={`Bawarchi Biryanis Atlanta Gallery - Explore Our Ambience & Delectable Dishes `} />
-        <meta property="og:image" content={"https://res.cloudinary.com/debox/image/upload/v1651053969/BBA/BBA_Website_Images/Our%20Ambience/OurAmbience7_gf4wyp.jpg"} />
+        <meta
+          property="og:title"
+          content={`Bawarchi Biryanis Atlanta Gallery - Explore Our Ambience & Delectable Dishes `}
+        />
+        <meta
+          property="og:image"
+          content={
+            "https://res.cloudinary.com/debox/image/upload/v1651053969/BBA/BBA_Website_Images/Our%20Ambience/OurAmbience7_gf4wyp.jpg"
+          }
+        />
         <meta property="og:type" content="article" />
-        <meta property="og:description" content={"Feast your eyes on our culinary creations. Our gallery showcases the wide array of mouth-watering Indian dishes you can relish at Bawarchi Biryanis Atlanta."} />
+        <meta
+          property="og:description"
+          content={
+            "Feast your eyes on our culinary creations. Our gallery showcases the wide array of mouth-watering Indian dishes you can relish at Bawarchi Biryanis Atlanta."
+          }
+        />
 
-        <meta name="twitter:card" content="summary"/>
-        <meta property="twitter:title" content={"Bawarchi Biryanis Atlanta Gallery - Explore Our Ambience & Delectable Dishes"} />
-        <meta property="twitter:description" content={"Feast your eyes on our culinary creations. Our gallery showcases the wide array of mouth-watering Indian dishes you can relish at Bawarchi Biryanis Atlanta."} />
+        <meta name="twitter:card" content="summary" />
+        <meta
+          property="twitter:title"
+          content={
+            "Bawarchi Biryanis Atlanta Gallery - Explore Our Ambience & Delectable Dishes"
+          }
+        />
+        <meta
+          property="twitter:description"
+          content={
+            "Feast your eyes on our culinary creations. Our gallery showcases the wide array of mouth-watering Indian dishes you can relish at Bawarchi Biryanis Atlanta."
+          }
+        />
         <meta
           property="twitter:url"
           content={`https://bawarchiatlanta.com/gallery`}
         />
-        <meta property="twitter:image" content={"https://res.cloudinary.com/debox/image/upload/v1651053969/BBA/BBA_Website_Images/Our%20Ambience/OurAmbience7_gf4wyp.jpg"} />
+        <meta
+          property="twitter:image"
+          content={
+            "https://res.cloudinary.com/debox/image/upload/v1651053969/BBA/BBA_Website_Images/Our%20Ambience/OurAmbience7_gf4wyp.jpg"
+          }
+        />
       </Head>
       <h1 className="font-bold font-big_calson text-5xl mb-12 text-center">
         Our Gallery

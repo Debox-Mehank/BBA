@@ -9,6 +9,7 @@ import toast, { Toaster } from "react-hot-toast";
 import Head from "next/head";
 import { useRouter } from "next/router";
 import { calculateReadingTime } from "../../utils/helper";
+import { ArticleJsonLd } from "next-seo";
 
 interface IBlogDeatils {
   title: string;
@@ -17,6 +18,7 @@ interface IBlogDeatils {
   image: {
     url: string;
   };
+  updatedAt: string;
   content: {
     raw: any;
     text: string;
@@ -34,6 +36,14 @@ const BlogDetails = ({
 
   return (
     <div className="text-primary bg-pri_green ">
+      <ArticleJsonLd
+        title={blog?.title}
+        description={blog?.shortDescription || ""}
+        url={`https://bawarchiatlanta.com/${blog?.slug}`}
+        images={[blog?.image?.url]}
+        datePublished={blog?.updatedAt}
+        authorName={"Bawarchi Atlanta"}
+      />
       <Toaster
         position="top-right"
         containerStyle={{
@@ -213,6 +223,7 @@ export async function getServerSideProps({ params }: { params: any }) {
         title
         slug
         shortDescription
+        updatedAt
         image {
           url
         }

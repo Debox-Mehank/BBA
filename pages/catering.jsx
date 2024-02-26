@@ -74,6 +74,8 @@ const Catering = () => {
             src={catering}
             alt="Bawarchi Atlanta's Catering Buffet"
             objectFit="cover"
+            placeholder="blur"
+            blurDataURL="LCN8:88x=}I:01Nz0f$z5Q0LIA~B"
           />
         </div>
         <div className="w-full bg-cover bg-center catering-div p-6 flex flex-col justify-center">
