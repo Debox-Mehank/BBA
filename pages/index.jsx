@@ -82,27 +82,27 @@ export default function Home({ data }) {
       {/* Below div is for offers.  */}
       {/* <div className="w-full h-screen bg-cover bg-center banner-div sm:mt-24 " /> */}
       <div>
-        {data[1]?.webBanner && (
+        {data[0]?.webBanner && (
           <Image
-            src={data[1]?.webBanner?.url}
+            src={data[0]?.webBanner?.url}
             width={1400}
             height={900}
-            alt={data[1]?.bannerAlt}
+            alt={data[0]?.bannerAlt}
             className="w-full min-h-screen bg-cover sm:pt-10 hidden md:block"
           />
         )}
-        {data[1]?.mobileBanner && (
+        {data[0]?.mobileBanner && (
           <Image
-            src={data[1]?.mobileBanner?.url}
+            src={data[0]?.mobileBanner?.url}
             width={1200}
             height={800}
-            alt={data[1]?.bannerAlt}
+            alt={data[0]?.bannerAlt}
             className="w-full min-h-screen bg-cover bg-center pt-14 block md:hidden"
           />
         )}
       </div>
       {/* hero section video */}
-      {!data[1]?.webBanner && (
+      {!data[0]?.webBanner && (
         <video
           autoPlay
           muted
@@ -111,12 +111,12 @@ export default function Home({ data }) {
           className="w-full h-screen bg-cover bg-center object-cover banner-video hidden md:block"
         >
           <source
-            src={data[0]?.webBanner?.url ?? "./main_desktop.mp4"}
+            src={data[1]?.webBanner?.url ?? "./main_desktop.mp4"}
             type="video/mp4"
           />
         </video>
       )}
-      {!data[1]?.mobileBanner && (
+      {!data[0]?.mobileBanner && (
         <video
           autoPlay
           muted
@@ -125,7 +125,7 @@ export default function Home({ data }) {
           className="w-full h-screen bg-cover bg-center object-cover banner-video block md:hidden"
         >
           <source
-            src={data[0]?.mobileBanner?.url ?? "./main_mobile.mp4"}
+            src={data[1]?.mobileBanner?.url ?? "./main_mobile.mp4"}
             type="video/mp4"
           />
         </video>

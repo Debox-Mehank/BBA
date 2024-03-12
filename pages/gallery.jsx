@@ -8,7 +8,6 @@ import imageData from "../utils/imageData";
 // Lib for Gallery
 import Lightbox from "react-image-lightbox";
 import "react-image-lightbox/style.css";
-// import { getPlaiceholder } from "plaiceholder";
 
 export default function OurGallery() {
   const [viewData, setViewData] = useState(imageData);
@@ -25,9 +24,6 @@ export default function OurGallery() {
     setModalImgData(viewData.map((img) => img.url));
   }, [viewData]);
 
-  // const buffer = Buffer.from(viewData.map((img) => img.url));
-  // const { base64 } = getPlaiceholder(buffer);
-  // console.log(base64, "BufferData @@@@@");
   return (
     <div className="mt-28 md:p-20 glimpses-div">
       <Head>
