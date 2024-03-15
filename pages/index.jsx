@@ -47,8 +47,6 @@ const SpecialitiesData = [
 
 export default function Home({ data }) {
   const [swiper, setSwiper] = useState();
-
-  console.log(data, "data");
   return (
     <div className="w-full">
       <Head>
