@@ -14,63 +14,63 @@ const Index = ({ FeaturedBlog }) => {
   const [offset, setOffset] = useState(2);
   const [hasMoreCaseStudies, sethasMoreCaseStudies] = useState(false);
 
-  // useEffect(() => {
-  //   const fetchBlogs = async () => {
-  //     const { data, error } = await client.query({
-  //       query: gql`
-  //         query MyQuery {
-  //           blogsConnection (orderBy: createdAt_ASC, first: ${offset}){
-  //             edges {
-  //               node {
-  //                 title
-  //                 slug
-  //                 shortDescription
-  //                 image {
-  //                   url
-  //                 }
-  //                 content {
-  //                   raw
-  //                   text
-  //                 }
-  //               }
-  //             }
-  //             pageInfo {
-  //               hasNextPage
-  //               hasPreviousPage
-  //               pageSize
-  //             }
-  //           }
-  //         }
-  //       `,
-  //     });
-  //     if (!error) {
-  //       sethasMoreCaseStudies(data?.blogsConnection?.pageInfo?.hasNextPage);
-  //       setBlogs(data.blogsConnection?.edges);
-  //     } else {
-  //       toast.error(error.message);
-  //     }
-  //   };
+  useEffect(() => {
+    const fetchBlogs = async () => {
+      const { data, error } = await client.query({
+        query: gql`
+          query MyQuery {
+            blogsConnection (orderBy: createdAt_ASC, first: ${offset}){
+              edges {
+                node {
+                  title
+                  slug
+                  shortDescription
+                  image {
+                    url
+                  }
+                  content {
+                    raw
+                    text
+                  }
+                }
+              }
+              pageInfo {
+                hasNextPage
+                hasPreviousPage
+                pageSize
+              }
+            }
+          }
+        `,
+      });
+      if (!error) {
+        sethasMoreCaseStudies(data?.blogsConnection?.pageInfo?.hasNextPage);
+        setBlogs(data.blogsConnection?.edges);
+      } else {
+        toast.error(error.message);
+      }
+    };
 
-  //   fetchBlogs();
-  // }, [offset]);
+    fetchBlogs();
+  }, [offset]);
 
-  // useEffect(() => {
-  //   const observer = new IntersectionObserver((entries) => {
-  //     if (entries[0].isIntersecting && hasMoreCaseStudies) {
-  //       setOffset((prev) => prev + 3);
-  //     }
-  //   });
+  useEffect(() => {
+    const observer = new IntersectionObserver((entries) => {
+      if (entries[0].isIntersecting && hasMoreCaseStudies) {
+        setOffset((prev) => prev + 3);
+      }
+    });
 
-  //   if (observer && ref.current) {
-  //     observer.observe(ref.current);
-  //   }
+    if (observer && ref.current) {
+      observer.observe(ref.current);
+    }
 
-  //   return () => {
-  //     if (observer) {
-  //       observer.disconnect();
-  //     }
-  //   };
-  // }, [ref, hasMoreCaseStudies]);
+    return () => {
+      if (observer) {
+        observer.disconnect();
+      }
+    };
+  }, [ref, hasMoreCaseStudies]);
 
   return (
     <div className="w-full mt-24">
