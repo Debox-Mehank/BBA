@@ -87,22 +87,6 @@ export default function Home({ data }) {
       {/* <div className="w-full h-screen bg-cover bg-center banner-div sm:mt-24 " /> */}
 
       <div>
-        <Image
-          src={webBanner}
-          width={1400}
-          height={900}
-          alt={"Ramdan offer"}
-          className="w-full min-h-screen bg-cover sm:pt-10 hidden md:block"
-        />
-        <Image
-          src={mobileBanner}
-          width={1200}
-          height={800}
-          alt={"Ramdan offer"}
-          className="w-full min-h-screen bg-cover bg-center pt-14 block md:hidden"
-        />
-      </div>
-      {/* <div>
         {data[1]?.webBanner && (
           <Image
             src={data[1]?.webBanner?.url}
@@ -151,7 +135,7 @@ export default function Home({ data }) {
             />
           </video>
         )}
-      </> */}
+      </>
       {/* end hero */}
       <br />
       <div id="aboutus" className="grid grid-cols-1 md:grid-cols-2">
@@ -407,27 +391,26 @@ export default function Home({ data }) {
   );
 }
 
-// export async function getServerSideProps() {
-//   const { data, error } = await client.query({
-//     query: gql`
-//       query MyQuery {
-//         homeBanners {
-//           bannerAlt
-//           webBanner {
-//             url
-//           }
-//           mobileBanner {
-//             url
-//           }
-//         }
-//       }
-//     `,
-//   });
-//   console.log(data, "data");
+export async function getServerSideProps() {
+  const { data, error } = await client.query({
+    query: gql`
+      query MyQuery {
+        homeBanners {
+          bannerAlt
+          webBanner {
+            url
+          }
+          mobileBanner {
+            url
+          }
+        }
+      }
+    `,
+  });
 
-//   return {
-//     props: {
-//       data: data.homeBanners,
-//     },
-//   };
-// }
+  return {
+    props: {
+      data: data.homeBanners,
+    },
+  };
+}
