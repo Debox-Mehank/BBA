@@ -14,77 +14,63 @@ const Index = ({ FeaturedBlog }) => {
   const [offset, setOffset] = useState(2);
   const [hasMoreCaseStudies, sethasMoreCaseStudies] = useState(false);
 
-  // const router = useRouter();
-  // const page: any = router?.query?.page;
-  // const [loading, setLoading] = useState(false);
-  // const [currentPage, setCurrentPage] = useState<any>(page || 1);
-  // const pageSize = 4;
-  // const paginatedBlogs = paginate(Blogs, currentPage, pageSize);
   // useEffect(() => {
-  //   if (page === undefined) {
-  //     setCurrentPage(1);
-  //   } else {
-  //     setCurrentPage(parseInt(page));
+  //   const fetchBlogs = async () => {
+  //     const { data, error } = await client.query({
+  //       query: gql`
+  //         query MyQuery {
+  //           blogsConnection (orderBy: createdAt_ASC, first: ${offset}){
+  //             edges {
+  //               node {
+  //                 title
+  //                 slug
+  //                 shortDescription
+  //                 image {
+  //                   url
+  //                 }
+  //                 content {
+  //                   raw
+  //                   text
+  //                 }
+  //               }
+  //             }
+  //             pageInfo {
+  //               hasNextPage
+  //               hasPreviousPage
+  //               pageSize
+  //             }
+  //           }
+  //         }
+  //       `,
+  //     });
+  //     if (!error) {
+  //       sethasMoreCaseStudies(data?.blogsConnection?.pageInfo?.hasNextPage);
+  //       setBlogs(data.blogsConnection?.edges);
+  //     } else {
+  //       toast.error(error.message);
+  //     }
+  //   };
+
+  //   fetchBlogs();
+  // }, [offset]);
+
+  // useEffect(() => {
+  //   const observer = new IntersectionObserver((entries) => {
+  //     if (entries[0].isIntersecting && hasMoreCaseStudies) {
+  //       setOffset((prev) => prev + 3);
+  //     }
+  //   });
+
+  //   if (observer && ref.current) {
+  //     observer.observe(ref.current);
   //   }
-  // }, [page]);
 
-  useEffect(() => {
-    const fetchBlogs = async () => {
-      const { data, error } = await client.query({
-        query: gql`
-          query MyQuery {
-            blogsConnection (orderBy: createdAt_ASC, first: ${offset}){
-              edges {
-                node {
-                  title
-                  slug
-                  shortDescription
-                  image {
-                    url
-                  }
-                  content {
-                    raw
-                    text
-                  }
-                }
-              }
-              pageInfo {
-                hasNextPage
-                hasPreviousPage
-                pageSize
-              }
-            }
-          }
-        `,
-      });
-      if (!error) {
-        sethasMoreCaseStudies(data?.blogsConnection?.pageInfo?.hasNextPage);
-        setBlogs(data.blogsConnection?.edges);
-      } else {
-        toast.error(error.message);
-      }
-    };
-
-    fetchBlogs();
-  }, [offset]);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver((entries) => {
-      if (entries[0].isIntersecting && hasMoreCaseStudies) {
-        setOffset((prev) => prev + 3);
-      }
-    });
-
-    if (observer && ref.current) {
-      observer.observe(ref.current);
-    }
-
-    return () => {
-      if (observer) {
-        observer.disconnect();
-      }
-    };
-  }, [ref, hasMoreCaseStudies]);
+  //   return () => {
+  //     if (observer) {
+  //       observer.disconnect();
+  //     }
+  //   };
+  // }, [ref, hasMoreCaseStudies]);
 
   return (
     <div className="w-full mt-24">
@@ -147,8 +133,12 @@ const Index = ({ FeaturedBlog }) => {
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto w-11/12 grid grid-cols-1 lg:grid-cols-3 gap-8  py-12">
-        {blogs.length > 0 ? (
+      <div
+        className={`max-w-7xl mx-auto w-11/12 grid grid-cols-1 lg:grid-cols-3 gap-8  ${
+          blogs.length > 0 && "py-12"
+        }`}
+      >
+        {blogs.length > 0 &&
           blogs.map((blog) => (
             <Link href={`/blogs/${blog?.node?.slug}`} key={blog?.node?.title}>
               <article className="overflow-hidden shadow transition hover:shadow-lg text-pri_green ">
@@ -171,15 +161,17 @@ const Index = ({ FeaturedBlog }) => {
                 </div>
               </article>
             </Link>
-          ))
-        ) : (
-          <div className="py-20 grid place-items-center h-full">
-            <p className="text-3xl text-center font-extrabold text-primary">
-              This place will fill in a while.
-            </p>
-          </div>
-        )}
+          ))}
       </div>
+      {blogs.length === 0 ? (
+        <div className="py-20 grid place-items-center h-full">
+          <p className="text-3xl text-center font-extrabold text-white">
+            This place will fill in a while.
+          </p>
+        </div>
+      ) : (
+        ""
+      )}
       {hasMoreCaseStudies ? (
         <div className="py-4 text-center text-primary font-medium" ref={ref}>
           Loading more items...

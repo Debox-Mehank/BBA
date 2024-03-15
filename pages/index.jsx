@@ -18,6 +18,10 @@ import dish2 from "../assets/dish2.png";
 import dish3 from "../assets/dish3.png";
 import dish4 from "../assets/dish4.png";
 import Head from "next/head";
+
+import webBanner from "../public/Bawarchi_March_Web_Banner_Ramadan.jpg";
+import mobileBanner from "../public/Bawarchi_March_Mobile_Banner_Ramadan.jpg";
+
 const SpecialitiesData = [
   {
     img: dish1,
@@ -43,6 +47,8 @@ const SpecialitiesData = [
 
 export default function Home({ data }) {
   const [swiper, setSwiper] = useState();
+
+  console.log(data, "data");
   return (
     <div className="w-full">
       <Head>
@@ -81,57 +87,74 @@ export default function Home({ data }) {
       </Head>
       {/* Below div is for offers.  */}
       {/* <div className="w-full h-screen bg-cover bg-center banner-div sm:mt-24 " /> */}
+
       <div>
-        {data[0]?.webBanner && (
+        <Image
+          src={webBanner}
+          width={1400}
+          height={900}
+          alt={"Ramdan offer"}
+          className="w-full min-h-screen bg-cover sm:pt-10 hidden md:block"
+        />
+        <Image
+          src={mobileBanner}
+          width={1200}
+          height={800}
+          alt={"Ramdan offer"}
+          className="w-full min-h-screen bg-cover bg-center pt-14 block md:hidden"
+        />
+      </div>
+      {/* <div>
+        {data[1]?.webBanner && (
           <Image
-            src={data[0]?.webBanner?.url}
+            src={data[1]?.webBanner?.url}
             width={1400}
             height={900}
-            alt={data[0]?.bannerAlt}
+            alt={data[1]?.bannerAlt}
             className="w-full min-h-screen bg-cover sm:pt-10 hidden md:block"
           />
         )}
-        {data[0]?.mobileBanner && (
+        {data[1]?.mobileBanner && (
           <Image
-            src={data[0]?.mobileBanner?.url}
+            src={data[1]?.mobileBanner?.url}
             width={1200}
             height={800}
-            alt={data[0]?.bannerAlt}
+            alt={data[1]?.bannerAlt}
             className="w-full min-h-screen bg-cover bg-center pt-14 block md:hidden"
           />
         )}
       </div>
-      {/* hero section video */}
-      {!data[0]?.webBanner && (
-        <video
-          autoPlay
-          muted
-          loop
-          playsInline
-          className="w-full h-screen bg-cover bg-center object-cover banner-video hidden md:block"
-        >
-          <source
-            src={data[1]?.webBanner?.url ?? "./main_desktop.mp4"}
-            type="video/mp4"
-          />
-        </video>
-      )}
-      {!data[0]?.mobileBanner && (
-        <video
-          autoPlay
-          muted
-          loop
-          playsInline
-          className="w-full h-screen bg-cover bg-center object-cover banner-video block md:hidden"
-        >
-          <source
-            src={data[1]?.mobileBanner?.url ?? "./main_mobile.mp4"}
-            type="video/mp4"
-          />
-        </video>
-      )}
-
-      {/* hero section video  end*/}
+      <>
+        {!data[1]?.webBanner && (
+          <video
+            autoPlay
+            muted
+            loop
+            playsInline
+            className="w-full h-screen bg-cover bg-center object-cover banner-video hidden md:block"
+          >
+            <source
+              src={data[0]?.webBanner?.url ?? "./main_desktop.mp4"}
+              type="video/mp4"
+            />
+          </video>
+        )}
+        {!data[1]?.mobileBanner && (
+          <video
+            autoPlay
+            muted
+            loop
+            playsInline
+            className="w-full h-screen bg-cover bg-center object-cover banner-video block md:hidden"
+          >
+            <source
+              src={data[0]?.mobileBanner?.url ?? "./main_mobile.mp4"}
+              type="video/mp4"
+            />
+          </video>
+        )}
+      </> */}
+      {/* end hero */}
       <br />
       <div id="aboutus" className="grid grid-cols-1 md:grid-cols-2">
         <div className="w-full flex justify-center items-stretch md:hidden">
@@ -386,49 +409,27 @@ export default function Home({ data }) {
   );
 }
 
-export async function getStaticProps() {
-  const { data, error } = await client.query({
-    query: gql`
-      query MyQuery {
-        homeBanners {
-          bannerAlt
-          webBanner {
-            url
-          }
-          mobileBanner {
-            url
-          }
-        }
-      }
-    `,
-  });
+// export async function getServerSideProps() {
+//   const { data, error } = await client.query({
+//     query: gql`
+//       query MyQuery {
+//         homeBanners {
+//           bannerAlt
+//           webBanner {
+//             url
+//           }
+//           mobileBanner {
+//             url
+//           }
+//         }
+//       }
+//     `,
+//   });
+//   console.log(data, "data");
 
-  return {
-    props: {
-      data: data.homeBanners,
-    },
-    revalidate: 60,
-  };
-}
-
-// time in minutes in design form daily tracker.
-// char limit for remarks so its not vague
-// link attachment / url
-
-// for marketing
-
-// client dropdown -> task -> remark - attachment
-
-// PL to be shown on load.
-
-// email to be sent to reporting manager when leave is submitted.
-// if sick leave more than 1 day, ask attachment.
-
-// leave -> half / full
-// if half, end date wont be paid
-
-// to handle paid for self (managers)
-
-// print button
-
-// manager email on resignation
+//   return {
+//     props: {
+//       data: data.homeBanners,
+//     },
+//   };
+// }
