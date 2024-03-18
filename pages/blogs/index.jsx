@@ -75,12 +75,16 @@ const Index = ({ FeaturedBlog }) => {
   return (
     <div className="w-full mt-24">
       <Head>
-        <title>{"Indian Food Blogs By Bawarchi Biryanis Atlanta"}</title>
+        <title>{"Blogs on Food in Atlanta by Bawarchi Atlanta"}</title>
         <link rel="canonical" href={`https://bawarchiatlanta.com/blogs`} />
+        <meta
+          name="description"
+          content="Check out the latest blogs on Food and Catering by Bawarchi Atlanta"
+        />
         {/* OG Tags */}
         <meta
           property="og:title"
-          content={"Indian Food Blogs by Bawarchi Biryanis Atlanta"}
+          content={"Blogs on Food in Atlanta by Bawarchi Atlanta"}
         />
         <meta
           property="og:image"
@@ -93,18 +97,18 @@ const Index = ({ FeaturedBlog }) => {
         <meta
           property="og:description"
           content={
-            "Make your events memorable with Bawarchi Biryanis Atlanta's exceptional Indian food catering. From intimate gatherings to large conferences, we cater to all, with custom menus to suit your budget and palate."
+            "Check out the latest blogs on Food and Catering by Bawarchi Atlanta"
           }
         />
         <meta name="twitter:card" content="summary" />
         <meta
           property="twitter:title"
-          content={"Indian Food Blogs by Bawarchi Biryanis Atlanta"}
+          content={"Blogs on Food in Atlanta by Bawarchi Atlanta"}
         />
         <meta
           property="twitter:description"
           content={
-            "Make your events memorable with Bawarchi Biryanis Atlanta's exceptional Indian food catering. From intimate gatherings to large conferences, we cater to all, with custom menus to suit your budget and palate."
+            "Check out the latest blogs on Food and Catering by Bawarchi Atlanta"
           }
         />
         <meta

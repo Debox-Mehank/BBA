@@ -32,34 +32,34 @@ const Catering = () => {
   return (
     <div className="w-full mt-24">
       <Head>
-        <title>{`Indian Food Catering Services in Atlanta | Bawarchi Biryanis Atlanta`}</title>
+        <title>{`Best Indian Catering in Atlanta`}</title>
         <link rel="canonical" href={`https://bawarchiatlanta.com/catering`} />
-        {/* <link rel="icon" href="/favicon.ico"/> */}
+        <meta
+          name="description"
+          content="Best Indian Catering services in Atlanta having catered more than 1000+ events and served half a million people through the Catering services over the last 10 years."
+        />{" "}
         {/* OG Tags */}
         <meta
           property="og:title"
-          content={`Indian Food Catering Services in Atlanta | Bawarchi Biryanis Atlanta `}
+          content={`Best Indian Catering in Atlanta `}
         />
         <meta property="og:image" content={"/assets/catering.jpg"} />
         <meta property="og:type" content="article" />
         <meta
           property="og:description"
           content={
-            "Make your events memorable with Bawarchi Biryanis Atlanta's exceptional Indian food catering. From intimate gatherings to large conferences, we cater to all, with custom menus to suit your budget and palate."
+            "Best Indian Catering services in Atlanta having catered more than 1000+ events and served half a million people through the Catering services over the last 10 years."
           }
         />
-
         <meta name="twitter:card" content="summary" />
         <meta
           property="twitter:title"
-          content={
-            "Indian Food Catering Services in Atlanta | Bawarchi Biryanis Atlanta"
-          }
+          content={"Best Indian Catering in Atlanta"}
         />
         <meta
           property="twitter:description"
           content={
-            "Make your events memorable with Bawarchi Biryanis Atlanta's exceptional Indian food catering. From intimate gatherings to large conferences, we cater to all, with custom menus to suit your budget and palate."
+            "Best Indian Catering services in Atlanta having catered more than 1000+ events and served half a million people through the Catering services over the last 10 years."
           }
         />
         <meta

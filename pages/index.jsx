@@ -50,34 +50,36 @@ export default function Home({ data }) {
   return (
     <div className="w-full">
       <Head>
-        <title>{`Bawarchi Biryanis Atlanta - Authentic Indian Cuisine in a Fine Dine Setting`}</title>
+        <title>{`Best Indian Restaurant in Atlanta`}</title>
         <link rel="canonical" href={`https://bawarchiatlanta.com/`} />
         <link rel="icon" href="/favicon.ico" />
+        <meta
+          name="description"
+          content="Best Indian Restaurant in Sandy Springs serving delicious Indian food since 2014. Serving authentic Indian Curries, Authentic Biryanis, Indian Appetizers & Tandoor, Indian Chaat, Snacksn and Indian Desserts."
+        />
         {/* OG Tags */}
         <meta
           property="og:title"
-          content={`Bawarchi Biryanis Atlanta - Authentic Indian Cuisine in a Fine Dine Setting `}
+          content={`Best Indian Restaurant in Atlanta `}
         />
         <meta property="og:image" content={"/assets/dish1.png"} />
         <meta property="og:type" content="article" />
         <meta
           property="og:description"
           content={
-            "Experience the richness of authentic Indian cuisine at Bawarchi Biryanis Atlanta. From Mughlai delights to South-Indian classics, our versatile menu celebrates India's culinary traditions."
+            "Best Indian Restaurant in Sandy Springs serving delicious Indian food since 2014. Serving authentic Indian Curries, Authentic Biryanis, Indian Appetizers & Tandoor, Indian Chaat, Snacksn and Indian Desserts."
           }
         />
 
         <meta name="twitter:card" content="summary" />
         <meta
           property="twitter:title"
-          content={
-            "Bawarchi Biryanis Atlanta - Authentic Indian Cuisine in a Fine Dine Setting"
-          }
+          content={"Best Indian Restaurant in Atlanta"}
         />
         <meta
           property="twitter:description"
           content={
-            "Experience the richness of authentic Indian cuisine at Bawarchi Biryanis Atlanta. From Mughlai delights to South-Indian classics, our versatile menu celebrates India's culinary traditions."
+            "Best Indian Restaurant in Sandy Springs serving delicious Indian food since 2014. Serving authentic Indian Curries, Authentic Biryanis, Indian Appetizers & Tandoor, Indian Chaat, Snacksn and Indian Desserts."
           }
         />
         <meta property="twitter:url" content={`https://bawarchiatlanta.com/`} />

@@ -27,14 +27,15 @@ export default function OurGallery() {
   return (
     <div className="mt-28 md:p-20 glimpses-div">
       <Head>
-        <title>{`Bawarchi Biryanis Atlanta Gallery - Explore Our Ambience & Delectable Dishes`}</title>
+        <title>{`Bawarchi Atlanta Photo Gallary`}</title>
         <link rel="canonical" href={`https://bawarchiatlanta.com/gallery`} />
+        <meta
+          name="description"
+          content="Check out the latest pictures from Bawarchi Atlanta."
+        />
         {/* <link rel="icon" href="/favicon.ico"/> */}
         {/* OG Tags */}
-        <meta
-          property="og:title"
-          content={`Bawarchi Biryanis Atlanta Gallery - Explore Our Ambience & Delectable Dishes `}
-        />
+        <meta property="og:title" content={`Bawarchi Atlanta Photo Gallary `} />
         <meta
           property="og:image"
           content={
@@ -44,23 +45,17 @@ export default function OurGallery() {
         <meta property="og:type" content="article" />
         <meta
           property="og:description"
-          content={
-            "Feast your eyes on our culinary creations. Our gallery showcases the wide array of mouth-watering Indian dishes you can relish at Bawarchi Biryanis Atlanta."
-          }
+          content={"Check out the latest pictures from Bawarchi Atlanta."}
         />
 
         <meta name="twitter:card" content="summary" />
         <meta
           property="twitter:title"
-          content={
-            "Bawarchi Biryanis Atlanta Gallery - Explore Our Ambience & Delectable Dishes"
-          }
+          content={"Bawarchi Atlanta Photo Gallary"}
         />
         <meta
           property="twitter:description"
-          content={
-            "Feast your eyes on our culinary creations. Our gallery showcases the wide array of mouth-watering Indian dishes you can relish at Bawarchi Biryanis Atlanta."
-          }
+          content={"Check out the latest pictures from Bawarchi Atlanta."}
         />
         <meta
           property="twitter:url"
