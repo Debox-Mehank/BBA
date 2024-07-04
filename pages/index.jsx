@@ -378,11 +378,11 @@ export default function Home({ data }) {
             <FontAwesomeIcon icon={faClock} size="2x" />
             <h3 className="font-extrabold  uppercase">Hours of operation</h3>
             <p className="font-bold text-xs whitespace-pre-line">
-              SUNDAY - THURSDAY{"\n"}
+              MONDAY - THURSDAY{"\n"}
               11:30AM - 9:30PM
             </p>
             <p className="font-bold text-xs whitespace-pre-line">
-              FRIDAY & SATURDAY{"\n"}
+              FRIDAY, SATURDAY & SUNDAY{"\n"}
               11:30AM - 10:00PM
             </p>
           </div>
