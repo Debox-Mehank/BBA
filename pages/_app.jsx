@@ -6,9 +6,8 @@ import "@fortawesome/fontawesome-svg-core/styles.css";
 import "../styles/globals.css";
 import "swiper/css";
 import image from "../assets/dish3.png";
+import { getMobileOSBasedAppLink } from "../utils/app_link_redirect";
 config.autoAddCss = false;
-
-//
 
 function MyApp({ Component, pageProps }) {
   return (
@@ -49,14 +48,6 @@ function MyApp({ Component, pageProps }) {
       </Head>
 
       <Component {...pageProps} />
-      <a
-        target="_blank"
-        rel="noreffer"
-        href="https://ordersave.com/partnersite/j5DgkW8FF1Nd/menu"
-        className="bg-white/80 backdrop-blur-3xl fixed bottom-4 right-8 z-[100] hover:bg-white duration-200 py-2 px-5 rounded-lg drop-shadow-2xl"
-      >
-        Order Online
-      </a>
 
       {/* Google Analytics */}
       <Script
