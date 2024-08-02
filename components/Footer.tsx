@@ -18,7 +18,7 @@ const Footer = () => {
             <Image src={Instagram} alt='instagram' className='w-[36px] h-[36px]' />
         </div>
         <div className='flex items-center justify-center' >
-        <p className='font-medium flex items-center custom-sm:text-xl text-[12px] custom-sm:mt-0 mt-10' >
+        <p className='font-medium flex items-center custom-sm:text-xl xsm:text-[14px] text-[10px] custom-sm:mt-0 mt-10' >
         DESIGNED AND DEVELOPED BY <span className='underline ml-1' >DEBOX CONSULTING PVT. LTD.</span>
         </p>
         </div>

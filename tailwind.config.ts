@@ -32,6 +32,7 @@ const config: Config = {
         'custom-lg': '980px',
         'custom-lg2': '1150px',
         'custom-sm': '600px',
+        
       },
     },
   },
