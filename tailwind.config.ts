@@ -26,7 +26,12 @@ const config: Config = {
       fontFamily: {
         rubik: ['var(--font-rubik)', 'serif'],
         bebas: ['var(--font-bebas)', 'serif']
-
+      },
+      screens: {
+        'xsm': '485px',
+        'custom-lg': '980px',
+        'custom-lg2': '1150px',
+        'custom-sm': '600px',
       },
     },
   },

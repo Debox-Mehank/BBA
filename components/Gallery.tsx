@@ -23,36 +23,39 @@ const Gallery = () => {
   }, [images.length]);
 
   return (
-    <div className='py-20 px-24 bg-bg2 rounded-[100px] relative -mt-20 flex items-center justify-between z-10 overflow-hidden'>
+    <div className='lg:py-20 lg:px-24 xsm:px-12 px-6 py-10 bg-bg2 rounded-[60px] lg:rounded-[100px] relative -mt-20 flex flex-col custom-lg:flex-row items-center custom-lg:justify-evenly justify-center z-10 overflow-hidden'>
       <motion.div
     variants={fadeIn("right", "tween", 0.2, 0.5)} 
     initial="hidden"
     whileInView="show"
     viewport={{ once: true}}
+    className='custom-lg:mr-10 custom-lg:mb-0 mb-20 custom-lg:w-1/2 w-full flex items-center justify-center'
       
       >
         <Image 
           src={images[currentImageIndex]} 
           alt='reviews' 
-          className='w-[500px] h-[630px] rounded-[80px] bg-contain' 
+          className='xsm:w-[500px] xsm:h-[630px] w-[400px] h-[530px] rounded-[80px] bg-contain' 
         />
       </motion.div>
       
-      <motion.div className='flex flex-col items-start max-w-[680px]'
+      <motion.div className='flex flex-col custom-lg:items-start  custom-lg:w-1/2 w-full'
       variants={fadeIn("left", "tween", 0.2, 0.5)} 
       initial="hidden"
       whileInView="show"
       viewport={{ once: true}}
       >
-        <h1 className='text-[80px] leading-[75px] font-bebas  mb-10 text-bg1'>
+        <h1 className='xl:text-[80px] xsm:text-[60px]  xsm:leading-[55px] xl:leading-[75px] 
+        text-[50px] leading-[45px]
+        font-bebas   xsm:mb-10 mb-14 text-bg1'>
           A decade of crafting delicious memories
         </h1>
-        <p className='text-2xl font-rubik max-w-[680px] text-bg1 mb-10'>
+        <p className='xsm:text-2xl text-xl font-rubik custom-lg:max-w-[680px] max-w-sreen text-bg1 xsm:mb-10 mb-14'>
           Bawarchi Biryanis isn&apos;t just about food. It&apos;s about the generations of chefs who kept the cooking traditions alive and are behind the delicious dishes we serve at our restaurant.
         </p>
         
-        <p className='flex items-center font-bebas text-3xl text-bg1 font-bold'>
-          READ MORE <Image src={arrowup} alt='arrow-up' className='w-[45px] h-[45px]' />
+        <p className='flex items-center font-bebas xsm:text-3xl text-xl text-bg1 font-bold'>
+          READ MORE <Image src={arrowup} alt='arrow-up' className='xsm:w-[45px] w-[35px] xsm:h-[45px] h-[35px]' />
         </p>
       </motion.div>
     </div>

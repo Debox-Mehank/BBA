@@ -30,7 +30,7 @@ const Bawarchi = () => {
   }, []);
 
   return (
-    <div className='w-full h-full px-24 max-h-[120vh] flex items-center justify-center gap-4 overflow-hidden'>
+    <div className='w-full custom-lg2:h-full h-[10vh] px-24 max-h-[120vh]  flex items-center justify-center gap-4 overflow-hidden'>
       <div className='flex flex-col items-center justify-center gap-y-10 ' style={{ transform: `translateY(${scrollY * 0.1}px)` }}>
         <Image src={B} alt='B' />
         <Image src={B1} alt='B' />

@@ -8,7 +8,7 @@ import Image from 'next/image';
 
 const Slider = () => {
   return (
-    <div className="relative h-[150vh] w-full overflow-hidden -z-10 -mt-24">
+    <div className="relative md:h-[150vh] h-[120vh] w-full overflow-hidden -z-10 -mt-24">
       <div className="absolute top-0 left-0 w-full h-full flex animate-slide">
         <div className="flex-shrink-0 ">
           <Image src={Image1} alt="Slide 1" className="w-full h-full object-cover" />
@@ -41,7 +41,7 @@ const Slider = () => {
         
             </div>
         <div className="text-center">
-          <h1 className="text-bg2 text-4xl max-w-[933px] leading-10 font-rubik">
+          <h1 className="text-bg2 md:text-4xl sm:text-3xl text-2xl leading-8 max-w-[933px] sm:leading-10 font-rubik px-2">
           Over the last 10 years, Bawarchi Atlanta has become a beloved fixture in the heart of Sandy Springs. We have had the privilege of hosting countless family gatherings, community events, and celebrations fostering strong connections and creating memories with every meal.
           </h1>
         </div>
