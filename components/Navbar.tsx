@@ -6,6 +6,7 @@ import { fadeIn } from '@/utils/motion';
 import Image from 'next/image';
 import Logo from "../assets/logo.png";
 import HamburgerIcon from "../assets/hamburger.png";
+import Link from "next/link";
 
 const Navbar = () => {
   const [isButtonVisible, setIsButtonVisible] = useState(false);
@@ -48,18 +49,20 @@ const Navbar = () => {
             <Image src={Logo} alt='logo' className='!w-full !h-full object-contain' />
           </div>
           <div className='flex items-center justify-between'>
+            <Link target='_blank' href="https://ordersave.com/partnersite/j5DgkW8FF1Nd/menu" >
             <button
               className={`px-6 py-2 h-12 hidden md:block w-[180px] text-[20px] bg-bg3 font-rubik font-medium mr-10 border rounded-lg text-bg1 transition-opacity duration-500 ${isButtonVisible ? 'opacity-100' : 'opacity-0'}`}
               style={{ visibility: isButtonVisible ? 'visible' : 'hidden' }}
-            >
+              >
               ORDER NOW
             </button>
+            </Link>
             <button>
               <Image src={HamburgerIcon} alt='Sidebar' className='w-9 h-6' onClick={toggleMenu} />
             </button>
           </div>
         </div>
-        <div className={`bg-bg1 top-0 right-0 fixed w-full h-full z-30 flex flex-col items-center justify-center transition-transform duration-300 transform ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
+        <div className={`bg-bg1 top-0 right-0 fixed w-[70%] md:w-1/2 h-full z-30 flex flex-col items-center justify-center transition-transform duration-300 transform ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
         <button className='self-end mr-4 mt-4' onClick={toggleMenu}>
           <svg className='absolute top-2 right-2 sm:top-10 sm:right-10 w-6 h-6 text-white' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
             <path strokeLinecap='round' strokeLinejoin='round' strokeWidth='2' d='M6 18L18 6M6 6l12 12'></path>

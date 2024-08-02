@@ -1,5 +1,6 @@
 import React from 'react';
-import BannerVideo from "../assets/videos/BannerVideo.mp4"
+import BannerVideo from "../assets/videos/BannerVideo.mp4";
+import Link from "next/link";
 
 const Banner = () => {
   return (
@@ -20,9 +21,11 @@ const Banner = () => {
             <br/> 
             <span className='sm:ml-[200px] ml-[80px]' >WITH LOVE</span>
           </h1>
+          <Link target='_blank' href="https://ordersave.com/partnersite/j5DgkW8FF1Nd/menu" >
           <button className="mt-4 px-8 py-3 tracking-wide text-sm xsm:text-lg md:text-xl font-medium font-rubik border-2  text-bg3 bg-bg1 rounded-[15px] shadow-xl">
             ORDER NOW
           </button>
+          </Link>
         </div>
       </div>
     </div>

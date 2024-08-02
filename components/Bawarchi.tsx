@@ -31,36 +31,36 @@ const Bawarchi = () => {
 
   return (
     <div className='w-full custom-lg2:h-full h-[10vh] px-24 max-h-[120vh]  flex items-center justify-center gap-4 overflow-hidden'>
-      <div className='flex flex-col items-center justify-center gap-y-10 ' style={{ transform: `translateY(${scrollY * 0.1}px)` }}>
+      <div className='flex flex-col items-center justify-center gap-y-10 ' style={{ transform: `translateY(${scrollY * 0.12}px)` }}>
         <Image src={B} alt='B' />
         <Image src={B1} alt='B' />
       </div>
-      <div className='flex flex-col items-center justify-center gap-y-10 ' style={{ transform: `translateY(${-scrollY * 0.1}px)` }}>
+      <div className='flex flex-col items-center justify-center gap-y-10 ' style={{ transform: `translateY(${-scrollY * 0.12}px)` }}>
         <Image src={A1} alt='A' />
         <Image src={A} alt='A' />
       
       </div>
-      <div className='flex flex-col items-center justify-center gap-y-10 ' style={{ transform: `translateY(${scrollY * 0.1}px)` }}>
+      <div className='flex flex-col items-center justify-center gap-y-10 ' style={{ transform: `translateY(${scrollY * 0.12}px)` }}>
         <Image src={W} alt='W' />
         <Image src={W1} alt='W' />
       </div>
-      <div className='flex flex-col items-center justify-center gap-y-10 ' style={{ transform: `translateY(${-scrollY * 0.1}px)` }}>
+      <div className='flex flex-col items-center justify-center gap-y-10 ' style={{ transform: `translateY(${-scrollY * 0.12}px)` }}>
         <Image src={A1} alt='A' />
         <Image src={A} alt='A' />
       </div>
-      <div className='flex flex-col items-center justify-center gap-y-10 ' style={{ transform: `translateY(${scrollY * 0.1}px)` }}>
+      <div className='flex flex-col items-center justify-center gap-y-10 ' style={{ transform: `translateY(${scrollY * 0.12}px)` }}>
         <Image src={R} alt='R' />
         <Image src={R1} alt='R' />
       </div>
-      <div className='flex flex-col items-center justify-center gap-y-10 ' style={{ transform: `translateY(${-scrollY * 0.1}px)` }}>
+      <div className='flex flex-col items-center justify-center gap-y-10 ' style={{ transform: `translateY(${-scrollY * 0.12}px)` }}>
         <Image src={C1} alt='C' />
         <Image src={C} alt='C' />
       </div>
-      <div className='flex flex-col items-center justify-center gap-y-10 ' style={{ transform: `translateY(${scrollY * 0.1}px)` }}>
+      <div className='flex flex-col items-center justify-center gap-y-10 ' style={{ transform: `translateY(${scrollY * 0.12}px)` }}>
         <Image src={H} alt='H' />
         <Image src={H1} alt='H' />
       </div>
-      <div className='flex flex-col items-center justify-center gap-y-10 ' style={{ transform: `translateY(${-scrollY * 0.1}px)` }}>
+      <div className='flex flex-col items-center justify-center gap-y-10 ' style={{ transform: `translateY(${-scrollY * 0.12}px)` }}>
         <Image src={I1} alt='I' />
         <Image src={I} alt='I' />
       </div>

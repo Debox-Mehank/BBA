@@ -8,24 +8,24 @@ import { motion } from 'framer-motion';
 
 const Download = () => {
   return (
-    <div className="lg:py-20 lg:px-24 xsm:px-12 px-6 py-10 bg-bg3 flex flex-col custom-lg:flex-row items-center custom-lg:justify-evenly justify-center  overflow-hidden">
+    <div className="lg:py-20 lg:px-24 xsm:px-12 px-6 py-10 bg-bg3 flex flex-col-reverse custom-lg:flex-row items-center custom-lg:justify-evenly justify-center  overflow-hidden">
       <motion.div
         variants={fadeIn("right", "tween", 0.2, 0.3)} 
         initial="hidden"
         whileInView="show"
         viewport={{ once: true}}
-        className='custom-lg:mr-10 custom-lg:mb-0 mb-20 custom-lg:w-1/2 w-full flex items-center justify-center'
+        className='custom-lg:mr-10 custom-lg:mt-0 mt-20 custom-lg:w-1/2 w-full flex items-center justify-center'
       >
         <Image src={Phone} alt='phone' className='w-[378px] h-[683px]' />
       </motion.div>
-        <motion.div className='flex flex-col custom-lg:items-start  custom-lg:w-1/2 w-full'
+        <motion.div className='flex flex-col custom-lg:items-start custom-lg:mt-0 mt-10  custom-lg:w-1/2 w-full'
                     variants={fadeIn("left", "tween", 0.2, 0.3)} 
                     initial="hidden"
                     whileInView="show"
                     viewport={{ once: true}}
         
         >
-            <h1 className='uppercase text-bg1 font-bebas custom-lg:text-[140px] md:text-[120px] text-[90px] leading-[80px] md:leading-[120px] custom-lg:max-w-[522px] w-full mb-5' >Deliciously
+            <h1 className='uppercase text-bg1 font-bebas custom-lg:text-[140px] md:text-[120px] text-[85px] leading-[80px] md:leading-[120px] custom-lg:max-w-[522px] w-full mb-5 ' >Deliciously
             Simple</h1>
             <p className='font-rubik md:text-4xl text-2xl text-bg1  custom-lg:max-w-[571px] w-full uppercase mb-10' >Download the Bawarchi App
             Today</p>
