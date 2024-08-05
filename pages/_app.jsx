@@ -9,10 +9,12 @@ import image from "../assets/dish3.png";
 import { getMobileOSBasedAppLink } from "../utils/app_link_redirect";
 config.autoAddCss = false;
 
+
 function MyApp({ Component, pageProps }) {
   return (
     <Layout>
       <Head>
+    
         <title>{`Bawarchi Biryanis Atlanta - Authentic Indian Cuisine in a Fine Dine Setting`}</title>
         <link rel="canonical" href={`https://bawarchiatlanta.com/`} />
         <link rel="icon" href="/favicon.ico" />

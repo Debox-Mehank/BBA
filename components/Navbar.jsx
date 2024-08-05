@@ -1,188 +1,96 @@
-import { useState, useEffect } from "react";
-import Router, { useRouter } from "next/router";
+"use client";
+
+import React, { useRef, useState, useEffect } from 'react';
+import { useRouter } from 'next/router';
+import { motion } from 'framer-motion';
+import { fadeIn } from '../utils/motion';
+import Image from 'next/image';
+import Logo from "../assets/logo.png";
+import HamburgerIcon from "../assets/hamburger.png";
 import Link from "next/link";
-import Image from "next/image";
-import logo from "../assets/bba_logo.png";
 
 const Navbar = () => {
   const router = useRouter();
-  const [isOpen, setIsOpen] = useState(false);
+  const [isButtonVisible, setIsButtonVisible] = useState(false);
+  const observerTargetRef = useRef(null);
 
   useEffect(() => {
-    const doMagic = () => {
-      setIsOpen(false);
+    const handleScroll = () => {
+      const target = observerTargetRef.current;
+      if (target) {
+        const isPast120vh = window.scrollY > window.innerHeight * 0.8;
+        setIsButtonVisible(isPast120vh);
+      }
     };
 
-    Router.events.on("routeChangeStart", doMagic); // add listener
+    if (router.pathname === '/') {
+      window.addEventListener('scroll', handleScroll);
+    } else {
+      setIsButtonVisible(true);
+    }
 
     return () => {
-      Router.events.off("routeChangeStart", doMagic); // remove listener
+      if (router.pathname === '/') {
+        window.removeEventListener('scroll', handleScroll);
+      }
     };
-  }, []);
+  }, [router.pathname]);
+
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  useEffect(() => {
+    if (isMenuOpen) {
+      document.body.classList.add('overflow-hidden');
+    } else {
+      document.body.classList.remove('overflow-hidden');
+    }
+  }, [isMenuOpen]);
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
 
   return (
-    <nav className="flex justify-between items-center h-auto w-full z-40 fixed top-0 left-0 sm:px-6 pt-3 pb-2 bg-white">
-      <div className="w-48 sm:w-60">
-        <Link href="/">
-          <span className="items-center mx-3 inline-flex">
-            <Image src={logo} alt="Bawarchi Biryanis Atlanta" />
-          </span>
-        </Link>
-      </div>
-      <ul className="hidden lg:block">
-        <Link href={"/"}>
-          <span
-            className={`px-4 py-2 font-bold items-center justify-center hover:text-primary uppercase text-xs md:text-base text-black`}
-          >
-            Home
-          </span>
-        </Link>
-        {/* // href="https://ordersave.com/partnersite/j5DgkW8FF1Nd/menu"
-            // target={"_blank"}
-            // rel="noreferrer" */}
-
-        <div className="inline px-4 py-2 font-bold items-center justify-center uppercase text-xs md:text-base text-black relative has_dropdown">
-          <a
-            rel="noreferrer"
-            href="https://ordersave.com/partnersite/j5DgkW8FF1Nd/menu"
-            className="cursor-pointer hover:text-primary"
-          >
-            Online Ordering
-          </a>
-          {/* <div className="absolute right-0 top-8 left-0 dropdown opacity-0 invisible translate-y-8">
-            <ul className="bg-white shadow-md border-collapse w-full border-gray-400 flex justify-evenly items-center flex-col">
-              <li className="w-full p-3  border border-collapse border-gray-400 hover:bg-greyButtonBg cursor-pointer hover:text-primary">
-                <a
-                  href="https://order.online/business/bawarchi-biryanis-46928/"
-                  target={"_blank"}
-                  rel="noreferrer"
-                >
-                  Delivery
-                </a>
-              </li>
-              <li className="w-full p-3  border border-collapse border-gray-400 hover:bg-greyButtonBg cursor-pointer hover:text-primary">
-                <a
-                  href="https://ordersave.com/partnersite/j5DgkW8FF1Nd/menu"
-                  target={"_blank"}
-                  rel="noreferrer"
-                >
-                  Takeaway
-                </a>
-              </li>
-            </ul>
-          </div> */}
+    <>
+      <div className='fixed top-0 left-0 w-full px-2 py-0 bg-bg1 z-50'>
+        <div className='flex justify-between items-center px-2 sm:px-16 py-6 xl:px-24 lg:px-12'>
+          <div className='relative !w-[170px] !h-[53px] min-w-[115px] min-h-[53px]'>
+            <Image src={Logo} alt='logo' className='!w-full !h-full object-contain' />
+          </div>
+          <div className='flex items-center justify-between'>
+            <Link target='_blank' href="https://ordersave.com/partnersite/j5DgkW8FF1Nd/menu">
+              <button
+                className={`px-6 py-2 h-12 hidden md:block w-[180px] text-[20px] bg-bg3 font-rubik font-medium mr-10 border rounded-lg text-bg1 transition-opacity duration-500 ${isButtonVisible ? 'opacity-100' : 'opacity-0'}`}
+                style={{ visibility: isButtonVisible ? 'visible' : 'hidden' }}
+              >
+                ORDER NOW
+              </button>
+            </Link>
+            <button>
+              <Image src={HamburgerIcon} alt='Sidebar' className='w-9 h-6' onClick={toggleMenu} />
+            </button>
+          </div>
         </div>
-
-        {/* <Link href={"/"}>
-                    <a
-                        className={`px-4 py-2 font-bold items-center justify-center hover:text-primary uppercase text-xs md:text-base text-black`}>
-                        Menu
-                    </a>
-                </Link> */}
-        <Link href={"/catering"}>
-          <span
-            className={`px-4 py-2 font-bold items-center justify-center hover:text-primary uppercase text-xs md:text-base text-black`}
+        <div className={`bg-bg1 top-0 right-0 fixed w-[70%] md:w-1/2 h-full z-30 flex flex-col items-center justify-center transition-transform duration-300 transform ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
+          <button className='self-end mr-4 mt-4' onClick={toggleMenu}>
+            <svg className='absolute top-2 right-2 sm:top-10 sm:right-10 w-6 h-6 text-white' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
+              <path strokeLinecap='round' strokeLinejoin='round' strokeWidth='2' d='M6 18L18 6M6 6l12 12'></path>
+            </svg>
+          </button>
+          <motion.ul className='justify-between flex text-xl pt-5 mx-5 items-center text-[#959090] flex-col  font-rubik font-medium'
+            variants={fadeIn("up", "tween", 0.2, 0.2)}
+            initial="hidden"
+            whileInView="show"
           >
-            Catering
-          </span>
-        </Link>
-        <Link href={"/blogs"}>
-          <span
-            className={`px-4 py-2 font-bold items-center justify-center hover:text-primary uppercase text-xs md:text-base text-black`}
-          >
-            Blogs
-          </span>
-        </Link>
-        <Link href="/gallery">
-          <span
-            className={`px-4 py-2 font-bold items-center justify-center hover:text-primary uppercase text-xs md:text-base text-black`}
-          >
-            Our Gallery
-          </span>
-        </Link>
-        {/* <Link href={"/"}>
-                    <a
-                        className={`px-4 py-2 font-bold items-center justify-center hover:text-primary uppercase text-xs md:text-base text-black`}>
-                        Promotions
-                    </a>
-                </Link> */}
-      </ul>
-      {/* Mobiel Nav */}
-      <div
-        className={`${
-          isOpen ? "block" : "hidden"
-        } fixed transition-all top-0 left-0 w-full h-full z-50 bg-black`}
-      >
-        <button
-          onClick={() => setIsOpen((prev) => !prev)}
-          className="absolute top-6 right-6 text-white text-6xl"
-          aria-label="Menu Mobile Button"
-        >
-          &times;
-        </button>
-        <ul className="flex flex-col justify-center items-center gap-4 h-full">
-          <a
-            onClick={() => {
-              setIsOpen((prev) => !prev);
-              router.push("/");
-            }}
-            className={`px-4 py-2 font-bold items-center justify-center hover:text-primary uppercase text-2xl text-white`}
-          >
-            Home
-          </a>
-
-          <a
-            onClick={() => {
-              setIsOpen((prev) => !prev);
-              router.push(
-                "https://ordersave.com/partnersite/j5DgkW8FF1Nd/menu"
-              );
-            }}
-            className={`px-4 py-2 font-bold items-center justify-center hover:text-primary uppercase text-2xl text-white`}
-          >
-            Order Online
-          </a>
-          <a
-            onClick={() => {
-              setIsOpen((prev) => !prev);
-              router.push("/catering");
-            }}
-            className={`px-4 py-2 font-bold items-center justify-center hover:text-primary uppercase text-2xl text-white`}
-          >
-            Catering
-          </a>
-          <a
-            onClick={() => {
-              setIsOpen((prev) => !prev);
-              router.push("/gallery");
-            }}
-            className={`px-4 py-2 font-bold items-center justify-center hover:text-primary uppercase text-2xl text-white`}
-          >
-            Our Gallery
-          </a>
-        </ul>
+            <li className='my-4 hover:text-bg3 cursor-pointer'>HOME</li>
+            <li className='my-4 hover:text-bg3 cursor-pointer'>OUR STORY</li>
+            <li className='my-4 hover:text-bg3 cursor-pointer'>OUR CATERING</li>
+            <li className='my-4 hover:text-bg3 cursor-pointer'>OUR GALLERY</li>
+          </motion.ul>
+        </div>
       </div>
-      <button
-        onClick={() => setIsOpen((prev) => !prev)}
-        className="inline-flex p-3 lg:hidden text-black ml-auto"
-        aria-label="Menu Mobile Button"
-      >
-        <svg
-          className="w-6 h-6"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={2}
-            d="M4 6h16M4 12h16M4 18h16"
-          />
-        </svg>
-      </button>
-    </nav>
+      <div ref={observerTargetRef} style={{ height: '1px' }} /> {/* Invisible target to manage scroll effect */}
+    </>
   );
 };
 
