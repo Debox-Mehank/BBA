@@ -19,7 +19,7 @@ const index = () => {
         <Banner/>
         <Gallery/>
         <Bawarchi/>
-        <CircleImage/>
+        {/* <CircleImage/> */}
         <Slider/>
         <Events/>
         <LunchSection/>

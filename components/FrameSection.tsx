@@ -48,7 +48,7 @@ const FrameSection = () => {
                 </div> 
             </div>
             <motion.div
-            variants={fadeIn("right", "tween", 0.2, 0.5)} 
+            variants={fadeIn("left", "tween", 0.2, 0.5)} 
 initial="hidden"
 whileInView="show"
 viewport={{ once: true}}

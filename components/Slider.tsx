@@ -8,7 +8,7 @@ import Image from 'next/image';
 
 const Slider = () => {
   return (
-    <div className="relative md:h-[150vh] h-[120vh] w-full overflow-hidden -z-10 -mt-24">
+    <div className="relative md:h-[150vh] h-[120vh] w-full overflow-hidden -z-10 ">
       <div className="absolute top-0 left-0 w-full h-full flex animate-slide">
         <div className="flex-shrink-0 ">
           <Image src={Image1} alt="Slide 1" className="w-full h-full object-cover" />
