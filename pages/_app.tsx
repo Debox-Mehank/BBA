@@ -3,6 +3,7 @@ import "../styles/global.css";
 import { Rubik, Bebas_Neue } from "@next/font/google";
 import Link from "next/link";
 import Head from "next/head";
+import { Toaster } from "react-hot-toast";
 
 const rubik = Rubik({
   weight: ["400", "500", "600", "700"],
@@ -58,6 +59,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         <meta property="twitter:url" content={`https://bawarchiatlanta.com/`} />
         <meta property="twitter:image" content={"/BBA.jpg"} />
       </Head>
+      <Toaster />
       <Component {...pageProps} />
       {/* <style jsx global>{`
         @import url("https://api.fontshare.com/v2/css?f[]=satoshi@400&display=swap");

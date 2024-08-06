@@ -1,6 +1,32 @@
 import React from "react";
+import { toast } from "react-hot-toast";
 
 const CateringForm = () => {
+  const handleFormSubmit = async (event) => {
+    event.preventDefault();
+    try {
+      const myForm = event.target;
+
+      const formData = new FormData(myForm);
+
+      const res = await fetch("/__forms.html", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: new URLSearchParams(formData).toString(),
+      });
+
+      if (res.status === 200) {
+        toast.success(
+          "Thank you for submitting your query, our catering specialist will get in touch with you shortly."
+        );
+      } else {
+        toast.error("Something went wrong, please try again later!");
+      }
+    } catch (e) {
+      toast.error("Something went wrong, please try again later!");
+    }
+  };
+
   return (
     <div className="px-6 sm:px-12 md:px-16 lg:px-24 py-10 lg:py-20 bg-bg2 rounded-[30px] lg:rounded-[100px]">
       <p className="text-center font-bebas text-4xl  lg:text-[60px] xl:text-[90px] mb-10 lg:mb-24 text-bg1">
@@ -9,9 +35,10 @@ const CateringForm = () => {
       <form
         className="flex flex-col gap-y-6"
         name="catering_request_form"
-        data-netlify="true"
-        action="/catering?submit=true"
-        method="POST"
+        onSubmit={handleFormSubmit}
+        // data-netlify="true"
+        // action="/catering?submit=true"
+        // method="POST"
       >
         <input type="hidden" name="form-name" value="catering_request_form" />
         <div className="flex flex-col sm:flex-row gap-x-4 gap-y-4">
