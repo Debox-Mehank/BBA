@@ -28,21 +28,21 @@ export default function OurGallery() {
 
   return (
     <>
-      <div className="mt-24 md:p-20 glimpses-div">
+      <div className="mt-28 xsm:mt-24 md:p-20 glimpses-div">
         <Head>
           <title>{`Bawarchi Atlanta Photo Gallary`}</title>
-          <link rel="canonical" href={`https://bawarchiatlanta.com/gallery`} />
           <meta
             name="description"
             content="Check out the latest pictures from Bawarchi Atlanta."
           />
-          {/* <link rel="icon" href="/favicon.ico"/> */}
+          <link rel="canonical" href={`https://bawarchiatlanta.com/gallery/`} />
+          <link rel="icon" href="/favicon.ico" />
           {/* OG Tags */}
           <meta
             property="og:title"
             content={`Bawarchi Atlanta Photo Gallary `}
           />
-
+          <meta property="og:image" content={"/BBA.jpg"} />
           <meta property="og:type" content="article" />
           <meta
             property="og:description"
@@ -60,8 +60,9 @@ export default function OurGallery() {
           />
           <meta
             property="twitter:url"
-            content={`https://bawarchiatlanta.com/gallery`}
+            content={`https://bawarchiatlanta.com/gallery/`}
           />
+          <meta property="twitter:image" content={"/BBA.jpg"} />
         </Head>
         <Navbar />
         <h1 className="font-bold font-big_calson text-5xl mb-12 font-bebas text-center">
