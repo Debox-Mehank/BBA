@@ -1,4 +1,7 @@
-import React from 'react'
+import React from 'react';
+import Image from 'next/image';
+import Image2 from "../assets/storyImg2.png"
+import { blurHashToDataURL } from '@/utils/blurhash';
 
 const StoryImage = () => {
   return (
@@ -6,17 +9,19 @@ const StoryImage = () => {
     <div
   className='custom-lg:mr-10 custom-lg:mb-0 mb-20 custom-lg:w-1/2 w-full flex items-start justify-center custom-lg:mt-0 mt-10' 
     >
-      <img 
-        src="https://via.placeholder.com/520x764"
+      <Image
+        src={Image2}
         alt='reviews' 
-        className='xsm:w-[500px] xsm:h-[630px] w-[400px] h-[530px]   bg-contain' 
+        className='xsm:w-[500px] xsm:h-[630px] w-[400px] h-[530px] rounded-[50px]  bg-contain' 
+        blurDataURL={blurHashToDataURL("L6Dl7o+sF5^*030h%0IV0g^+~Bt6")}
+        placeholder='blur'
       />
     </div>
     
     <div className='flex flex-col custom-lg:items-start items-center  custom-lg:w-1/2 w-full'>
       <h1 className='xl:text-[80px] xsm:text-[60px]  xsm:leading-[55px] xl:leading-[75px] 
       text-[45px] leading-[45px]
-      font-bebas text-bg3'>
+      font-bebas text-bg2 custom-lg:mb-0 mb-10'>
         A decade of crafting delicious memories
       </h1>
      

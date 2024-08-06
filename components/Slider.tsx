@@ -9,25 +9,14 @@ import Image from 'next/image';
 const Slider = () => {
   return (
     <div className="relative md:h-[150vh] h-[120vh] w-full overflow-hidden -z-10 ">
-      <div className="absolute top-0 left-0 w-full h-full flex animate-slide">
+      <div className="absolute top-0 left-0 w-full h-full flex ">
         <div className="flex-shrink-0 ">
-          <Image src={Image1} alt="Slide 1" className="w-full h-full object-cover" />
+          <Image src={Image2} alt="Slide 1" className="w-full h-full object-cover" />
         </div>
-        <div className="flex-shrink-0 ">
-          <Image src={Image2} alt="Slide 2" className="w-full h-full object-cover" />
-        </div>
-        <div className="flex-shrink-0 ">
-          <Image src={Image3} alt="Slide 3" className="w-full h-full object-cover" />
-        </div>
-        <div className="flex-shrink-0 ">
-          <Image src={Image4} alt="Slide 4" className="w-full h-full object-cover" />
-        </div>
-        <div className="flex-shrink-0">
-          <Image src={Image5} alt="Slide 5" className="w-full h-full object-cover" />
-        </div>
+       
       </div>
       <div className="relative z-10 flex flex-col items-center justify-center w-full h-full bg-black bg-opacity-10">
-        <div className='absolute font-bebas top-40 animate-scroll text-4xl   text-white flex w-full whitespace-nowrap ' >
+        <div className='absolute font-bebas top-16 animate-scroll text-4xl   text-white flex w-full whitespace-nowrap ' >
         <span className="mr-5">A DECADE OF DELICIOUSNESS</span>
         <span className="mr-5">A DECADE OF DELICIOUSNESS</span>
         <span className="mr-5">A DECADE OF DELICIOUSNESS</span>

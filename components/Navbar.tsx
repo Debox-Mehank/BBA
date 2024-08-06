@@ -13,6 +13,12 @@ const Navbar = () => {
   const router = useRouter();
   const [isButtonVisible, setIsButtonVisible] = useState(false);
   const observerTargetRef = useRef(null);
+  const footer = [
+    {name: "Home", href:"/"},
+    {name: "Our Story", href:"/our-story"},
+    {name: "Our Catering", href:"/catering"},
+    {name: "Our Gallery", href:"/"}
+  ]
 
   useEffect(() => {
     const handleScroll = () => {
@@ -77,15 +83,17 @@ const Navbar = () => {
               <path strokeLinecap='round' strokeLinejoin='round' strokeWidth='2' d='M6 18L18 6M6 6l12 12'></path>
             </svg>
           </button>
-          <motion.ul className='justify-between flex text-xl pt-5 mx-5 items-center text-[#959090] flex-col  font-rubik font-medium'
+          <motion.ul className='justify-between flex text-xl pt-5 mx-5 gap-y-6 items-center text-[#959090] flex-col  font-rubik font-medium'
             variants={fadeIn("up", "tween", 0.2, 0.2)}
             initial="hidden"
             whileInView="show"
           >
-            <li className='my-4 hover:text-bg3 cursor-pointer'>HOME</li>
-            <li className='my-4 hover:text-bg3 cursor-pointer'>OUR STORY</li>
-            <li className='my-4 hover:text-bg3 cursor-pointer'>OUR CATERING</li>
-            <li className='my-4 hover:text-bg3 cursor-pointer'>OUR GALLERY</li>
+                    {footer.map((item, index) => (
+            <Link key={index} href={item.href}  >
+              <span className='cursor-pointer  hover:text-bg3 uppercase'>{item.name}</span>
+            </Link>
+          ))}
+        
           </motion.ul>
         </div>
       </div>

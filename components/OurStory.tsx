@@ -1,14 +1,22 @@
 import React from 'react';
 import Image from 'next/image';
+import Image1 from "../assets/storyImg1.png";
+import { blurHashToDataURL } from '@/utils/blurhash';
 
 const OurStory = () => {
   return (
     <div className='lg:py-20 lg:px-24 mt-20 xsm:px-12 px-6 py-10 flex flex-col items-center bg-bg3'>
         <h1 className='xl:text-[90px] xsm:text-[60px]  xsm:leading-[55px] xl:leading-[80px] 
-        text-[50px] leading-[45px]
-        font-bebas   xsm:mb-10 mb-14 text-bg1 text-center'  >A decade of crafting <br/>
+        text-[40px] leading-[40px]
+        font-bebas   xsm:mb-10 mb-5 text-bg1 text-center'  >A decade of crafting <br/>
         delicious memories</h1>
-        <img src="https://via.placeholder.com/1240x600" alt='our story' className='rounded-[70px]' />
+        <Image 
+        src={Image1} 
+        alt='our story' 
+        className='rounded-[70px] md:w-[1240px] xsm:w-[500px] min-w-[300px] h-[500px] xsm:h-[600px]' 
+        placeholder='blur'
+        blurDataURL={blurHashToDataURL("LDDvAw.AK9Iw,mDh=]MwaK9F%Ks+")}
+        />
     </div>
   )
 }

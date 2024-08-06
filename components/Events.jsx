@@ -1,9 +1,10 @@
 import React from 'react';
 import Image from 'next/image';
 import arrowup from "../assets/arrow-up.png";
-import CateringReel from "../assets/videos/Reel with Overlay (1) (1).mp4";
+import CateringReel from "../assets/videos/ReelCompressed.mp4";
 import { fadeIn } from '@/utils/motion';
 import {motion} from "framer-motion";
+import Link from 'next/link';
 
 
 const Events = () => {
@@ -42,10 +43,11 @@ const Events = () => {
             Looking for the best Indian food catering in Atlanta? You&apos;ve come to the right place. Bawarchi Biryanis Atlanta is here to add a delicious zing to your special events. 
 
           </p>
-          
-          <p className='flex items-center font-bebas xsm:text-3xl text-xl text-bg1 font-bold'>
+          <Link href="/catering" >
+          <p className='flex items-center font-bebas xsm:text-3xl text-xl text-bg1 font-bold cursor-pointer'>
             READ MORE <Image src={arrowup} alt='arrow-up' className='xsm:w-[45px] w-[35px] xsm:h-[45px] h-[35px]' />
           </p>
+          </Link>
         </motion.div>
       </div>
     );
