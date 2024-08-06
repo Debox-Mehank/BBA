@@ -13,47 +13,47 @@ const Blogs = () => {
   const [offset, setOffset] = useState(2);
   const [hasMoreBlogs, setHasMoreBlogs] = useState(true);
 
-  useEffect(() => {
-    const fetchBlogs = async () => {
-      try {
-        const response = await graphQLClient.request(gql`
-          query MyQuery($offset: Int!) {
-            blogsConnection(orderBy: createdAt_ASC, first: $offset) {
-              edges {
-                node {
-                  title
-                  slug
-                  shortDescription
-                  image {
-                    url
-                  }
-                  content {
-                    raw
-                    text
-                  }
-                }
-              }
-              pageInfo {
-                hasNextPage
-                hasPreviousPage
-                pageSize
-              }
-            }
-          }
-        `, { offset });
+  // useEffect(() => {
+  //   const fetchBlogs = async () => {
+  //     try {
+  //       const response = await graphQLClient.request(gql`
+  //         query MyQuery($offset: Int!) {
+  //           blogsConnection(orderBy: createdAt_ASC, first: $offset) {
+  //             edges {
+  //               node {
+  //                 title
+  //                 slug
+  //                 shortDescription
+  //                 image {
+  //                   url
+  //                 }
+  //                 content {
+  //                   raw
+  //                   text
+  //                 }
+  //               }
+  //             }
+  //             pageInfo {
+  //               hasNextPage
+  //               hasPreviousPage
+  //               pageSize
+  //             }
+  //           }
+  //         }
+  //       `, { offset });
 
-        const data = response?.blogsConnection;
-        setHasMoreBlogs(data.pageInfo.hasNextPage);
-        setBlogs(data.edges);
+  //       const data = response?.blogsConnection;
+  //       setHasMoreBlogs(data.pageInfo.hasNextPage);
+  //       setBlogs(data.edges);
 
-      } catch (error) {
-        console.log(error.message);
-      }
-    };
+  //     } catch (error) {
+  //       console.log(error.message);
+  //     }
+  //   };
 
-    fetchBlogs();
-  }, []);
-  console.log(blogs);
+  //   fetchBlogs();
+  // }, []);
+  // console.log(blogs);
 
   return (
     <div>

@@ -1,4 +1,5 @@
 const BlogContentSection = ({ blogs }: any) => {
+  
     const BlogItem = ({ imageSrc, title }: any) => {
       return (
         <div className="blog-item rounded-md overflow-hidden ">
@@ -16,7 +17,7 @@ const BlogContentSection = ({ blogs }: any) => {
         <div className="max-w-7xl mx-auto">
           <h2 className="text-4xl font-bold text-center mb-12 text-bg1">Our Blog</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {blogs.length > 0 && blogs.map((blog, index) => (
+            {/* {blogs.length > 0 && blogs.map((blog, index) => (
               blog.node && (
                 <BlogItem
                   key={index}
@@ -25,7 +26,7 @@ const BlogContentSection = ({ blogs }: any) => {
                   
                 />
               )
-            ))}
+            ))} */}
           </div>
         </div>
       </div>
