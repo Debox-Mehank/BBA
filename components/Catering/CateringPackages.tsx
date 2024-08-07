@@ -1,6 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
-import catering from "../assets/catering.png"
+import catering from "../../assets/catering.png"
 import { blurHashToDataURL } from '@/utils/blurhash';
 
 const CateringPackages = () => {

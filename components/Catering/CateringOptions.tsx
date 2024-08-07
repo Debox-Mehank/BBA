@@ -1,5 +1,5 @@
 import React from 'react';
-import dosa from "../assets/dosa.png";
+import dosa from "../../assets/dosa.png";
 import Image from 'next/image';
 import { blurHashToDataURL } from '@/utils/blurhash';
 

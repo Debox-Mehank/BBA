@@ -1,6 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
-import dosaRoll from "../assets/dosa-roll.png"
+import dosaRoll from "../../assets/dosa-roll.png"
 import { blurHashToDataURL } from '@/utils/blurhash';
 
 const PartyPackage = () => {

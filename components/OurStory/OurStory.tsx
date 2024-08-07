@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import Image1 from "../assets/storyImg1.png";
+import Image1 from "../../assets/storyImg1.png";
 import { blurHashToDataURL } from "@/utils/blurhash";
 
 const OurStory = () => {

@@ -4,33 +4,22 @@ import useMediaQuery from "../hooks/useMediaQuery";
 import Head from "next/head";
 // Data
 import imageData from "../utils/imageData";
-
-// Lib for Gallery
-// import Lightbox from "react-image-lightbox";
-// import "react-image-lightbox/style.css";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import Zoom from 'react-medium-image-zoom';
+import 'react-medium-image-zoom/dist/styles.css';
 
 export default function OurGallery() {
   const [viewData, setViewData] = useState(imageData);
   const [selected, setSelected] = useState("All");
-  const [modalIsOpen, setModalIsOpen] = useState(false);
-  const [modalImgIndex, setModalImgIndex] = useState(null);
-  const [modalImgData, setModalImgData] = useState([]);
 
   const isDesktop = useMediaQuery("(min-width: 500px)");
-
-  // Filtering Images for the Modal based on user input
-
-  useEffect(() => {
-    setModalImgData(viewData.map((img) => img.url));
-  }, [viewData]);
 
   return (
     <>
       <div className="mt-28 xsm:mt-24 md:p-20 glimpses-div">
         <Head>
-          <title>{`Bawarchi Atlanta Photo Gallary`}</title>
+          <title>{`Bawarchi Atlanta Photo Gallery`}</title>
           <meta
             name="description"
             content="Check out the latest pictures from Bawarchi Atlanta."
@@ -40,7 +29,7 @@ export default function OurGallery() {
           {/* OG Tags */}
           <meta
             property="og:title"
-            content={`Bawarchi Atlanta Photo Gallary `}
+            content={`Bawarchi Atlanta Photo Gallery `}
           />
           <meta property="og:image" content={"/BBA.jpg"} />
           <meta property="og:type" content="article" />
@@ -52,7 +41,7 @@ export default function OurGallery() {
           <meta name="twitter:card" content="summary" />
           <meta
             property="twitter:title"
-            content={"Bawarchi Atlanta Photo Gallary"}
+            content={"Bawarchi Atlanta Photo Gallery"}
           />
           <meta
             property="twitter:description"
@@ -70,7 +59,6 @@ export default function OurGallery() {
         </h1>
 
         {/* Category Buttons */}
-
         <div className="mx-auto grid grid-cols-2 gap-4 max-w-md w-11/12 sm:grid-cols-4 sm:max-w-xl md:max-w-none justify-between font-big_calson font-bold text-white">
           <button
             className={`text-lg px-6 py-2 lg:text-2xl font-rubik lg:py-3 w-full bg-black rounded-md hover:bg-pri_green duration-200 transition 
@@ -115,45 +103,22 @@ export default function OurGallery() {
             Our Events
           </button>
         </div>
+
         {/* Gallery Images */}
         <div className="mt-8 grid gap-4 sm:gap-6 grid-cols-3 mx-auto w-11/12 md:w-full justify-center">
           {viewData.map((img, index) => (
-            <Image
-              width={400}
-              height={400}
-              className="rounded-xl cursor-pointer hover:scale-105 transition-all"
-              key={index}
-              alt={img.alt}
-              src={img.url}
-              objectFit="cover"
-              onClick={() => {
-                setModalImgIndex(index);
-                setModalIsOpen(true);
-              }}
-            />
+            <Zoom key={index}>
+              <Image
+                width={400}
+                height={400}
+                className="rounded-xl cursor-pointer hover:scale-105 transition-all"
+                alt={img.alt}
+                src={img.url}
+                objectFit="cover"
+              />
+            </Zoom>
           ))}
         </div>
-        {/* {modalIsOpen && (
-        <Lightbox
-          mainSrc={modalImgData[modalImgIndex]}
-          nextSrc={modalImgData[(modalImgIndex + 1) % modalImgData.length]}
-          prevSrc={
-            modalImgData[
-              (modalImgIndex + modalImgData.length - 1) % modalImgData.length
-            ]
-          }
-          onMoveNextRequest={() =>
-            setModalImgIndex((prev) => (prev + 1) % modalImgData.length)
-          }
-          onMovePrevRequest={() =>
-            setModalImgIndex(
-              (prev) => (prev + modalImgData.length - 1) % modalImgData.length
-            )
-          }
-          onCloseRequest={() => setModalIsOpen(false)}
-          imagePadding={isDesktop ? "100" : "40"}
-        />
-      )} */}
       </div>
       <Footer />
     </>

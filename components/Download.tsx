@@ -35,7 +35,7 @@ const Download = () => {
           Deliciously Simple
         </h1>
         <p className="font-rubik md:text-4xl text-2xl text-bg1  custom-lg:max-w-[571px] w-full uppercase mb-10">
-          Download the Bawarchi App Today
+          Download Our App Today
         </p>
         <div className="flex items-start flex-col">
           {/* <Image src={QR}  alt='QR' className='md:w-[240px] md:h-[240px] w-[200px] h-[200px]' />
