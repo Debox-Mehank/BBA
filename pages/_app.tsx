@@ -4,6 +4,7 @@ import { Rubik, Bebas_Neue } from "@next/font/google";
 import Link from "next/link";
 import Head from "next/head";
 import { Toaster } from "react-hot-toast";
+import Script from "next/script";
 
 const rubik = Rubik({
   weight: ["400", "500", "600", "700"],
@@ -61,6 +62,20 @@ function MyApp({ Component, pageProps }: AppProps) {
       </Head>
       <Toaster />
       <Component {...pageProps} />
+
+      {/* Google Analytics */}
+      <Script
+        strategy="lazyOnload"
+        id="analytics"
+        src={`https://www.googletagmanager.com/gtag/js?id=UA-228506755-1`}
+      />
+      <Script strategy="lazyOnload" id="analytics2">
+        {`            window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', "UA-228506755-1");`}
+      </Script>
       {/* <style jsx global>{`
         @import url("https://api.fontshare.com/v2/css?f[]=satoshi@400&display=swap");
       `}</style> */}
