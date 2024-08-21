@@ -30,15 +30,7 @@ const Banner = () => {
                 ORDER NOW
               </button>
             </Link>
-            <Link
-              target="_blank"
-              href="https://ordersave.com/partnersite/j5DgkW8FF1Nd/menu"
-              passHref
-            >
-              <button className="mt-4 px-8 py-3 tracking-wide text-sm xsm:text-lg md:text-xl font-medium font-rubik border-2 border-bg1  text-bg1 bg-bg3 bg-opacity-70 rounded-[15px] shadow-xl">
-                {"10th ANNIVERSARY SPECIAL"}
-              </button>
-            </Link>
+          
           </div>
         </div>
       </div>

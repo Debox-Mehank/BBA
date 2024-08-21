@@ -11,6 +11,7 @@ import { calculateReadingTime } from "../../utils/helper";
 import { ArticleJsonLd } from "next-seo";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { blurHashToDataURL } from "@/utils/blurhash";
 
 interface IBlogDetails {
   title: string;
@@ -24,6 +25,7 @@ interface IBlogDetails {
     raw: any;
     text: string;
   };
+  blurHash: string
 }
 
 interface BlogQueryResponse {
@@ -147,6 +149,8 @@ const BlogDetails = ({
               alt={blog?.title}
               width={1600}
               height={900}
+              placeholder="blur"
+              blurDataURL={blurHashToDataURL(blog?.blurHash)}
               className="aspect-video object-cover rounded-md"
             />
           </div>
@@ -176,6 +180,8 @@ const BlogDetails = ({
                             width={600}
                             height={400}
                             className="w-full h-full object-cover"
+                            placeholder="blur"
+                            blurDataURL={blurHashToDataURL(blog?.blurHash)}
                           />
 
                           <div className="bg-[#f5e5d5] p-4 sm:p-6">
@@ -212,6 +218,7 @@ export async function getServerSideProps({ params }: { params: any }) {
         title
         slug
         shortDescription
+        blurHash
         image {
           url
         }
@@ -231,6 +238,7 @@ export async function getServerSideProps({ params }: { params: any }) {
         slug
         shortDescription
         updatedAt
+        blurHash
         image {
           url
         }
