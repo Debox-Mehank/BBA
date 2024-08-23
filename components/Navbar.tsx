@@ -19,6 +19,7 @@ const Navbar = () => {
     { name: "Catering", href: "/catering" },
     { name: "Gallery", href: "/gallery" },
     { name: "Blogs", href: "/blogs" },
+    { name: "Order Online", href:"https://ordersave.com/partnersite/j5DgkW8FF1Nd/menu" },
   ];
 
   useEffect(() => {
