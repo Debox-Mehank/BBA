@@ -23,9 +23,17 @@ const Footer = () => {
             </Link>
           ))}
         </div>
+        <div className="flex flex-col md:items-center items-start my-5" >
+
+<p className="font-semibold uppercase" > Operational Hours:</p>
+<p>
+Sunday to Thursday - 11:30 AM - 9:30 PM <br/>
+Friday & Saturday - 11:30 AM - 10:00 PM</p>
+</div>
         <p className="md:text-xl text-lg mb-4">
           Delicious Indian Food in Sandy Springs Atlanta{" "}
         </p>
+
         <div className="flex items-center">
           <Link
             href="https://www.facebook.com/bawarchibiryanisandysprings"
@@ -60,7 +68,10 @@ const Footer = () => {
             DEBOX CONSULTING PVT. LTD.
           </Link>
         </p>
+       
+
       </div>
+    
     </div>
   );
 };
