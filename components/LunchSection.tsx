@@ -3,7 +3,7 @@
 import React, { useRef } from "react";
 import Image from "next/image";
 import { motion, useScroll, useTransform } from "framer-motion";
-import Thali from "../assets/Thali 1.png";
+import Thali from "../assets/lunchThali.png";
 import { blurHashToDataURL } from "@/utils/blurhash";
 
 const LunchSection = () => {
@@ -27,22 +27,22 @@ const LunchSection = () => {
       <motion.div
         style={{ y: yTransform }}
         transition={{ duration: 1, ease: "easeInOut" }} // Adjust duration and easing as needed
+        // className="w-full h-full"
       >
         <Image
           src={Thali}
           alt="thali"
-          className="w-[450px] h-[350px] xsm:w-[500px] xsm:h-[400px] lg:w-[676px] lg:h-[570px]"
+          className="w-[950px] h-[300px] xsm:w-[600px] xsm:h-[400px] lg:w-[1176px] lg:h-[500px]"
+        
           // placeholder="blur"
           // blurDataURL={blurHashToDataURL("LLIXsnxv18wb~ot8IWa0x^j[S~M|")}
         />
       </motion.div>
       <p className="text-rubik text-xl md:text-2xl max-w-[1242px] text-bg1 text-center mb-10 md:-mt-[140px] md:mb-5 leading-8">
-        Enjoy our daily-changing thali, featuring a delightful assortment of
-        traditional Indian dishes. Experience a new culinary journey with every
-        visit, celebrating the essence of Indian cuisine.
+      Enjoy our delicious lunch combos featuring a delightful assortment of a perfect lunch meal. Includes Biryani, appetizer, curry, naan and a side of vegetable raita.
       </p>
       <p className="text-2xl md:text-3xl font-rubik text-bg1 text-center font-medium mb-20">
-        Available from 11:30 AM to 3:00 PM
+      Available from 11:30 AM to 3:00 PM
       </p>
     </div>
   );
