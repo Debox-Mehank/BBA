@@ -14,7 +14,7 @@ const Banner = () => {
       >
         <source src={BannerVideo} type={"video/mp4"} />
       </video>
-      <div className="relative z-10 flex items-center justify-center w-full h-full bg-black bg-opacity-50">
+      <div className="relative z-10 flex items-center justify-center w-full h-full">
         <div className="text-center">
           <h1 className="text-white sm:text-[100px] sm:leading-[80px] md:text-[150px] mb-4 md:leading-[120px] text-[70px] leading-[60px] font-bebas">
             <span className="sm:mr-[200px] mr-[80px]">FROM INDIA</span>
