@@ -29,7 +29,12 @@ const Footer = () => {
 <p>
 Sunday to Thursday - 11:30 AM - 9:30 PM <br/>
 Friday & Saturday - 11:30 AM - 10:00 PM</p>
-</div>
+        </div>
+        <div className="flex flex-col md:items-center items-start mt-3 mb-5" >
+
+<p className="font-semibold uppercase" > Our Location:</p>
+<p>6627-A Roswell Rd NE, Sandy Springs, GA 30328, United States</p>
+        </div>
         <p className="md:text-xl text-lg mb-4">
           Delicious Indian Food in Sandy Springs Atlanta{" "}
         </p>
