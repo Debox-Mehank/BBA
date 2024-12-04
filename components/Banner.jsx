@@ -30,6 +30,14 @@ const Banner = () => {
                 ORDER NOW
               </button>
             </Link>
+            <Link
+              target="_blank"
+              href="https://www.clover.com/online-ordering/kwality-ice-creams-atl-sandy-springs"
+            >
+              <button className="mt-4 px-8 py-3 tracking-wide text-sm xsm:text-lg md:text-xl font-medium font-rubik border-2 border-bg1 text-bg1 bg-bg3 rounded-[15px] shadow-xl">
+                Kwality Ice-Creams Atlanta
+              </button>
+            </Link>
           
           </div>
         </div>

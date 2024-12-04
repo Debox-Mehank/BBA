@@ -19,7 +19,14 @@ const Navbar = () => {
     { name: "Catering", href: "/catering" },
     { name: "Gallery", href: "/gallery" },
     { name: "Blogs", href: "/blogs" },
-    { name: "Order Online", href:"https://ordersave.com/partnersite/j5DgkW8FF1Nd/menu" },
+    {
+      name: "Order Online",
+      href: "https://ordersave.com/partnersite/j5DgkW8FF1Nd/menu",
+    },
+    {
+      name: "Kwality Ice-Creams",
+      href: "https://www.clover.com/online-ordering/kwality-ice-creams-atl-sandy-springs",
+    },
   ];
 
   useEffect(() => {
