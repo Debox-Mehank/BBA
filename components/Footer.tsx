@@ -32,7 +32,9 @@ const Footer = () => {
         </div>
         <div className="flex flex-col md:items-center items-start my-5">
           <p className="font-semibold uppercase"> Contact Us:</p>
-          <p> +1 (404) 255-5059</p>
+          <a href="tel:+14042555059" className="hover:underline">
+            +1 (404) 255-5059
+          </a>
         </div>
         <div className="flex flex-col md:items-center items-start mt-3 mb-5">
           <p className="font-semibold uppercase"> Our Location:</p>
