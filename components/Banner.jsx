@@ -21,7 +21,7 @@ const Banner = () => {
             <br />
             <span className="sm:ml-[200px] ml-[80px]">WITH LOVE</span>
           </h1>
-          <div className="flex flex-col xsm:flex-row items-center justify-center space-x-4">
+          <div className="flex flex-col md:flex-row items-center justify-center space-x-4">
             <Link
               target="_blank"
               href="https://ordersave.com/partnersite/j5DgkW8FF1Nd/menu"
@@ -36,6 +36,14 @@ const Banner = () => {
             >
               <button className="mt-4 px-8 py-3 tracking-wide text-sm xsm:text-lg md:text-xl font-medium font-rubik border-2 border-bg1 text-bg1 bg-bg3 rounded-[15px] shadow-xl">
                 Kwality Ice-Creams Atlanta
+              </button>
+            </Link>
+             <Link
+              target="_blank"
+              href="https://ordersave.com/partnersite/j5DgkW8FF1Nd/menu"
+            >
+              <button className="mt-4 px-8 py-3 tracking-wide text-sm xsm:text-lg md:text-xl font-medium font-rubik border-2  text-bg3 bg-bg1 rounded-[15px] shadow-xl">
+                Weekend Specials
               </button>
             </Link>
           
