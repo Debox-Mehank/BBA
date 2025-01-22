@@ -4,8 +4,6 @@ import Link from "next/link";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { gql } from "@apollo/client";
-import client from "../apolloClient";
 import {
   faPhone,
   faLocationDot,
@@ -18,10 +16,6 @@ import dish2 from "../assets/dish2.png";
 import dish3 from "../assets/dish3.png";
 import dish4 from "../assets/dish4.png";
 import Head from "next/head";
-
-import webBanner from "../public/Bawarchi_March_Web_Banner_Ramadan.jpg";
-import mobileBanner from "../public/Bawarchi_March_Mobile_Banner_Ramadan.jpg";
-
 const SpecialitiesData = [
   {
     img: dish1,
@@ -45,100 +39,66 @@ const SpecialitiesData = [
   },
 ];
 
-export default function Home({ data }) {
+export default function Home() {
   const [swiper, setSwiper] = useState();
   return (
     <div className="w-full">
       <Head>
-        <title>{`Best Indian Restaurant in Atlanta`}</title>
+        <title>{`Bawarchi Biryanis Atlanta - Authentic Indian Cuisine in a Fine Dine Setting`}</title>
         <link rel="canonical" href={`https://bawarchiatlanta.com/`} />
         <link rel="icon" href="/favicon.ico" />
-        <meta
-          name="description"
-          content="Best Indian Restaurant in Sandy Springs serving delicious Indian food since 2014. Serving authentic Indian Curries, Authentic Biryanis, Indian Appetizers & Tandoor, Indian Chaat, Snacksn and Indian Desserts."
-        />
         {/* OG Tags */}
         <meta
           property="og:title"
-          content={`Best Indian Restaurant in Atlanta `}
+          content={`Bawarchi Biryanis Atlanta - Authentic Indian Cuisine in a Fine Dine Setting `}
         />
         <meta property="og:image" content={"/assets/dish1.png"} />
         <meta property="og:type" content="article" />
         <meta
           property="og:description"
           content={
-            "Best Indian Restaurant in Sandy Springs serving delicious Indian food since 2014. Serving authentic Indian Curries, Authentic Biryanis, Indian Appetizers & Tandoor, Indian Chaat, Snacksn and Indian Desserts."
+            "Experience the richness of authentic Indian cuisine at Bawarchi Biryanis Atlanta. From Mughlai delights to South-Indian classics, our versatile menu celebrates India's culinary traditions."
           }
         />
 
         <meta name="twitter:card" content="summary" />
         <meta
           property="twitter:title"
-          content={"Best Indian Restaurant in Atlanta"}
+          content={
+            "Bawarchi Biryanis Atlanta - Authentic Indian Cuisine in a Fine Dine Setting"
+          }
         />
         <meta
           property="twitter:description"
           content={
-            "Best Indian Restaurant in Sandy Springs serving delicious Indian food since 2014. Serving authentic Indian Curries, Authentic Biryanis, Indian Appetizers & Tandoor, Indian Chaat, Snacksn and Indian Desserts."
+            "Experience the richness of authentic Indian cuisine at Bawarchi Biryanis Atlanta. From Mughlai delights to South-Indian classics, our versatile menu celebrates India's culinary traditions."
           }
         />
         <meta property="twitter:url" content={`https://bawarchiatlanta.com/`} />
         <meta property="twitter:image" content={"/assets/dish1.png"} />
       </Head>
       {/* Below div is for offers.  */}
-      {/* <div className="w-full h-screen bg-cover bg-center banner-div sm:mt-24 " /> */}
-
-      <div>
-        {data[1]?.webBanner && (
-          <Image
-            src={data[1]?.webBanner?.url}
-            width={1400}
-            height={900}
-            alt={data[1]?.bannerAlt}
-            className="w-full min-h-screen bg-cover sm:pt-10 hidden md:block"
-          />
-        )}
-        {data[1]?.mobileBanner && (
-          <Image
-            src={data[1]?.mobileBanner?.url}
-            width={1200}
-            height={800}
-            alt={data[1]?.bannerAlt}
-            className="w-full min-h-screen bg-cover bg-center pt-14 block md:hidden"
-          />
-        )}
-      </div>
-      <>
-        {!data[1]?.webBanner && (
-          <video
-            autoPlay
-            muted
-            loop
-            playsInline
-            className="w-full h-screen bg-cover bg-center object-cover banner-video hidden md:block"
-          >
-            <source
-              src={data[0]?.webBanner?.url ?? "./main_desktop.mp4"}
-              type="video/mp4"
-            />
-          </video>
-        )}
-        {!data[1]?.mobileBanner && (
-          <video
-            autoPlay
-            muted
-            loop
-            playsInline
-            className="w-full h-screen bg-cover bg-center object-cover banner-video block md:hidden"
-          >
-            <source
-              src={data[0]?.mobileBanner?.url ?? "./main_mobile.mp4"}
-              type="video/mp4"
-            />
-          </video>
-        )}
-      </>
-      {/* end hero */}
+      {/* sm:mt-24 */}
+      {/* <div className="w-full h-screen bg-cover bg-center banner-div  " /> */}
+      {/* hero section video */}
+      <video
+        autoPlay
+        muted
+        loop
+        playsInline
+        className="w-full h-screen bg-cover bg-center object-cover banner-video hidden lg:block"
+      >
+        <source src="./main_desktop.mp4" type="video/mp4" />
+      </video>
+      <video
+        autoPlay
+        muted
+        loop
+        playsInline
+        className="w-full h-screen bg-cover bg-center object-cover banner-video block lg:hidden"
+      >
+        <source src="./main_mobile.mp4" type="video/mp4" />
+      </video>
       <br />
       <div id="aboutus" className="grid grid-cols-1 md:grid-cols-2">
         <div className="w-full flex justify-center items-stretch md:hidden">
@@ -367,7 +327,7 @@ export default function Home({ data }) {
               {"\n"}
               <span className="font-extrabold">EMAIL :</span>{" "}
               <a href="mailto:bawarchibiryaniatl@gmail.com">
-                bawarchibiryaniatl@gmail.com
+              bawarchibiryaniatl@gmail.com
               </a>
               {/* <a href="mailto:contact@bawarchiatlanta.com">
                 contact@bawarchiatlanta.com
@@ -378,11 +338,11 @@ export default function Home({ data }) {
             <FontAwesomeIcon icon={faClock} size="2x" />
             <h3 className="font-extrabold  uppercase">Hours of operation</h3>
             <p className="font-bold text-xs whitespace-pre-line">
-              MONDAY - THURSDAY{"\n"}
+              SUNDAY - THURSDAY{"\n"}
               11:30AM - 9:30PM
             </p>
             <p className="font-bold text-xs whitespace-pre-line">
-              FRIDAY, SATURDAY & SUNDAY{"\n"}
+              FRIDAY & SATURDAY{"\n"}
               11:30AM - 10:00PM
             </p>
           </div>
@@ -416,3 +376,25 @@ export async function getServerSideProps() {
     },
   };
 }
+
+// time in minutes in design form daily tracker.
+// char limit for remarks so its not vague
+// link attachment / url
+
+// for marketing
+
+// client dropdown -> task -> remark - attachment
+
+// PL to be shown on load.
+
+// email to be sent to reporting manager when leave is submitted.
+// if sick leave more than 1 day, ask attachment.
+
+// leave -> half / full
+// if half, end date wont be paid
+
+// to handle paid for self (managers)
+
+// print button
+
+// manager email on resignation

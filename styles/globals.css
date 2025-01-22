@@ -152,12 +152,12 @@ body {
 }
 
 .banner-div {
-  margin-top: 60px;
-  background-image: url("/WebBanner_BawarchiAtlantaHolidayCombos.jpg");
+  background-image: url("/web-banner.jpg");
 }
 
 @media only screen and (max-width: 768px) {
   .banner-div {
+    margin-top: 30px;
     background-image: url("/mob-banner.jpg");
   }
 }

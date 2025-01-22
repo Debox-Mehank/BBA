@@ -32,34 +32,34 @@ const Catering = () => {
   return (
     <div className="w-full mt-24">
       <Head>
-        <title>{`Best Indian Catering in Atlanta`}</title>
+        <title>{`Indian Food Catering Services in Atlanta | Bawarchi Biryanis Atlanta`}</title>
         <link rel="canonical" href={`https://bawarchiatlanta.com/catering`} />
-        <meta
-          name="description"
-          content="Best Indian Catering services in Atlanta having catered more than 1000+ events and served half a million people through the Catering services over the last 10 years."
-        />{" "}
+        {/* <link rel="icon" href="/favicon.ico"/> */}
         {/* OG Tags */}
         <meta
           property="og:title"
-          content={`Best Indian Catering in Atlanta `}
+          content={`Indian Food Catering Services in Atlanta | Bawarchi Biryanis Atlanta `}
         />
         <meta property="og:image" content={"/assets/catering.jpg"} />
         <meta property="og:type" content="article" />
         <meta
           property="og:description"
           content={
-            "Best Indian Catering services in Atlanta having catered more than 1000+ events and served half a million people through the Catering services over the last 10 years."
+            "Make your events memorable with Bawarchi Biryanis Atlanta's exceptional Indian food catering. From intimate gatherings to large conferences, we cater to all, with custom menus to suit your budget and palate."
           }
         />
+
         <meta name="twitter:card" content="summary" />
         <meta
           property="twitter:title"
-          content={"Best Indian Catering in Atlanta"}
+          content={
+            "Indian Food Catering Services in Atlanta | Bawarchi Biryanis Atlanta"
+          }
         />
         <meta
           property="twitter:description"
           content={
-            "Best Indian Catering services in Atlanta having catered more than 1000+ events and served half a million people through the Catering services over the last 10 years."
+            "Make your events memorable with Bawarchi Biryanis Atlanta's exceptional Indian food catering. From intimate gatherings to large conferences, we cater to all, with custom menus to suit your budget and palate."
           }
         />
         <meta
@@ -74,8 +74,6 @@ const Catering = () => {
             src={catering}
             alt="Bawarchi Atlanta's Catering Buffet"
             objectFit="cover"
-            placeholder="blur"
-            blurDataURL="LCN8:88x=}I:01Nz0f$z5Q0LIA~B"
           />
         </div>
         <div className="w-full bg-cover bg-center catering-div p-6 flex flex-col justify-center">

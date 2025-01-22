@@ -1,15 +1,3 @@
-<<<<<<< HEAD
 # Allow all crawlers
 User-agent: *
 Allow: /
-=======
-# *
-User-agent: *
-Allow: /
-
-# Host
-Host: https://www.bawarchiatlanta.com
-
-# Sitemaps
-Sitemap: https://www.bawarchiatlanta.com/sitemap.xml
->>>>>>> d22cb41833bae537f572a600b40b46d0a24888e8
