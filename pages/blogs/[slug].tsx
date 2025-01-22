@@ -1,17 +1,33 @@
+<<<<<<< HEAD
 import client from "../../apolloClient";
 import { gql } from "@apollo/client";
+=======
+import { graphQLClient } from "../../lib/graphqlClient";
+import { gql } from "graphql-request";
+>>>>>>> d22cb41833bae537f572a600b40b46d0a24888e8
 import React from "react";
 import Image from "next/image";
 import { RichText } from "@graphcms/rich-text-react-renderer";
 import Link from "next/link";
 import toast, { Toaster } from "react-hot-toast";
+<<<<<<< HEAD
 
+=======
+>>>>>>> d22cb41833bae537f572a600b40b46d0a24888e8
 import Head from "next/head";
 import { useRouter } from "next/router";
 import { calculateReadingTime } from "../../utils/helper";
 import { ArticleJsonLd } from "next-seo";
+<<<<<<< HEAD
 
 interface IBlogDeatils {
+=======
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+import { blurHashToDataURL } from "@/utils/blurhash";
+
+interface IBlogDetails {
+>>>>>>> d22cb41833bae537f572a600b40b46d0a24888e8
   title: string;
   slug: string;
   shortDescription: string;
@@ -23,19 +39,40 @@ interface IBlogDeatils {
     raw: any;
     text: string;
   };
+<<<<<<< HEAD
+=======
+  blurHash: string
+}
+
+interface BlogQueryResponse {
+  blogs: IBlogDetails[];
+}
+
+interface RelatedBlogQueryResponse {
+  blogs: IBlogDetails[];
+>>>>>>> d22cb41833bae537f572a600b40b46d0a24888e8
 }
 
 const BlogDetails = ({
   blog,
   relatedBlogs,
 }: {
+<<<<<<< HEAD
   blog: IBlogDeatils;
   relatedBlogs: any;
+=======
+  blog: IBlogDetails;
+  relatedBlogs: IBlogDetails[];
+>>>>>>> d22cb41833bae537f572a600b40b46d0a24888e8
 }) => {
   const router = useRouter();
 
   return (
+<<<<<<< HEAD
     <div className="text-primary bg-pri_green ">
+=======
+    <div className="">
+>>>>>>> d22cb41833bae537f572a600b40b46d0a24888e8
       <ArticleJsonLd
         title={blog?.title}
         description={blog?.shortDescription || ""}
@@ -74,10 +111,21 @@ const BlogDetails = ({
         />
         <meta property="twitter:image" content={blog?.image?.url} />
       </Head>
+<<<<<<< HEAD
       <div className="pt-[72px] md:pt-28">
         <div className="">
           <div className="max-w-4xl mx-auto py-10 md:py-14 w-11/12">
             <h1 className={`text-2xl md:text-5xl font-bold `}>{blog?.title}</h1>
+=======
+      <Navbar/>
+
+      <div className="pt-20 bg-bg3">
+        <div className="relative">
+
+          <div className="max-w-4xl mx-auto py-10 md:py-14 w-11/12">
+         
+            <h1 className={`text-2xl md:text-5xl  font-bebas `}>{blog?.title}</h1>
+>>>>>>> d22cb41833bae537f572a600b40b46d0a24888e8
             <div className="font-bold pt-4 flex gap-x-2 items-center">
               <span>
                 <svg
@@ -95,7 +143,11 @@ const BlogDetails = ({
                   />
                 </svg>
               </span>
+<<<<<<< HEAD
               <div className={` flex justify-between w-full`}>
+=======
+              <div className={` flex justify-between w-full font-rubik`}>
+>>>>>>> d22cb41833bae537f572a600b40b46d0a24888e8
                 <p>
                   {calculateReadingTime(blog?.content?.text)} minute reading
                 </p>
@@ -109,7 +161,11 @@ const BlogDetails = ({
                     });
                   }}
                 >
+<<<<<<< HEAD
                   <span className="font-bold">Share </span>
+=======
+                  <span className="font-bold ">Share </span>
+>>>>>>> d22cb41833bae537f572a600b40b46d0a24888e8
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
@@ -134,10 +190,19 @@ const BlogDetails = ({
               alt={blog?.title}
               width={1600}
               height={900}
+<<<<<<< HEAD
               className="aspect-video object-cover rounded-md"
             />
           </div>
           <div className="max-w-4xl mx-auto w-10/12">
+=======
+              placeholder="blur"
+              blurDataURL={blurHashToDataURL(blog?.blurHash)}
+              className="aspect-video object-cover rounded-md"
+            />
+          </div>
+          <div className="max-w-4xl mx-auto w-10/12 font-rubik">
+>>>>>>> d22cb41833bae537f572a600b40b46d0a24888e8
             <p className="text-lg  py-7 font-bold">{blog?.shortDescription}</p>
             <div className="prose prose-teal leading-8 pb-8 font-">
               <RichText content={blog?.content?.raw?.children} />
@@ -154,7 +219,11 @@ const BlogDetails = ({
                 </div>
                 <div className="flex flex-wrap gap-6 mx-auto justify-center items-center w-11/12">
                   {relatedBlogs &&
+<<<<<<< HEAD
                     relatedBlogs.map((blog: any) => (
+=======
+                    relatedBlogs.map((blog: IBlogDetails) => (
+>>>>>>> d22cb41833bae537f572a600b40b46d0a24888e8
                       <Link href={`/blogs/${blog?.slug}`} key={blog?.title}>
                         <article className="overflow-hidden shadow transition hover:shadow-lg text-pri_green max-w-sm">
                           <Image
@@ -163,6 +232,11 @@ const BlogDetails = ({
                             width={600}
                             height={400}
                             className="w-full h-full object-cover"
+<<<<<<< HEAD
+=======
+                            placeholder="blur"
+                            blurDataURL={blurHashToDataURL(blog?.blurHash)}
+>>>>>>> d22cb41833bae537f572a600b40b46d0a24888e8
                           />
 
                           <div className="bg-[#f5e5d5] p-4 sm:p-6">
@@ -185,11 +259,16 @@ const BlogDetails = ({
           )}
         </div>
       </div>
+<<<<<<< HEAD
+=======
+      <Footer/>
+>>>>>>> d22cb41833bae537f572a600b40b46d0a24888e8
     </div>
   );
 };
 
 export default BlogDetails;
+<<<<<<< HEAD
 export async function getServerSideProps({ params }: { params: any }) {
   const { data } = await client.query({
     query: gql`
@@ -198,6 +277,17 @@ export async function getServerSideProps({ params }: { params: any }) {
         title
         slug
         shortDescription
+=======
+
+export async function getServerSideProps({ params }: { params: any }) {
+  const GET_BLOG_QUERY = gql`
+    query GetBlog($slug: String!) {
+      blogs(where: { slug: $slug }) {
+        title
+        slug
+        shortDescription
+        blurHash
+>>>>>>> d22cb41833bae537f572a600b40b46d0a24888e8
         image {
           url
         }
@@ -205,6 +295,7 @@ export async function getServerSideProps({ params }: { params: any }) {
           raw
           text
         }
+<<<<<<< HEAD
       }
     }
   `,
@@ -220,10 +311,24 @@ export async function getServerSideProps({ params }: { params: any }) {
     query: gql`
       query Blogs {
       blogs( first:3,where: { slug_not: "${params.slug}" }) {
+=======
+        updatedAt
+      }
+    }
+  `;
+
+  const GET_RELATED_BLOGS_QUERY = gql`
+    query GetRelatedBlogs($slug: String!) {
+      blogs(first: 3, where: { slug_not: $slug }) {
+>>>>>>> d22cb41833bae537f572a600b40b46d0a24888e8
         title
         slug
         shortDescription
         updatedAt
+<<<<<<< HEAD
+=======
+        blurHash
+>>>>>>> d22cb41833bae537f572a600b40b46d0a24888e8
         image {
           url
         }
@@ -231,6 +336,7 @@ export async function getServerSideProps({ params }: { params: any }) {
           raw
           text
         }
+<<<<<<< HEAD
         
       }
     }
@@ -249,4 +355,38 @@ export async function getServerSideProps({ params }: { params: any }) {
     },
   };
   revalidate: 60;
+=======
+      }
+    }
+  `;
+
+  try {
+    const { blogs }: BlogQueryResponse = await graphQLClient.request(GET_BLOG_QUERY, {
+      slug: params.slug,
+    });
+
+    if (!blogs.length) {
+      return {
+        notFound: true,
+      };
+    }
+
+    const { blogs: relatedBlogs }: RelatedBlogQueryResponse = await graphQLClient.request(GET_RELATED_BLOGS_QUERY, {
+      slug: params.slug,
+    });
+
+    return {
+      props: {
+        blog: blogs[0],
+        relatedBlogs,
+      },
+    };
+  } catch (error) {
+    console.error("Error fetching blog data:", error);
+    return {
+      notFound: true,
+    };
+    revalidate: 60;
+  }
+>>>>>>> d22cb41833bae537f572a600b40b46d0a24888e8
 }
