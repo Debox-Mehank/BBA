@@ -1,7 +1,10 @@
 import type React from "react"
+import { useState } from "react"
 import { toast } from "react-hot-toast"
 
 const CateringForm: React.FC = () => {
+  const [isSubmitted, setIsSubmitted] = useState(false)
+
   const handleFormSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault()
     try {
@@ -17,6 +20,7 @@ const CateringForm: React.FC = () => {
       })
 
       if (res.ok) {
+        setIsSubmitted(true)
         toast.success(
           "Thank you for submitting your query, our catering specialist will get in touch with you shortly.",
         )
@@ -26,6 +30,21 @@ const CateringForm: React.FC = () => {
     } catch (e) {
       toast.error("Something went wrong, please try again later!")
     }
+  }
+
+  if (isSubmitted) {
+    return (
+      <div className="px-6 sm:px-12 md:px-16 lg:px-24 py-10 lg:py-20 bg-bg2 rounded-[30px] lg:rounded-[100px] text-center">
+        <h2 className="font-bebas text-4xl lg:text-[60px] xl:text-[90px] mb-6 text-bg1">Thank You!</h2>
+        <p className="text-xl font-rubik text-bg1 mb-8">
+          We've received your catering inquiry and appreciate your interest. Our team will review your request and get
+          back to you shortly.
+        </p>
+        <p className="text-lg font-rubik text-bg1">
+          If you have any immediate questions, please don't hesitate to contact us directly.
+        </p>
+      </div>
+    )
   }
 
   return (
@@ -44,13 +63,20 @@ const CateringForm: React.FC = () => {
               name="firstname"
               type="text"
               className="w-full p-3 rounded-lg border-0 focus:ring-0"
+              required
             />
           </div>
           <div className="flex-1">
             <label htmlFor="lastname" className="block text-lg font-semibold mb-1 text-bg1 font-rubik">
               Last Name
             </label>
-            <input id="lastname" name="lastname" type="text" className="w-full p-3 rounded-lg border-0 focus:ring-0" />
+            <input
+              id="lastname"
+              name="lastname"
+              type="text"
+              className="w-full p-3 rounded-lg border-0 focus:ring-0"
+              required
+            />
           </div>
         </div>
 
@@ -64,13 +90,20 @@ const CateringForm: React.FC = () => {
               name="phonenumber"
               type="tel"
               className="w-full p-3 rounded-lg border-0 focus:ring-0"
+              required
             />
           </div>
           <div className="flex-1">
             <label htmlFor="email" className="block text-lg font-semibold mb-1 text-bg1 font-rubik">
               Email ID
             </label>
-            <input id="email" name="email" type="email" className="w-full p-3 rounded-lg border-0 focus:ring-0" />
+            <input
+              id="email"
+              name="email"
+              type="email"
+              className="w-full p-3 rounded-lg border-0 focus:ring-0"
+              required
+            />
           </div>
         </div>
 
@@ -78,7 +111,13 @@ const CateringForm: React.FC = () => {
           <label htmlFor="eventdate" className="block text-lg font-semibold mb-1 text-bg1 font-rubik">
             Event Date
           </label>
-          <input id="eventdate" name="eventdate" type="date" className="w-full p-3 rounded-lg border-0 focus:ring-0" />
+          <input
+            id="eventdate"
+            name="eventdate"
+            type="date"
+            className="w-full p-3 rounded-lg border-0 focus:ring-0"
+            required
+          />
         </div>
 
         <div className="flex flex-col">
@@ -90,6 +129,7 @@ const CateringForm: React.FC = () => {
             name="pickuptime"
             type="time"
             className="w-full p-3 rounded-lg border-0 focus:ring-0"
+            required
           />
         </div>
 
@@ -102,6 +142,7 @@ const CateringForm: React.FC = () => {
             name="noofpeople"
             type="number"
             className="w-full p-3 rounded-lg border-0 focus:ring-0"
+            required
           />
         </div>
 
