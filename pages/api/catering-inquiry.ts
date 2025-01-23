@@ -1,5 +1,7 @@
 import type { NextApiRequest, NextApiResponse } from "next"
-import nodemailer from "nodemailer"
+import { Resend } from "resend"
+
+const resend = new Resend(process.env.RESEND_KEY)
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   if (req.method === "POST") {
@@ -17,14 +19,6 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         event_type,
       } = req.body
 
-      const transporter = nodemailer.createTransport({
-        service: "gmail",
-        auth: {
-          user: process.env.EMAIL_USER,
-          pass: process.env.EMAIL_PASSWORD,
-        },
-      })
-
       const htmlTemplate = `
         <!DOCTYPE html>
         <html lang="en">
@@ -33,7 +27,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
           <meta name="viewport" content="width=device-width, initial-scale=1.0">
           <title>New Catering Inquiry</title>
           <style>
-            body { font-family: Arial, sans-serif; line-height: 1.6; color: #222    ; }
+            body { font-family: Arial, sans-serif; line-height: 1.6; color: #222; }
             .container { max-width: 600px; margin: 0 auto; padding: 20px; }
             h1 { color: #4a5568; }
             .info { margin-bottom: 20px; }
@@ -50,29 +44,31 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
               <p><span class="label">Event Date:</span> ${eventdate}</p>
               <p><span class="label">Pickup/Delivery Time:</span> ${pickuptime}</p>
               <p><span class="label">Number of People:</span> ${noofpeople}</p>
-          
+              <p><span class="label">Catering Type:</span> ${catering_type || "Not specified"}</p>
+              <p><span class="label">Event Type:</span> ${event_type || "Not specified"}</p>
               <p><span class="label">Message:</span> ${management_message}</p>
             </div>
           </div>
         </body>
         </html>
       `
-    //   <p><span class="label">Catering Type:</span> ${catering_type}</p>
-    //   <p><span class="label">Event Type:</span> ${event_type}</p>
 
-      const mailOptions = {
-        from: process.env.EMAIL_USER,
-        to: "meet@debox.co.in",
+      const { data, error } = await resend.emails.send({
+        from: "Bawarchi Atlanta <noreply@bawarchiatlanta.com>",
+        to: ["meet@debox.co.in"],
         subject: "Bawarchi Atlanta: New Catering Inquiry",
         html: htmlTemplate,
+      })
+
+      if (error || !data) {
+        console.error("Error sending email:", error)
+        return res.status(500).json({ error: "Failed to send email" })
       }
 
-      await transporter.sendMail(mailOptions)
-
-      res.status(200).json({ message: "Email sent successfully" })
+      res.status(200).json({ message: "Email sent successfully", id: data.id })
     } catch (error) {
-      console.error("Error sending email:", error)
-      res.status(500).json({ error: "Failed to send email" })
+      console.error("Error in API handler:", error)
+      res.status(500).json({ error: "Internal server error" })
     }
   } else {
     res.setHeader("Allow", ["POST"])

@@ -35,6 +35,7 @@
     "react-phone-number-input": "^3.4.11",
     "react-slick": "^0.30.2",
     "react-spinners": "^0.14.1",
+    "resend": "^4.1.1",
     "sharp": "^0.33.4",
     "slick-carousel": "^1.8.1",
     "swiper": "^11.1.15"
