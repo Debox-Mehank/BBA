@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import arrowup from "../assets/arrow-up.png";
-import CateringReel from "../assets/videos/ReelCompressed.mp4";
+import CateringReel from "../assets/videos/reel.webm";
 import { fadeIn } from "@/utils/motion";
 import { motion } from "framer-motion";
 import Link from "next/link";
