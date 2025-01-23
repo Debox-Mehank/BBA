@@ -63,7 +63,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       const mailOptions = {
         from: process.env.EMAIL_USER,
         to: "meet@debox.co.in",
-        subject: "New Catering Inquiry",
+        subject: "Bawarchi Atlanta: New Catering Inquiry",
         html: htmlTemplate,
       }
 
