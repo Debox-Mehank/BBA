@@ -48,7 +48,6 @@ export const TimePeriodSelect = React.forwardRef<
       );
     }
   };
-
   return (
     <div className="flex h-10 items-center bg-white rounded-[10px] !ring-0 border-0 !outline-none">
       <Select
