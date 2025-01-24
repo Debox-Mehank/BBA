@@ -1,7 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import { toast } from "react-hot-toast";
+import { DatePicker } from "../ui/date-picker";
+import { getYear } from "date-fns";
+import { TimePicker } from "../ui/time-picker/time-picker";
 
 const CateringForm = () => {
+  const [dob, setDob] = useState("");
+  const [time, setTime] = useState(new Date());
+
+  console.log(dob);
+
   const handleFormSubmit = async (event) => {
     event.preventDefault();
     try {
@@ -33,9 +41,10 @@ const CateringForm = () => {
         Catering Request Form
       </p>
       <form
-        className="flex flex-col gap-y-6"
+        className="flex flex-col gap-y-6 max-w-7xl mx-auto"
         name="catering_request_form"
         onSubmit={handleFormSubmit}
+
         // data-netlify="true"
         // action="/catering?submit=true"
         // method="POST"
@@ -53,7 +62,7 @@ const CateringForm = () => {
               id="firstname"
               name="firstname"
               type="text"
-              className="w-full p-3 rounded-lg border-0 focus:ring-0"
+              className="w-full p-3 rounded-[10px] border-0 focus:ring-0"
             />
           </div>
           <div className="flex-1">
@@ -67,7 +76,7 @@ const CateringForm = () => {
               id="lastname"
               name="lastname"
               type="text"
-              className="w-full p-3 rounded-lg border-0 focus:ring-0"
+              className="w-full p-3 rounded-[10px] border-0 focus:ring-0"
             />
           </div>
         </div>
@@ -84,7 +93,7 @@ const CateringForm = () => {
               id="phonenumber"
               name="phonenumber"
               type="tel"
-              className="w-full p-3 rounded-lg border-0 focus:ring-0"
+              className="w-full p-3 rounded-[10px] border-0 focus:ring-0"
             />
           </div>
           <div className="flex-1">
@@ -98,12 +107,26 @@ const CateringForm = () => {
               id="email"
               name="email"
               type="email"
-              className="w-full p-3 rounded-lg border-0 focus:ring-0"
+              className="w-full p-3 rounded-[10px] border-0 focus:ring-0"
             />
           </div>
         </div>
 
-        <div className="flex flex-col">
+        <div>
+          <label
+            htmlFor="dob"
+            className="block text-lg font-semibold mb-1 text-bg1 font-rubik"
+          >
+            Event Date
+          </label>
+          <DatePicker
+            selectedDate={dob.length === 0 ? null : new Date(dob)}
+            setDateFn={(date) => setDob(date.toISOString())}
+            endYear={getYear(new Date()) - 18}
+          />
+        </div>
+
+        {/* <div className="flex flex-col">
           <label
             htmlFor="eventdate"
             className="block text-lg font-semibold mb-1 text-bg1 font-rubik"
@@ -114,9 +137,9 @@ const CateringForm = () => {
             id="eventdate"
             name="eventdate"
             type="date"
-            className="w-full p-3 rounded-lg border-0 focus:ring-0"
+            className="w-full p-3 rounded-[10px] border-0 focus:ring-0"
           />
-        </div>
+        </div> */}
 
         <div className="flex flex-col">
           <label
@@ -125,12 +148,18 @@ const CateringForm = () => {
           >
             Pickup/Delivery Time
           </label>
-          <input
+          <TimePicker
+            setDate={(date) => {
+              setTime(date);
+            }}
+            date={time}
+          />
+          {/* <input
             id="pickuptime"
             name="pickuptime"
             type="time"
-            className="w-full p-3 rounded-lg border-0 focus:ring-0"
-          />
+            className="w-full p-3 rounded-[10px] border-0 focus:ring-0"
+          /> */}
         </div>
 
         <div className="flex flex-col">
@@ -144,7 +173,7 @@ const CateringForm = () => {
             id="noofpeople"
             name="noofpeople"
             type="number"
-            className="w-full p-3 rounded-lg border-0 focus:ring-0"
+            className="w-full p-3 rounded-[10px] border-0 focus:ring-0"
           />
         </div>
 
@@ -159,13 +188,13 @@ const CateringForm = () => {
             id="management_message"
             name="management_message"
             rows="4"
-            className="w-full p-3 rounded-lg border-0 focus:ring-0"
+            className="w-full p-3 rounded-[10px] border-0 focus:ring-0"
           />
         </div>
 
         <button
           type="submit"
-          className="bg-bg1 uppercase xsm:w-[400px] w-[300px] font-rubik text-2xl text-bg3 py-2 px-2 rounded-lg mt-10 self-center"
+          className="bg-bg1 uppercase xsm:w-[400px] w-[300px] font-rubik text-2xl text-bg3 py-2 px-2 rounded-[10px] mt-10 self-center"
         >
           Submit
         </button>

@@ -6,8 +6,8 @@ import Head from "next/head";
 import imageData from "../utils/imageData";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
-import Zoom from 'react-medium-image-zoom';
-import 'react-medium-image-zoom/dist/styles.css';
+import Zoom from "react-medium-image-zoom";
+import "react-medium-image-zoom/dist/styles.css";
 
 export default function OurGallery() {
   const [viewData, setViewData] = useState(imageData);
@@ -59,9 +59,9 @@ export default function OurGallery() {
         </h1>
 
         {/* Category Buttons */}
-        <div className="mx-auto grid grid-cols-2 gap-4 max-w-md w-11/12 sm:grid-cols-4 sm:max-w-xl md:max-w-none justify-between font-big_calson font-bold text-white">
+        <div className="mx-auto grid grid-cols-1 gap-4 max-w-md w-11/12 sm:grid-cols-3 sm:max-w-xl md:max-w-none justify-between font-big_calson font-bold text-white">
           <button
-            className={`text-lg px-6 py-2 lg:text-2xl font-rubik lg:py-3 w-full bg-black rounded-md hover:bg-pri_green duration-200 transition 
+            className={`text-lg px-6 py-2 lg:text-2xl font-rubik lg:py-3 w-full bg-black rounded-[10px] hover:bg-pri_green duration-200 transition 
           ${selected === "All" && "bg-orange-400"}`}
             onClick={() => {
               setViewData(imageData);
@@ -71,7 +71,7 @@ export default function OurGallery() {
             All Images
           </button>
           <button
-            className={`text-lg px-6 py-2 lg:text-2xl font-rubik lg:py-3 w-full bg-black rounded-md hover:bg-pri_green duration-200 transition 
+            className={`text-lg px-6 py-2 lg:text-2xl font-rubik lg:py-3 w-full bg-black rounded-[10px] hover:bg-pri_green duration-200 transition 
           ${selected === "Ambience" && "bg-orange-400"}`}
             onClick={() => {
               setViewData(
@@ -82,8 +82,8 @@ export default function OurGallery() {
           >
             Our Ambience
           </button>
-          <button
-            className={`text-lg px-6 py-2 lg:text-2xl font-rubik lg:py-3 w-full bg-black rounded-md hover:bg-pri_green duration-200 transition 
+          {/* <button
+            className={`text-lg px-6 py-2 lg:text-2xl font-rubik lg:py-3 w-full bg-black rounded-[10px] hover:bg-pri_green duration-200 transition 
           ${selected === "Food" && "bg-orange-400"}`}
             onClick={() => {
               setViewData(imageData.filter((img) => img.category === "food"));
@@ -91,9 +91,9 @@ export default function OurGallery() {
             }}
           >
             Our Food
-          </button>
+          </button> */}
           <button
-            className={`text-lg px-6 py-2 lg:text-2xl  font-rubik lg:py-3 w-full bg-black rounded-md hover:bg-pri_green duration-200 transition 
+            className={`text-lg px-6 py-2 lg:text-2xl  font-rubik lg:py-3 w-full bg-black rounded-[10px] hover:bg-pri_green duration-200 transition 
           ${selected === "Events" && "bg-orange-400"}`}
             onClick={() => {
               setViewData(imageData.filter((img) => img.category === "events"));

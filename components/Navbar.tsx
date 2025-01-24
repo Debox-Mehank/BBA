@@ -87,7 +87,7 @@ const Navbar = () => {
               href="https://ordersave.com/partnersite/j5DgkW8FF1Nd/menu"
             >
               <button
-                className={`px-6 py-2 h-12 hidden md:block w-[180px] text-[20px] bg-bg3 font-rubik font-medium mr-10 border rounded-lg text-bg1 transition-opacity duration-500 ${
+                className={`px-6 py-2 h-12 hidden md:block w-[180px] text-[20px] bg-bg3 font-rubik font-medium mr-10 border rounded-[10px] text-bg1 transition-opacity duration-500 ${
                   isButtonVisible ? "opacity-100" : "opacity-0"
                 }`}
                 style={{ visibility: isButtonVisible ? "visible" : "hidden" }}

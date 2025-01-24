@@ -1,18 +1,44 @@
 "use client";
 
-import React, { useRef } from "react";
+import React, { IframeHTMLAttributes, useRef } from "react";
 import Image from "next/image";
 import { motion, useScroll, useTransform } from "framer-motion";
-import Image1 from "../assets/Gallery1.jpg";
-import Image2 from "../assets/Gallery2.jpg";
-import Image3 from "../assets/Gallery3.jpg";
-import Image4 from "../assets/Gallery4.png";
 import arrowup from "../assets/mingcute_arrow-up-line.png";
 import { fadeIn } from "@/utils/motion";
 import { blurHashToDataURL } from "@/utils/blurhash";
 import Link from "next/link";
 
-const FrameSection = () => {
+interface IFrameSection {
+  frameSectionTitle: string;
+  frameSectionImage1: {
+    url: string;
+  };
+  frameSectionImage2: {
+    url: string;
+  };
+  frameSectionImage3: {
+    url: string;
+  };
+  frameSectionImage4: {
+    url: string;
+  };
+  frameSectionBlurHash1: string;
+  frameSectionBlurHash2: string;
+  frameSectionBlurHash3: string;
+  frameSectionBlurHash4: string;
+}
+
+const FrameSection: React.FC<IFrameSection> = ({
+  frameSectionImage1,
+  frameSectionImage2,
+  frameSectionImage3,
+  frameSectionImage4,
+  frameSectionTitle,
+  frameSectionBlurHash1,
+  frameSectionBlurHash2,
+  frameSectionBlurHash3,
+  frameSectionBlurHash4,
+}) => {
   const scrollRef = useRef(null);
   const { scrollYProgress } = useScroll({
     target: scrollRef,
@@ -34,33 +60,23 @@ const FrameSection = () => {
             className="absolute top-[10%] left-0 space-y-12"
           >
             <Image
-              src={Image1}
+              src={frameSectionImage1.url}
               placeholder="blur"
-              blurDataURL={blurHashToDataURL("LhI;q%i^kXoM~qjEkCa}E.oIWBjs")}
+              blurDataURL={blurHashToDataURL(frameSectionBlurHash1)}
               alt="gallery-image"
-              className="w-[360px] h-[500px] rounded-lg"
+              className="w-[360px] h-[500px] rounded-[10px]"
+              width={360}
+              height={500}
             />
             <Image
-              src={Image2}
+              src={frameSectionImage2.url}
               placeholder="blur"
-              blurDataURL={blurHashToDataURL("LCECRHHqyER4Q7D%-pNGB;9ZxHNG")}
+              blurDataURL={blurHashToDataURL(frameSectionBlurHash2)}
               alt="gallery-image"
-              className="w-[360px] h-[500px] rounded-lg"
+              className="w-[360px] h-[500px] rounded-[10px]"
+              width={360}
+              height={500}
             />
-            {/* <Image
-              placeholder="blur"
-              blurDataURL={blurHashToDataURL("LACsaLL#%hVW.lESwckStkD*xbSO")}
-              src={Image3}
-              alt="gallery-image"
-              className="w-[360px] h-[500px] rounded-lg"
-            />
-            <Image
-              placeholder="blur"
-              blurDataURL={blurHashToDataURL("L6G%_I-UD+-4}qE1E1RP0FpGB:E4")}
-              src={Image4}
-              alt="gallery-image"
-              className="w-[360px] h-[500px] rounded-lg"
-            /> */}
           </motion.div>
         </div>
         <div className="hidden lg:block relative w-[360px] h-full overflow-hidden">
@@ -70,51 +86,34 @@ const FrameSection = () => {
           >
             <Image
               placeholder="blur"
-              blurDataURL={blurHashToDataURL("LACsaLL#%hVW.lESwckStkD*xbSO")}
-              src={Image3}
+              blurDataURL={blurHashToDataURL(frameSectionBlurHash3)}
+              src={frameSectionImage3.url}
               alt="gallery-image"
-              className="w-[360px] h-[500px] rounded-lg"
+              className="w-[360px] h-[500px] rounded-[10px]"
+              width={360}
+              height={500}
             />
             <Image
               placeholder="blur"
-              blurDataURL={blurHashToDataURL("L6G%_I-UD+-4}qE1E1RP0FpGB:E4")}
-              src={Image4}
+              blurDataURL={blurHashToDataURL(frameSectionBlurHash4)}
+              src={frameSectionImage4.url}
               alt="gallery-image"
-              className="w-[360px] h-[500px] rounded-lg"
+              className="w-[360px] h-[500px] rounded-[10px]"
+              width={360}
+              height={500}
             />
-            {/* <Image
-              src={Image1}
-              placeholder="blur"
-              blurDataURL={blurHashToDataURL("LhI;q%i^kXoM~qjEkCa}E.oIWBjs")}
-              alt="gallery-image"
-              className="w-[360px] h-[500px] rounded-lg"
-            />
-            <Image
-              src={Image2}
-              placeholder="blur"
-              blurDataURL={blurHashToDataURL("LCECRHHqyER4Q7D%-pNGB;9ZxHNG")}
-              alt="gallery-image"
-              className="w-[360px] h-[500px] rounded-lg"
-            /> */}
           </motion.div>
         </div>
         <div className="flex items-center flex-col justify-center lg:hidden custom-sm:flex-row">
-          {/* <div className="flex custom-sm:mr-10 mb-10 custom-sm:mb-0">
-            <Image
-              src={Image2}
-              placeholder="blur"
-              blurDataURL={blurHashToDataURL("LCECRHHqyER4Q7D%-pNGB;9ZxHNG")}
-              alt="gallery-image"
-              className="w-[360px] h-[500px] rounded-lg"
-            />
-          </div> */}
           <div>
             <Image
-              src={Image4}
+              src={frameSectionImage4.url}
               placeholder="blur"
-              blurDataURL={blurHashToDataURL("L6G%_I-UD+-4}qE1E1RP0FpGB:E4")}
+              blurDataURL={blurHashToDataURL(frameSectionBlurHash4)}
               alt="gallery-image"
-              className="w-[360px] h-[500px] rounded-lg"
+              className="w-[360px] h-[500px] rounded-[10px]"
+              width={360}
+              height={500}
             />
           </div>
         </div>
@@ -127,15 +126,17 @@ const FrameSection = () => {
         className="lg:ml-10 ml-0 lg:items-start items-center mt-8 lg:mt-0"
       >
         <h1 className="font-bebas custom-sm:text-[80px] text-[60px] leading-[55px] custom-sm:leading-[70px] text-bg3 lg:max-w-[438px] mb-10">
-          Capturing the essence of Bawarchi Atlanta in every frame
+          {frameSectionTitle}
         </h1>
         <Link href="/catering">
-          <p className="flex items-center font-bebas xsm:text-3xl text-xl text-bg3 cursor-pointer">
-            READ MORE{" "}
+          <p className="flex items-center font-bebas xsm:text-3xl text-xl text-bg3 font-bold cursor-pointer group">
+            <span className="group-hover:text-primary transition-all duration-300 ease-in-out">
+              READ MORE
+            </span>
             <Image
               src={arrowup}
               alt="arrow-up"
-              className="xsm:w-[45px] w-[35px] xsm:h-[45px] h-[35px]"
+              className="xsm:w-[45px] w-[35px] xsm:h-[45px] h-[35px] group-hover:rotate-45 transition-all duration-300 ease-in-out"
             />
           </p>
         </Link>

@@ -6,7 +6,14 @@ import { motion } from "framer-motion";
 import { blurHashToDataURL } from "@/utils/blurhash";
 import Link from "next/link";
 
-const Download = () => {
+interface IDownLoad {
+  CTAImage: {
+    url: string;
+  };
+  CTABlurHash: string;
+}
+
+const Download: React.FC<IDownLoad> = ({ CTAImage, CTABlurHash }) => {
   return (
     <div className="lg:py-20 lg:px-24 xsm:px-12 px-6 py-10 bg-bg3 flex flex-col-reverse custom-lg:flex-row items-center custom-lg:justify-evenly justify-center  overflow-hidden">
       <motion.div
@@ -17,11 +24,13 @@ const Download = () => {
         className="custom-lg:mr-10 custom-lg:mt-0 mt-20 custom-lg:w-1/2 w-full flex items-center justify-center"
       >
         <Image
-          src={Phone}
+          src={CTAImage.url}
           alt="phone"
           className="w-[378px] h-[683px] object-contain"
           placeholder="blur"
-          blurDataURL={blurHashToDataURL("LLL;pp-q0LNF_N?GM{xuX,f4nOah")}
+          blurDataURL={blurHashToDataURL(CTABlurHash)}
+          width={378}
+          height={683}
         />
       </motion.div>
       <motion.div

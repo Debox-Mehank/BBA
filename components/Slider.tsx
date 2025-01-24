@@ -1,38 +1,133 @@
-import React from 'react';
-import Image1 from "../assets/slider/BBA1.jpg";
-import Image2 from "../assets/slider/BBA2.jpg";
-import Image3 from "../assets/slider/BBA3.jpg";
-import Image4 from "../assets/slider/BBA4.jpg";
-import Image5 from "../assets/slider/BBA5.jpg";
-import Image from 'next/image';
+import React from "react";
+import Image from "next/image";
+import CountUp from "react-countup";
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
 
-const Slider = () => {
+interface ISliderSectionProps {
+  highlightSectionTitle: string;
+  highlightSectionContent: string;
+  highlightSectionImage: {
+    url: string;
+  };
+  eventsCatered: number;
+  biryanisServed: number;
+  guestsServed: number;
+}
+
+const Slider: React.FC<ISliderSectionProps> = ({
+  highlightSectionContent,
+  highlightSectionImage,
+  highlightSectionTitle,
+  biryanisServed,
+  eventsCatered,
+  guestsServed,
+}) => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
+
   return (
-    <div className="relative md:h-[150vh] h-[120vh] w-full overflow-hidden -z-10 ">
-      <div className="absolute top-0 left-0 w-full h-full flex ">
-        <div className="flex-shrink-0 ">
-          <Image src={Image2} alt="Slide 1" className="w-full h-full object-cover" />
+    <div className="relative w-full overflow-hidden -z-10">
+      {/* Background Image */}
+      <div className="absolute top-0 left-0 w-full h-full flex">
+        <div className="flex-shrink-0 w-full">
+          <Image
+            src={highlightSectionImage.url}
+            alt="Slide 1"
+            className="w-full h-full object-cover"
+            width={1000}
+            height={1000}
+            priority
+          />
         </div>
-       
       </div>
-      <div className="relative z-10 flex flex-col items-center justify-center w-full h-full bg-black bg-opacity-10">
-        <div className='absolute font-bebas top-16 animate-scroll text-4xl   text-white flex w-full whitespace-nowrap ' >
-        <span className="mr-5">A DECADE OF DELICIOUSNESS</span>
-        <span className="mr-5">A DECADE OF DELICIOUSNESS</span>
-        <span className="mr-5">A DECADE OF DELICIOUSNESS</span>
-        <span className="mr-5">A DECADE OF DELICIOUSNESS</span>
-        <span className="mr-5">A DECADE OF DELICIOUSNESS</span>
-        <span className="mr-5">A DECADE OF DELICIOUSNESS</span>
-        <span className="mr-5">A DECADE OF DELICIOUSNESS</span>
-        <span className="mr-5">A DECADE OF DELICIOUSNESS</span>
-        <span className="mr-5">A DECADE OF DELICIOUSNESS</span>
-        <span className="mr-5">A DECADE OF DELICIOUSNESS</span>
-        
-            </div>
-        <div className="text-center">
-          <h1 className="text-bg2 md:text-4xl sm:text-3xl text-2xl leading-8 max-w-[933px] sm:leading-10 font-rubik px-2">
-          Over the last 10 years, Bawarchi Atlanta has become a beloved fixture in the heart of Sandy Springs. We have had the privilege of hosting countless family gatherings, community events, and celebrations fostering strong connections and creating memories with every meal.
-          </h1>
+
+      {/* Content Section */}
+      <div
+        ref={ref}
+        className="relative z-10 flex flex-col items-center justify-center w-full bg-black bg-opacity-30 px-4 py-16"
+      >
+        {/* Scrolling Title */}
+        <div className="absolute font-bebas top-6 animate-scroll text-4xl text-white flex w-full whitespace-nowrap">
+          <span className="mr-5">{highlightSectionTitle}</span>
+          <span className="mr-5">{highlightSectionTitle}</span>
+          <span className="mr-5">{highlightSectionTitle}</span>
+          <span className="mr-5">{highlightSectionTitle}</span>
+          <span className="mr-5">{highlightSectionTitle}</span>
+          <span className="mr-5">{highlightSectionTitle}</span>
+          <span className="mr-5">{highlightSectionTitle}</span>
+          <span className="mr-5">{highlightSectionTitle}</span>
+          <span className="mr-5">{highlightSectionTitle}</span>
+        </div>
+
+        {/* Counter Section */}
+        <div className="text-center gap-10 flex flex-col items-center space-y-8 min-h-screen justify-center">
+          <div className="flex flex-wrap justify-center items-center gap-8 md:gap-16 font-bebas">
+            <motion.div
+              className="text-center text-bg2"
+              initial={{ opacity: 0, y: 50 }}
+              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.5, delay: 0.2 }}
+            >
+              <h2 className="text-3xl md:text-4xl font-bold">
+                {isInView && (
+                  <CountUp
+                    start={eventsCatered - 100}
+                    end={eventsCatered}
+                    duration={2.5}
+                    suffix="+"
+                  />
+                )}
+              </h2>
+              <p className="text-base md:text-lg">Events Catered</p>
+            </motion.div>
+            <motion.div
+              className="text-center text-bg2 md:-mt-10"
+              initial={{ opacity: 0, y: 50 }}
+              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.5, delay: 0.4 }}
+            >
+              <h2 className="text-3xl md:text-4xl font-bold">
+                {isInView && (
+                  <CountUp
+                    start={biryanisServed - 100}
+                    end={biryanisServed}
+                    duration={2.5}
+                    suffix="+"
+                  />
+                )}
+              </h2>
+              <p className="text-base md:text-lg">Biryanis Served</p>
+            </motion.div>
+            <motion.div
+              className="text-center text-bg2"
+              initial={{ opacity: 0, y: 50 }}
+              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.5, delay: 0.6 }}
+            >
+              <h2 className="text-3xl md:text-4xl font-bold">
+                {isInView && (
+                  <CountUp
+                    start={guestsServed - 100}
+                    end={guestsServed}
+                    duration={2.5}
+                    suffix="+"
+                  />
+                )}
+              </h2>
+              <p className="text-base md:text-lg">Guests Served</p>
+            </motion.div>
+          </div>
+
+          {/* Highlight Content */}
+          <motion.h1
+            className="text-bg2 md:text-4xl sm:text-3xl text-2xl leading-8 max-w-[963px] sm:leading-10 font-rubik px-2 text-center"
+            initial={{ opacity: 0, y: 50 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.5, delay: 0.8 }}
+          >
+            {highlightSectionContent}
+          </motion.h1>
         </div>
       </div>
     </div>

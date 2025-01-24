@@ -5,6 +5,8 @@ import Link from "next/link";
 import Head from "next/head";
 import { Toaster } from "react-hot-toast";
 import Script from "next/script";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
 const rubik = Rubik({
   weight: ["400", "500", "600", "700"],

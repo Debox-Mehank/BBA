@@ -25,7 +25,7 @@ interface IBlogDetails {
     raw: any;
     text: string;
   };
-  blurHash: string
+  blurHash: string;
 }
 
 interface BlogQueryResponse {
@@ -85,14 +85,14 @@ const BlogDetails = ({
         />
         <meta property="twitter:image" content={blog?.image?.url} />
       </Head>
-      <Navbar/>
+      <Navbar />
 
       <div className="pt-20 bg-bg3">
         <div className="relative">
-
           <div className="max-w-4xl mx-auto py-10 md:py-14 w-11/12">
-         
-            <h1 className={`text-2xl md:text-5xl  font-bebas `}>{blog?.title}</h1>
+            <h1 className={`text-2xl md:text-5xl  font-bebas `}>
+              {blog?.title}
+            </h1>
             <div className="font-bold pt-4 flex gap-x-2 items-center">
               <span>
                 <svg
@@ -156,7 +156,7 @@ const BlogDetails = ({
           </div>
           <div className="max-w-4xl mx-auto w-10/12 font-rubik">
             <p className="text-lg  py-7 font-bold">{blog?.shortDescription}</p>
-            <div className="prose prose-teal leading-8 pb-8 font-">
+            <div className="prose prose-teal leading-8 pb-8">
               <RichText content={blog?.content?.raw?.children} />
             </div>
             {!relatedBlogs.length && <hr className="bg-primary h-[2px]" />}
@@ -204,7 +204,7 @@ const BlogDetails = ({
           )}
         </div>
       </div>
-      <Footer/>
+      <Footer />
     </div>
   );
 };
@@ -251,9 +251,12 @@ export async function getServerSideProps({ params }: { params: any }) {
   `;
 
   try {
-    const { blogs }: BlogQueryResponse = await graphQLClient.request(GET_BLOG_QUERY, {
-      slug: params.slug,
-    });
+    const { blogs }: BlogQueryResponse = await graphQLClient.request(
+      GET_BLOG_QUERY,
+      {
+        slug: params.slug,
+      }
+    );
 
     if (!blogs.length) {
       return {
@@ -261,9 +264,10 @@ export async function getServerSideProps({ params }: { params: any }) {
       };
     }
 
-    const { blogs: relatedBlogs }: RelatedBlogQueryResponse = await graphQLClient.request(GET_RELATED_BLOGS_QUERY, {
-      slug: params.slug,
-    });
+    const { blogs: relatedBlogs }: RelatedBlogQueryResponse =
+      await graphQLClient.request(GET_RELATED_BLOGS_QUERY, {
+        slug: params.slug,
+      });
 
     return {
       props: {
