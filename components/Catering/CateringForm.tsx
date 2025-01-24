@@ -70,6 +70,19 @@ const CateringForm: React.FC = () => {
     }
   };
 
+  const handlePhoneNumberChange = (v: string | undefined) => {
+    // Remove all non-digit characters
+    const cleanedNumber = v?.replace(/\D/g, "") || "";
+
+    // Limit to 10 digits
+    const limitedNumber = cleanedNumber.slice(0, 10);
+
+    setFormData((prev) => ({
+      ...prev,
+      phonenumber: limitedNumber,
+    }));
+  };
+
   // Validation function
   const validateForm = (): boolean => {
     const newErrors: FormErrors = {};
