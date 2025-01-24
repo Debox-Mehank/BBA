@@ -156,22 +156,22 @@ const CateringForm: React.FC = () => {
 
       console.log(submissionData);
 
-      // const res = await fetch("/api/catering-inquiry", {
-      //   method: "POST",
-      //   headers: {
-      //     "Content-Type": "application/json",
-      //   },
-      //   body: JSON.stringify(submissionData),
-      // });
+      const res = await fetch("/api/catering-inquiry", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(submissionData),
+      });
 
-      // if (res.ok) {
-      //   setIsSubmitted(true);
-      //   toast.success(
-      //     "Thank you for submitting your query, our catering specialist will get in touch with you shortly."
-      //   );
-      // } else {
-      //   toast.error("Something went wrong, please try again later!");
-      // }
+      if (res.ok) {
+        setIsSubmitted(true);
+        toast.success(
+          "Thank you for submitting your query, our catering specialist will get in touch with you shortly."
+        );
+      } else {
+        toast.error("Something went wrong, please try again later!");
+      }
     } catch (e) {
       toast.error("Something went wrong, please try again later!");
     } finally {
