@@ -55,11 +55,11 @@ const PartyTrays: React.FC<IPartyTrays> = ({
       <p className="xl:text-[90px] xsm:text-[60px] text-[40px] font-bebas text-bg1 text-center">
         Party Trays
       </p>
-      <div className="flex flex-wrap justify-center mt-10 gap-x-4 gap-y-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-10 justify-center">
         {partyTrays.map(({ content, image }, index) => (
           <div
             key={index}
-            className="bg-bg1 text-bg2 rounded-[40px] flex-1 min-w-[250px] max-w-[300px] overflow-hidden"
+            className="bg-bg1 text-bg2 rounded-[40px] overflow-hidden"
           >
             <div className="w-full relative h-48">
               <Image

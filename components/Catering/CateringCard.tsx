@@ -26,18 +26,18 @@ const CateringCard: React.FC<ICateringCard> = ({
       <p className="xl:text-[90px] xsm:text-[60px] text-[40px] font-bebas text-bg1 text-center custom-lg:mb-10">
         CATERING OPTIONS
       </p>
-      <div className="flex flex-col xl:flex-nowrap flex-wrap  custom-lg:flex-row items-stretch justify-center gap-6 w-full">
+      <div className="grid grid-cols-1 xl:grid-cols-3 gap-6 w-full">
         {[
           { content: package1, additionalClasses: "" },
           {
             content: package2,
-            additionalClasses: "custom-lg:translate-y-[-50px]",
+            additionalClasses: "xl:-translate-y-[50px]",
           },
           { content: package3, additionalClasses: "" },
         ].map(({ content, additionalClasses }, index) => (
           <div
             key={index}
-            className={`bg-bg1 text-bg2 w-full custom-lg:w-[300px] lg:w-[440px] rounded-[40px] p-6 flex flex-col gap-y-2 ${additionalClasses}`}
+            className={`bg-bg1 text-bg2 w-full rounded-[40px] p-6 flex flex-col gap-y-2 ${additionalClasses}`}
           >
             <RichText
               content={content.raw}

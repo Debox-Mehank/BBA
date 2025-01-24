@@ -79,7 +79,7 @@ const Gallery: React.FC<IGallery> = ({
           viewport={{ once: true }}
           className="custom-lg:mr-10 custom-lg:mb-0 mb-10 custom-lg:w-1/2 w-full flex items-center justify-center"
         >
-          <div className="relative xsm:w-[500px] xsm:h-[630px] w-[400px] h-[530px] overflow-hidden">
+          <div className="relative xsm:w-[500px] xsm:h-[580px] w-[400px] h-[530px] overflow-hidden">
             <AnimatePresence initial={false}>
               <motion.div
                 key={currentImageIndex}
@@ -123,7 +123,7 @@ const Gallery: React.FC<IGallery> = ({
         </p>
         <Link href="/our-story">
           <p className="flex items-center font-bebas xsm:text-3xl text-xl text-bg1 font-bold cursor-pointer group">
-            <span className="group-hover:text-primary transition-all duration-300 ease-in-out">
+            <span className="transition-all duration-300 ease-in-out">
               READ MORE
             </span>
             <Image

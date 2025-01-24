@@ -1,6 +1,5 @@
 import React from "react";
 import Image from "next/image";
-import dosaRoll from "../../assets/dosa-roll.png";
 import { blurHashToDataURL } from "@/utils/blurhash";
 import { RichText } from "@graphcms/rich-text-react-renderer";
 
@@ -36,7 +35,7 @@ const PartyPackage: React.FC<IPartyPackage> = ({
 }) => {
   return (
     <div className="lg:px-24 py-10 xsm:px-12 px-6 bg-bg3 rounded-[60px] lg:rounded-[100px] z-10 overflow-hidden">
-      <p className="xl:text-[90px] xsm:text-[60px]  text-[40px] font-bebas text-bg1 text-center">
+      <p className="xl:text-[90px] xsm:text-[60px] text-[40px] font-bebas text-bg1 text-center">
         {sectionTitle}
       </p>
 
@@ -52,8 +51,8 @@ const PartyPackage: React.FC<IPartyPackage> = ({
             height={460}
           />
         </div>
-        <div className="flex flex-col items-start text-bg1  font-rubik custom-lg:ml-10 ml-4">
-          <ul className="gap-y-2 flex flex-col max-w-[610px] font-rubik xsm:text-2xl text-xl text-bg1 font-medium list-disc custom-lg:pl-10 pl-0  h-full mt-10 custom-lg:mt-0">
+        <div className="flex flex-col items-start text-bg1 font-rubik custom-lg:ml-10 ml-4">
+          <ul className="gap-y-2 flex flex-col max-w-[610px] font-rubik xsm:text-2xl text-xl text-bg1 font-medium list-disc custom-lg:pl-10 pl-0 h-full mt-10 custom-lg:mt-0">
             <RichText
               content={sectionContent.raw}
               renderers={{
@@ -62,19 +61,14 @@ const PartyPackage: React.FC<IPartyPackage> = ({
                 ),
               }}
             />
-            {/* <li>Prices are for 50 people & above</li>
-            <li>
-              All extra items will be charged. Delivery & Setup Charge Extra
-            </li>
-            <li>Tax Applicable for all items</li>
-            <li>Deposit required for Chaffing Dishes</li> */}
           </ul>
         </div>
       </div>
+
       <div className="bg-bg3 py-10">
-        <div className="flex flex-col lg:flex-row items-stretch gap-y-6 lg:gap-x-4">
+        <div className="grid grid-cols-1 custom-lg:grid-cols-2 gap-6">
           {/* Gold Package */}
-          <div className="w-full lg:w-1/2 bg-bg1 text-bg2 flex flex-col py-10 px-6 lg:px-10 items-center gap-y-4 rounded-[40px]">
+          <div className="bg-bg1 text-bg2 flex flex-col py-10 px-6 lg:px-10 items-center gap-y-4 rounded-[40px]">
             <h2 className="text-3xl lg:text-5xl font-bebas text-center">
               {Package1Title}
             </h2>
@@ -87,7 +81,7 @@ const PartyPackage: React.FC<IPartyPackage> = ({
           </div>
 
           {/* Platinum Package */}
-          <div className="w-full lg:w-1/2 bg-bg1 text-bg2 flex flex-col py-10 px-6 lg:px-10 items-center gap-y-4 rounded-[40px]">
+          <div className="bg-bg1 text-bg2 flex flex-col py-10 px-6 lg:px-10 items-center gap-y-4 rounded-[40px]">
             <h2 className="text-3xl lg:text-5xl font-bebas text-center">
               {Package2Title}
             </h2>

@@ -39,7 +39,7 @@ const CateringOptions: React.FC<ICateringOptions> = ({
             alt="dosa"
             placeholder="blur"
             blurDataURL={blurHashToDataURL(sectionImageBlurHash)}
-            className="rounded-[40px] md:min-w-[450px] w-[400px] h-[500px] min-h-[560px]"
+            className="rounded-[40px] md:min-w-[450px] w-[400px] md:h-[500px] h-[380px]"
             width={450}
             height={560}
           />

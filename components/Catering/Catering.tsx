@@ -23,7 +23,7 @@ const Catering: React.FC<ICatering> = ({
       >
         {sectionTitle}
       </h1>
-      <div className="w-full max-w-[1240px] ">
+      <div className="w-full max-w-[1240px]">
         <Image
           src={sectionImage.url}
           alt="Catering"
@@ -32,7 +32,7 @@ const Catering: React.FC<ICatering> = ({
           blurDataURL={blurHashToDataURL(sectionImageBlurHash)}
           width={1240}
           height={800}
-          className="md:rounded-[70px] rounded-[10px] object-cover"
+          className="md:rounded-[70px] min-h-[300px] rounded-[10px] object-cover"
         />
       </div>
     </div>

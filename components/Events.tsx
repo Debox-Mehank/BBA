@@ -57,7 +57,7 @@ const Events: React.FC<IEvents> = ({ eventReel, eventContent, eventTitle }) => {
         </p>
         <Link href="/catering">
           <p className="flex items-center font-bebas xsm:text-3xl text-xl text-bg1 font-bold cursor-pointer group">
-            <span className="group-hover:text-primary transition-all duration-300 ease-in-out">
+            <span className="transition-all duration-300 ease-in-out">
               READ MORE
             </span>
             <Image
