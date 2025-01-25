@@ -5,7 +5,6 @@ import { blurHashToDataURL } from "@/utils/blurhash";
 import { RichText } from "@graphcms/rich-text-react-renderer";
 
 interface ICateringPackages {
-  sectionTitle: string;
   sectionImage: {
     url: string;
   };
@@ -20,7 +19,6 @@ const CateringPackages: React.FC<ICateringPackages> = ({
   sectionContent,
   sectionImage,
   sectionImageBlurHash,
-  sectionTitle,
 }) => {
   return (
     <div className="lg:px-24 xsm:px-12 px-6 py-10 bg-bg3 rounded-[60px] lg:rounded-[100px] z-10 overflow-hidden">

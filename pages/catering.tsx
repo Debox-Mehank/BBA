@@ -28,7 +28,6 @@ export interface ICateringPage {
     text: string;
   };
   section2ImageBlurHash: string;
-  section3Title: string;
   section3Image: {
     url: string;
   };
@@ -173,7 +172,6 @@ const catering: React.FC<ICatering> = ({ cateringPageData }) => {
         sectionContent={cateringPageData.section3Content}
         sectionImage={cateringPageData.section3Image}
         sectionImageBlurHash={cateringPageData.section3ImageBlurHash}
-        sectionTitle={cateringPageData.section3Title}
       />
 
       <PartyTrays
@@ -224,7 +222,6 @@ export const getStaticProps: GetStaticProps = async () => {
             text
           }
           section4ImageBlurHash
-          section3Title
           section3Image {
             url
           }
