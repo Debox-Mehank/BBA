@@ -186,11 +186,12 @@ const CateringForm: React.FC = () => {
             Thank You!
           </h2>
           <p className="text-xl font-rubik text-bg1 mb-8 max-w-4xl mt-4 mx-auto">
-            We've received your catering inquiry and appreciate your interest.
-            Our team will review your request and get back to you shortly.
+            We&apos;ve received your catering inquiry and appreciate your
+            interest. Our team will review your request and get back to you
+            shortly.
           </p>
           <p className="text-lg font-rubik text-bg1">
-            If you have any immediate questions, please don't hesitate to
+            If you have any immediate questions, please don&apos;t hesitate to
             contact us directly.
           </p>
         </div>
