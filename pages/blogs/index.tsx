@@ -114,7 +114,7 @@ const Blogs: React.FC = () => {
   const BlogFeaturedSection: React.FC<{ blog: BlogNode }> = ({ blog }) => {
     return (
       <div className="flex flex-col items-center bg-bg3 mt-20">
-        <h1 className="xl:text-[90px] xsm:text-[60px] xsm:leading-[55px] xl:leading-[70px] text-[50px] leading-[45px] font-bebas xsm:mb-10 mb-5 md:mb-16 text-bg1 text-center">
+        <h1 className="xl:text-[90px] xsm:text-[60px] xsm:leading-[55px] xl:leading-[70px] text-[50px] leading-[45px] font-bebas xsm:mb-10 mb-5 md:mb-16 text-bg1 text-center mt-4">
           BLOGS
         </h1>
         <Link href={`/blogs/${blog.slug}`}>
