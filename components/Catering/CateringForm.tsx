@@ -182,7 +182,7 @@ const CateringForm: React.FC = () => {
       ) : (
         <form
           onSubmit={handleFormSubmit}
-          className="flex flex-col gap-y-6 max-w-5xl mx-auto"
+          className="flex flex-col gap-y-6 max-w-4xl mx-auto"
         >
           <p className="text-center font-bebas text-4xl lg:text-[60px] xl:text-[90px] mb-10 lg:mb-24 text-bg1">
             Catering Request Form
