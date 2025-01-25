@@ -1,145 +1,152 @@
-"use client";
+import React, { useState } from "react";
+import { CalendarIcon } from "@radix-ui/react-icons";
+import { format } from "date-fns";
 
-import { format, getMonth, getYear, setMonth, setYear } from "date-fns";
-import * as React from "react";
-
+import { cn } from "@/lib/utils";
+import { Button } from "@/components/ui/button";
 import { Calendar } from "@/components/ui/calendar";
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "./select";
+import { ScrollArea, ScrollBar } from "@/components/ui/scroll-area";
 
-interface DatePickerProps {
-  selectedDate: Date | null;
-  startYear?: number;
-  endYear?: number;
+interface DateTimePickerProps {
+  selectedDate?: Date | null;
   setDateFn: (date: Date) => void;
 }
-export function DatePicker({
-  selectedDate = null,
-  startYear = getYear(new Date()) - 100,
-  endYear = getYear(new Date()),
+
+export function DateTimePicker({
+  selectedDate,
   setDateFn,
-}: DatePickerProps) {
-  const [date, setDate] = React.useState<Date | null>(selectedDate);
-  const [open, setOpen] = React.useState(false);
-  const [selectOpen, setSelectOpen] = React.useState(false);
+}: DateTimePickerProps) {
+  const [date, setDate] = useState<Date | undefined>(selectedDate || undefined);
+  const [isOpen, setIsOpen] = useState(false);
 
-  const months = [
-    "January",
-    "February",
-    "March",
-    "April",
-    "May",
-    "June",
-    "July",
-    "August",
-    "September",
-    "October",
-    "November",
-    "December",
-  ];
-  const years = Array.from(
-    { length: endYear - startYear + 1 },
-    (_, i) => startYear + i
-  );
+  const hours = Array.from({ length: 12 }, (_, i) => i + 1);
 
-  const handleMonthChange = (month: string) => {
-    if (date) {
-      const newDate = setMonth(date, months.indexOf(month));
-      setDate(newDate);
-    } else {
-      const newDate1 = setMonth(
-        setYear(new Date(), endYear),
-        months.indexOf(month)
-      );
-      setDate(newDate1);
+  const handleDateSelect = (selectedDate: Date | undefined) => {
+    if (selectedDate) {
+      setDate(selectedDate);
+      setDateFn(selectedDate);
     }
   };
 
-  const handleYearChange = (year: string) => {
+  const handleTimeChange = (
+    type: "hour" | "minute" | "ampm",
+    value: string
+  ) => {
     if (date) {
-      const newDate = setYear(date, parseInt(year));
+      const newDate = new Date(date);
+      if (type === "hour") {
+        newDate.setHours(
+          (parseInt(value) % 12) + (newDate.getHours() >= 12 ? 12 : 0)
+        );
+      } else if (type === "minute") {
+        newDate.setMinutes(parseInt(value));
+      } else if (type === "ampm") {
+        const currentHours = newDate.getHours();
+        newDate.setHours(
+          value === "PM" ? (currentHours % 12) + 12 : currentHours % 12
+        );
+      }
       setDate(newDate);
-    } else {
-      const newDate = setYear(setYear(new Date(), endYear), parseInt(year));
-      setDate(newDate);
-    }
-  };
-
-  const handleSelect = (selectedData: Date | undefined) => {
-    if (selectedData) {
-      setDate(selectedData);
-      setDateFn(selectedData);
+      setDateFn(newDate);
     }
   };
 
   return (
-    <Popover open={open} onOpenChange={(v) => !selectOpen && setOpen(v)}>
+    <Popover open={isOpen} onOpenChange={setIsOpen}>
       <PopoverTrigger asChild>
-        <div
-          className={`mt-1 block w-full border rounded-[10px] shadow-sm py-3 px-3 focus:outline-none focus:ring-[#1E212D] focus:border-[#1E212D] bg-white`}
+        <Button
+          variant="outline"
+          className={cn(
+            "w-full justify-start text-left font-normal bg-white rounded-[10px] border-0 hover:bg-white py-6",
+            !date && "text-muted-foreground"
+          )}
         >
-          <p className={`text-black  ${date ? "" : "text-opacity-40"}`}>
-            {date ? format(date, "PPP") : "Pick a date"}
-          </p>
-        </div>
+          <CalendarIcon className="mr-2 h-4 w-4" />
+          {date ? (
+            format(date, "MM/dd/yyyy hh:mm aa")
+          ) : (
+            <span>MM/DD/YYYY hh:mm aa</span>
+          )}
+        </Button>
       </PopoverTrigger>
-      <PopoverContent side="bottom" align="start" className="w-auto p-0">
-        <div className="flex justify-between p-2">
-          <Select
-            onValueChange={handleMonthChange}
-            value={months[getMonth(date ?? setYear(new Date(), endYear))]}
-            open={selectOpen}
-            onOpenChange={setSelectOpen}
-          >
-            <SelectTrigger className="w-[110px]">
-              <SelectValue placeholder="Month" />
-            </SelectTrigger>
-            <SelectContent>
-              {months.map((month) => (
-                <SelectItem key={month} value={month}>
-                  {month}
-                </SelectItem>
-              ))}
-            </SelectContent>
-          </Select>
-          <Select
-            onValueChange={handleYearChange}
-            value={getYear(date ?? setYear(new Date(), endYear)).toString()}
-          >
-            <SelectTrigger className="w-[110px]">
-              <SelectValue placeholder="Year" />
-            </SelectTrigger>
-            <SelectContent>
-              {years.map((year) => (
-                <SelectItem key={year} value={year.toString()}>
-                  {year}
-                </SelectItem>
-              ))}
-            </SelectContent>
-          </Select>
+      <PopoverContent className="w-auto p-0">
+        <div className="sm:flex">
+          <Calendar
+            mode="single"
+            selected={date}
+            onSelect={handleDateSelect}
+            initialFocus
+            // className="rounded-[10px]"
+          />
+          <div className="flex flex-col sm:flex-row sm:h-[300px] divide-y sm:divide-y-0 sm:divide-x">
+            <ScrollArea className="w-64 sm:w-auto">
+              <div className="flex sm:flex-col p-2">
+                {hours.map((hour) => (
+                  <Button
+                    key={hour}
+                    size="icon"
+                    variant={
+                      date && date.getHours() % 12 === hour % 12
+                        ? "default"
+                        : "ghost"
+                    }
+                    className="sm:w-full shrink-0 aspect-square"
+                    onClick={() => handleTimeChange("hour", hour.toString())}
+                  >
+                    {hour}
+                  </Button>
+                ))}
+              </div>
+              <ScrollBar orientation="horizontal" className="sm:hidden" />
+            </ScrollArea>
+            <ScrollArea className="w-64 sm:w-auto">
+              <div className="flex sm:flex-col p-2">
+                {Array.from({ length: 12 }, (_, i) => i * 5).map((minute) => (
+                  <Button
+                    key={minute}
+                    size="icon"
+                    variant={
+                      date && date.getMinutes() === minute ? "default" : "ghost"
+                    }
+                    className="sm:w-full shrink-0 aspect-square"
+                    onClick={() =>
+                      handleTimeChange("minute", minute.toString())
+                    }
+                  >
+                    {minute.toString().padStart(2, "0")}
+                  </Button>
+                ))}
+              </div>
+              <ScrollBar orientation="horizontal" className="sm:hidden" />
+            </ScrollArea>
+            <ScrollArea className="">
+              <div className="flex sm:flex-col p-2">
+                {["AM", "PM"].map((ampm) => (
+                  <Button
+                    key={ampm}
+                    size="icon"
+                    variant={
+                      date &&
+                      ((ampm === "AM" && date.getHours() < 12) ||
+                        (ampm === "PM" && date.getHours() >= 12))
+                        ? "default"
+                        : "ghost"
+                    }
+                    className="sm:w-full shrink-0 aspect-square"
+                    onClick={() => handleTimeChange("ampm", ampm)}
+                  >
+                    {ampm}
+                  </Button>
+                ))}
+              </div>
+            </ScrollArea>
+          </div>
         </div>
-
-        <Calendar
-          mode="single"
-          selected={date ?? setYear(new Date(), endYear)}
-          onSelect={handleSelect}
-          month={date ?? setYear(new Date(), endYear)}
-          onMonthChange={setDate}
-          initialFocus
-          disabled={{ after: setYear(new Date(), endYear) }}
-          fromYear={startYear}
-          toYear={endYear}
-        />
       </PopoverContent>
     </Popover>
   );

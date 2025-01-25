@@ -57,7 +57,9 @@ const PartyPackage: React.FC<IPartyPackage> = ({
               content={sectionContent.raw}
               renderers={{
                 li: ({ children }) => (
-                  <li className="my-2 text-bg1 list-disc">{children}</li>
+                  <li className="my-2 text-bg1 list-disc font-normal">
+                    {children}
+                  </li>
                 ),
               }}
             />

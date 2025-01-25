@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
 import { toast } from "react-hot-toast";
-import { DatePicker } from "../ui/date-picker";
+import { DateTimePicker } from "../ui/date-picker";
 import { getYear, isAfter, isBefore } from "date-fns";
 import { TimePicker } from "../ui/time-picker/time-picker";
 import { isValidPhoneNumber } from "libphonenumber-js";
@@ -68,19 +68,6 @@ const CateringForm: React.FC = () => {
     }
   };
 
-  const handlePhoneNumberChange = (v: string | undefined) => {
-    // Remove all non-digit characters
-    const cleanedNumber = v?.replace(/\D/g, "") || "";
-
-    // Limit to 10 digits
-    const limitedNumber = cleanedNumber.slice(0, 10);
-
-    setFormData((prev) => ({
-      ...prev,
-      phonenumber: limitedNumber,
-    }));
-  };
-
   // Validation function
   const validateForm = (): boolean => {
     const newErrors: FormErrors = {};
@@ -115,11 +102,6 @@ const CateringForm: React.FC = () => {
       newErrors.eventDate = "Event date must be in the future";
     }
 
-    // Event Time validation
-    if (!eventTime) {
-      newErrors.eventTime = "Please select an event time";
-    }
-
     // Number of People validation
     const peopleCount = parseInt(formData.noofpeople, 10);
     if (isNaN(peopleCount)) {
@@ -137,6 +119,7 @@ const CateringForm: React.FC = () => {
     // Validate form
     if (!validateForm()) {
       toast.error("Please correct the errors in the form");
+      console.log(errors);
       return;
     }
 
@@ -145,7 +128,7 @@ const CateringForm: React.FC = () => {
       const submissionData = {
         ...formData,
         eventdate: new Date(eventDate).toISOString().split("T")[0], // Extract just the date
-        pickuptime: new Date(eventTime!).toLocaleTimeString("en-US", {
+        pickuptime: new Date(eventDate).toLocaleTimeString("en-US", {
           hour: "2-digit",
           minute: "2-digit",
           hour12: true,
@@ -153,6 +136,7 @@ const CateringForm: React.FC = () => {
       };
 
       console.log(submissionData);
+      console.log(eventDate);
 
       const res = await fetch("/api/catering-inquiry", {
         method: "POST",
@@ -196,7 +180,10 @@ const CateringForm: React.FC = () => {
           </p>
         </div>
       ) : (
-        <form onSubmit={handleFormSubmit} className="flex flex-col gap-y-6">
+        <form
+          onSubmit={handleFormSubmit}
+          className="flex flex-col gap-y-6 max-w-5xl mx-auto"
+        >
           <p className="text-center font-bebas text-4xl lg:text-[60px] xl:text-[90px] mb-10 lg:mb-24 text-bg1">
             Catering Request Form
           </p>
@@ -282,7 +269,7 @@ const CateringForm: React.FC = () => {
             <label className="block text-lg font-semibold mb-1 text-bg1 font-rubik">
               Event Date
             </label>
-            <DatePicker
+            <DateTimePicker
               selectedDate={eventDate.length === 0 ? null : new Date(eventDate)}
               setDateFn={(date) => {
                 setEventDate(date.toISOString());
@@ -291,15 +278,15 @@ const CateringForm: React.FC = () => {
                   setErrors((prev) => ({ ...prev, eventDate: undefined }));
                 }
               }}
-              endYear={getYear(new Date()) + 1}
             />
+
             {errors.eventDate && (
               <p className="text-red-500 text-sm mt-1">{errors.eventDate}</p>
             )}
           </div>
 
           {/* Event Time */}
-          <div>
+          {/* <div>
             <label className="block text-lg font-semibold mb-1 text-bg1 font-rubik">
               Pickup/Delivery Time
             </label>
@@ -316,7 +303,7 @@ const CateringForm: React.FC = () => {
             {errors.eventTime && (
               <p className="text-red-500 text-sm mt-1">{errors.eventTime}</p>
             )}
-          </div>
+          </div> */}
 
           {/* Number of People */}
           <div>

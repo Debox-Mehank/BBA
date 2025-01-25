@@ -55,14 +55,14 @@ const BlogDetails = ({
         datePublished={blog?.updatedAt}
         authorName={"Bawarchi Atlanta"}
       />
-      <Toaster
+      {/* <Toaster
         position="top-right"
         containerStyle={{
           position: "absolute",
           top: 80,
           right: 20,
         }}
-      />
+      /> */}
       <Head>
         <title>{blog.title}</title>
         <meta name="description" content={blog?.shortDescription} />

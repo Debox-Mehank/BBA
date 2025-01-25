@@ -22,7 +22,7 @@ const CateringCard: React.FC<ICateringCard> = ({
   package3,
 }) => {
   return (
-    <div className="px-6 py-10 bg-bg3 flex flex-col items-center rounded-[80px]">
+    <div className="lg:px-24 px-6 py-10 bg-bg3 flex flex-col items-center rounded-[80px]">
       <p className="xl:text-[90px] xsm:text-[60px] text-[40px] font-bebas text-bg1 text-center custom-lg:mb-10">
         CATERING OPTIONS
       </p>

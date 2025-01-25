@@ -1,7 +1,9 @@
-import React, { useEffect, useState } from "react";
+import type React from "react";
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import Instagram from "../assets/ri_instagram-fill.png";
 import Facebook from "../assets/ic_baseline-facebook.png";
+import Logo from "../assets/logo.png";
 import Link from "next/link";
 import { RichText } from "@graphcms/rich-text-react-renderer";
 import { graphQLClient } from "@/lib/graphqlClient";
@@ -22,7 +24,7 @@ const Footer: React.FC = () => {
   const [footerData, setFooterData] = useState<IFooterData | null>(null);
   const [error, setError] = useState<string | null>(null);
 
-  const footerLinks = [
+  const quickLinks = [
     { name: "Home", href: "/" },
     { name: "Our Story", href: "/our-story" },
     { name: "Catering", href: "/catering" },
@@ -73,75 +75,96 @@ const Footer: React.FC = () => {
   }
 
   return (
-    <div className="bg-bg1 pt-12 sm:pb-12 pb-2 sm:px-4 px-4 flex flex-col custom-sm:items-center justify-between font-rubik text-bg3 gap-y-6">
-      <div className="flex flex-col items-start md:items-center">
-        <div className="flex flex-col mb-4 custom-sm:flex-row custom-sm:items-center items-start gap-y-4 justify-evenly text-xl font-medium gap-x-10">
-          {footerLinks.map((item, index) => (
-            <Link key={index} href={item.href}>
-              <span className="cursor-pointer uppercase">{item.name}</span>
+    <footer className="bg-bg1 pt-12 pb-6 px-4 font-rubik text-bg3">
+      <div className="container mx-auto grid md:grid-cols-4 gap-8 md:gap-12">
+        {/* Column 1: Logo, Address, Social Links */}
+        <div className="flex flex-col items-start md:pl-10">
+          <Image
+            src={Logo || "/placeholder.svg"}
+            alt="Restaurant Logo"
+            width={150}
+            height={50}
+            className="mb-4"
+          />
+          <p className="mb-4">{footerData.address}</p>
+          <div className="flex items-center">
+            <Link
+              href={`${footerData.facebookLink}`}
+              target="_blank"
+              className="mr-4"
+            >
+              <Image
+                src={Facebook || "/placeholder.svg"}
+                alt="facebook"
+                className="w-[30px] h-[30px]"
+              />
             </Link>
-          ))}
+            <Link href={`${footerData.instagramLink}`} target="_blank">
+              <Image
+                src={Instagram || "/placeholder.svg"}
+                alt="instagram"
+                className="w-[30px] h-[30px]"
+              />
+            </Link>
+          </div>
         </div>
-        <div className="flex flex-col md:items-center items-start my-5">
-          <p className="font-semibold uppercase">Operational Hours:</p>
-          <div>
+
+        {/* Column 2: Quick Links */}
+        <div className="lg:ml-20">
+          <h3 className="font-semibold uppercase mb-4 ">Quick Links:</h3>
+          <div className="flex flex-col space-y-2 text-start">
+            {quickLinks.map((item, index) => (
+              <Link
+                key={index}
+                href={item.href}
+                className="hover:underline w-fit"
+              >
+                {item.name}
+              </Link>
+            ))}
+          </div>
+        </div>
+
+        {/* Column 3: Operational Hours */}
+        <div>
+          <h3 className="font-semibold uppercase mb-4">Operational Hours:</h3>
+          <div className="">
             <RichText content={footerData.operationalHours.raw} />
           </div>
         </div>
-        <div className="flex flex-col md:items-center items-start my-5">
-          <p className="font-semibold uppercase">Contact Us:</p>
-          <a
-            href={`tel:${footerData.contactDetail}`}
-            className="hover:underline"
-          >
-            {footerData.contactDetail}
-          </a>
-        </div>
-        <div className="flex flex-col md:items-center items-start mt-3 mb-5">
-          <p className="font-semibold uppercase">Our Location:</p>
-          <Link
-            href="https://www.google.com/maps/place/Bawarchi+Biryanis+Atlanta/@33.9358123,-84.3794284,17z/data=!3m1!4b1!4m6!3m5!1s0x88f50e9fded7b25d:0x28ffca00c31c2e05!8m2!3d33.9358123!4d-84.3768535!16s%2Fg%2F11b5wjnpzw?entry=ttu&g_ep=EgoyMDI0MTIwMS4xIKXMDSoASAFQAw%3D%3D"
-            passHref
-            target="_blank"
-          >
-            <p className="hover:underline underline-offset-2">
-              {footerData.address}
-            </p>
-          </Link>
-        </div>
-        <p className="md:text-xl text-lg mb-4">
-          Delicious Indian Food in Sandy Springs Atlanta
-        </p>
-        <div className="flex items-center">
-          <Link href={`${footerData.facebookLink}`} target="_blank">
-            <Image
-              src={Facebook}
-              alt="facebook"
-              className="w-[30px] h-[30px] mr-4"
-            />
-          </Link>
-          <Link href={`${footerData.instagramLink}`} target="_blank">
-            <Image
-              src={Instagram}
-              alt="instagram"
-              className="w-[30px] h-[30px]"
-            />
-          </Link>
+
+        {/* Column 4: Contact Us */}
+        <div>
+          <h3 className="font-semibold uppercase mb-4">Contact Us:</h3>
+          <p>
+            Phone:
+            <a
+              href={`tel:${footerData.contactDetail}`}
+              className="hover:underline ml-2"
+            >
+              {footerData.contactDetail}
+            </a>
+          </p>
         </div>
       </div>
-      <div className="flex items-center justify-center">
-        <p className="font-medium flex items-center custom-sm:text-xl xsm:text-[14px] text-[10px] custom-sm:mt-0 mt-10">
+
+      {/* Bottom Section */}
+      <div className="container mx-auto mt-8 pt-4 border-t border-gray-300 flex md:flex-row space-y-4 flex-col md:space-y-0 justify-between items-center">
+        <p className="text-sm">
+          Delicious Indian Food in Sandy Springs Atlanta
+        </p>
+        <p className="text-sm">
           DESIGNED AND DEVELOPED BY{" "}
           <Link
             href="https://debox.co.in/"
             target="_blank"
-            className="underline ml-1"
+            className="underline"
           >
             DEBOX CONSULTING PVT. LTD.
           </Link>
         </p>
       </div>
-    </div>
+    </footer>
   );
 };
 

@@ -128,7 +128,7 @@ const FrameSection: React.FC<IFrameSection> = ({
         <h1 className="font-bebas custom-sm:text-[80px] text-[60px] leading-[55px] custom-sm:leading-[70px] text-bg3 lg:max-w-[438px] mb-10">
           {frameSectionTitle}
         </h1>
-        <Link href="/catering">
+        <Link href="/our-story">
           <p className="flex items-center font-bebas xsm:text-3xl text-xl text-bg3 font-bold cursor-pointer group">
             <span className="transition-all duration-300 ease-in-out">
               READ MORE

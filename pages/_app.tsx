@@ -30,7 +30,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         <title>{`Best Indian Restaurant in Atlanta`}</title>
         <meta
           name="description"
-          content="Best Indian Restaurant in Sandy Springs serving delicious Indian food since 2014. Serving authentic Indian Curries, Authentic Biryanis, Indian Appetizers & Tandoor, Indian Chaat, Snacksn and Indian Desserts."
+          content="Best Indian Restaurant in Sandy Springs serving delicious Indian food since 2014. Serving authentic Indian Curries, Authentic Biryanis, Indian Appetizers & Tandoor, Indian Chaat, Snacks and Indian Desserts."
         />
         <link rel="canonical" href={`https://bawarchiatlanta.com/`} />
         <link rel="icon" href="/favicon.ico" />

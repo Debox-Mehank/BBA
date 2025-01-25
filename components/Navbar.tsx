@@ -4,16 +4,23 @@ import React, { useRef, useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import { motion } from "framer-motion";
 import { fadeIn } from "@/utils/motion";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import Logo from "../assets/logo.png";
 import HamburgerIcon from "../assets/hamburger.png";
 import Link from "next/link";
 
-const Navbar = () => {
+interface FooterLink {
+  name: string;
+  href: string;
+}
+
+const Navbar: React.FC = () => {
   const router = useRouter();
-  const [isButtonVisible, setIsButtonVisible] = useState(false);
-  const observerTargetRef = useRef(null);
-  const footer = [
+  const [isButtonVisible, setIsButtonVisible] = useState<boolean>(false);
+  const observerTargetRef = useRef<HTMLDivElement>(null);
+  const navbarRef = useRef<HTMLDivElement>(null);
+
+  const footer: FooterLink[] = [
     { name: "Home", href: "/" },
     { name: "Our Story", href: "/our-story" },
     { name: "Catering", href: "/catering" },
@@ -29,6 +36,9 @@ const Navbar = () => {
     },
   ];
 
+  const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
+
+  // Handle scroll and button visibility
   useEffect(() => {
     const handleScroll = () => {
       const target = observerTargetRef.current;
@@ -51,8 +61,7 @@ const Navbar = () => {
     };
   }, [router.pathname]);
 
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-
+  // Handle menu open/close with body overflow
   useEffect(() => {
     if (isMenuOpen) {
       document.body.classList.add("overflow-hidden");
@@ -61,13 +70,49 @@ const Navbar = () => {
     }
   }, [isMenuOpen]);
 
+  // Close menu when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+        navbarRef.current &&
+        !navbarRef.current.contains(event.target as Node) &&
+        isMenuOpen
+      ) {
+        setIsMenuOpen(false);
+      }
+    };
+
+    // Add click listener to document
+    document.addEventListener("mousedown", handleClickOutside);
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [isMenuOpen]);
+
+  // Close menu on route change
+  useEffect(() => {
+    const handleRouteChange = () => {
+      setIsMenuOpen(false);
+    };
+
+    router.events.on("routeChangeStart", handleRouteChange);
+
+    return () => {
+      router.events.off("routeChangeStart", handleRouteChange);
+    };
+  }, [router]);
+
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
   return (
     <>
-      <div className="fixed top-0 left-0 w-full px-2 py-0 bg-bg1 z-50">
+      <div
+        ref={navbarRef}
+        className="fixed top-0 left-0 w-full px-2 py-0 bg-bg1 z-50"
+      >
         <div className="flex justify-between items-center px-2 sm:px-16 py-6 xl:px-24 lg:px-12">
           <Link
             href={"/"}
@@ -134,8 +179,8 @@ const Navbar = () => {
             whileInView="show"
           >
             {footer.map((item, index) => (
-              <Link key={index} href={item.href}>
-                <span className="cursor-pointer  hover:text-bg3 uppercase">
+              <Link key={index} href={item.href} onClick={toggleMenu}>
+                <span className="cursor-pointer hover:text-bg3 uppercase">
                   {item.name}
                 </span>
               </Link>
@@ -143,8 +188,7 @@ const Navbar = () => {
           </motion.ul>
         </div>
       </div>
-      <div ref={observerTargetRef} style={{ height: "1px" }} />{" "}
-      {/* Invisible target to manage scroll effect */}
+      <div ref={observerTargetRef} style={{ height: "1px" }} />
     </>
   );
 };

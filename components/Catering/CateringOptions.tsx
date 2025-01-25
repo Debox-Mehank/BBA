@@ -44,22 +44,20 @@ const CateringOptions: React.FC<ICateringOptions> = ({
             height={560}
           />
         </div>
-        <div className="flex flex-col items-start text-bg3 custom-lg:max-w-[800px] w-full font-rubik custom-lg:mt-0 mt-10 custom-lg:ml-10 ml-0 font-semibold space-y-6">
+        <div className="flex flex-col items-start text-bg3 custom-lg:max-w-[800px] w-full font-rubik custom-lg:mt-0 mt-10 custom-lg:ml-10 ml-0  space-y-6">
           <RichText
             content={sectionContent.raw}
             renderers={{
               ul: ({ children }) => (
-                <ul className="gap-y-2 font-rubik text-xl font-bold list-disc pl-5">
+                <ul className="gap-y-2 font-rubik text-xl list-disc pl-5">
                   {children}
                 </ul>
               ),
               li: ({ children }) => (
                 <li className="my-2 text-bg3">{children}</li>
               ),
-              p: ({ children }) => (
-                <h5 className="text-xl mb-4 font-medium">{children}</h5>
-              ),
-              h3: ({ children }) => <h3 className="text-2xl">{children}</h3>,
+              p: ({ children }) => <h5 className="text-xl mb-4">{children}</h5>,
+              h3: ({ children }) => <h3 className="text-2xl ">{children}</h3>,
             }}
           />
           {/* <h2 className="text-xl mb-4 font-semibold">

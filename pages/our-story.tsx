@@ -44,10 +44,10 @@ const ourStory: React.FC<OurStoryPageProps> = ({ ourStoryPageData }) => {
   return (
     <>
       <Head>
-        <title>Bawarchi Atlanta Story</title>
+        <title>Bawarchi Atlanta Journey</title>
         <meta
           name="description"
-          content="Know about the journey and passion behind Bawarchi Atlanta's authentic Indian cuisine."
+          content="Discover the journey of Bawarchi Atlanta's culinary passion and commitment to authentic Indian cuisine."
         />
         <link rel="canonical" href={`https://bawarchiatlanta.com/our-story/`} />
         <link rel="icon" href="/favicon.ico" />

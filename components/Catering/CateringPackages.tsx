@@ -35,7 +35,7 @@ const CateringPackages: React.FC<ICateringPackages> = ({
           />
         </div>
         <div className="flex flex-col items-start text-bg1  font-rubik custom-lg:ml-10 ml-4">
-          <ul className="gap-y-2 flex flex-col max-w-[600px] font-rubik xsm:text-2xl text-bg1 font-medium custom-lg:pl-10 pl-0 h-full mt-10 custom-lg:mt-0 text-xl">
+          <ul className="gap-y-2 flex flex-col max-w-[600px] font-rubik xsm:text-2xl text-bg1 font-normal custom-lg:pl-10 pl-0 h-full mt-10 custom-lg:mt-0 text-xl">
             <RichText
               content={sectionContent.raw}
               renderers={{

@@ -39,7 +39,7 @@ const OurStory: React.FC<IOurStory> = ({
         }`}
       >
         <div className="custom-lg:w-1/2 w-full flex items-center justify-center">
-          <div className="relative xsm:w-[500px] xsm:h-[600px] w-[400px] h-[530px]">
+          <div className="relative xsm:w-[450px] xsm:h-[540px] w-[400px] h-[530px]">
             <Image
               src={sectionImage.url}
               placeholder="blur"
