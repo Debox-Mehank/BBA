@@ -18,8 +18,6 @@ export default async function handler(
         pickuptime,
         noofpeople,
         management_message,
-        catering_type,
-        event_type,
       } = req.body;
 
       const htmlTemplate = `
@@ -47,12 +45,6 @@ export default async function handler(
               <p><span class="label">Event Date:</span> ${eventdate}</p>
               <p><span class="label">Pickup/Delivery Time:</span> ${pickuptime}</p>
               <p><span class="label">Number of People:</span> ${noofpeople}</p>
-              <p><span class="label">Catering Type:</span> ${
-                catering_type || "Not specified"
-              }</p>
-              <p><span class="label">Event Type:</span> ${
-                event_type || "Not specified"
-              }</p>
               <p><span class="label">Message:</span> ${management_message}</p>
             </div>
           </div>

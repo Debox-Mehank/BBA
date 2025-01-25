@@ -1,7 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
 import { toast } from "react-hot-toast";
-import Input from "react-phone-number-input/input";
-import "react-phone-number-input/style.css";
 import { DatePicker } from "../ui/date-picker";
 import { getYear, isAfter, isBefore } from "date-fns";
 import { TimePicker } from "../ui/time-picker/time-picker";
@@ -146,8 +144,8 @@ const CateringForm: React.FC = () => {
     try {
       const submissionData = {
         ...formData,
-        eventDate: new Date(eventDate).toISOString().split("T")[0], // Extract just the date
-        eventTime: new Date(eventTime!).toLocaleTimeString("en-US", {
+        eventdate: new Date(eventDate).toISOString().split("T")[0], // Extract just the date
+        pickuptime: new Date(eventTime!).toLocaleTimeString("en-US", {
           hour: "2-digit",
           minute: "2-digit",
           hour12: true,
@@ -244,16 +242,14 @@ const CateringForm: React.FC = () => {
               <label className="block text-lg font-semibold mb-1 text-bg1 font-rubik">
                 Phone Number
               </label>
-              <Input
+              <input
                 name="phonenumber"
-                country="US"
+                maxLength={10}
                 value={formData.phonenumber}
-                onChange={(v) =>
-                  setFormData((prev) => ({ ...prev, phonenumber: v || "" }))
-                }
                 className={`w-full p-3 rounded-[10px] border-0 focus:ring-0 ${
                   errors.phonenumber ? "border-2 border-red-500" : ""
                 }`}
+                onChange={handleInputChange}
               />
               {errors.phonenumber && (
                 <p className="text-red-500 text-sm mt-1">
@@ -358,7 +354,7 @@ const CateringForm: React.FC = () => {
           <button
             type="submit"
             disabled={isLoading}
-            className="bg-bg1 uppercase xsm:w-[400px] w-[300px] font-rubik text-2xl text-bg3 py-2 px-2 rounded-[10px] mt-10 self-center disabled:opacity-50"
+            className="bg-bg1 uppercase xsm:w-[400px] w-[200px] font-rubik text-xl sm:text-2xl text-bg3 py-2 px-2 rounded-[10px] mt-10 self-center disabled:opacity-50"
           >
             {isLoading ? "Submitting..." : "Submit"}
           </button>
