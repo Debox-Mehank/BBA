@@ -39,13 +39,13 @@ const PartyPackage: React.FC<IPartyPackage> = ({
         {sectionTitle}
       </p>
 
-      <div className="relative flex flex-col custom-lg:flex-row items-center">
+      <div className="relative flex flex-col custom-lg:flex-row items-center justify-center max-w-8xl mx-auto">
         <div>
           <Image
             placeholder="blur"
             src={sectionImage.url}
             alt="Masala Dosa"
-            className="rounded-[40px] w-[600px] h-[460px]"
+            className="rounded-[40px] w-[600px] md:h-[460px] h-[300px]"
             blurDataURL={blurHashToDataURL(sectionImageBlurHash)}
             width={600}
             height={460}

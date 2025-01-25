@@ -99,7 +99,6 @@ interface ICatering {
 }
 
 const catering: React.FC<ICatering> = ({ cateringPageData }) => {
-  console.log(cateringPageData);
   return (
     <div>
       <Head>

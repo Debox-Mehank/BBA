@@ -110,7 +110,6 @@ interface HomePageProps {
 }
 
 const HomePage: React.FC<HomePageProps> = ({ homePageData }) => {
-  console.log(homePageData);
   return (
     <div>
       <Navbar />

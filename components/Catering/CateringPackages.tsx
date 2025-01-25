@@ -24,12 +24,12 @@ const CateringPackages: React.FC<ICateringPackages> = ({
 }) => {
   return (
     <div className="lg:px-24 xsm:px-12 px-6 py-10 bg-bg3 rounded-[60px] lg:rounded-[100px] z-10 overflow-hidden">
-      <div className="relative flex flex-col custom-lg:flex-row items-center">
+      <div className="relative flex flex-col custom-lg:flex-row items-center justify-center">
         <div>
           <Image
             src={sectionImage.url}
             alt="catering"
-            className="rounded-[40px] w-[600px] h-[500px]"
+            className="rounded-[40px] w-[600px] md:h-[500px] h-[360px]"
             placeholder="blur"
             blurDataURL={blurHashToDataURL(sectionImageBlurHash)}
             width={600}
