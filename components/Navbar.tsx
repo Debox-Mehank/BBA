@@ -119,6 +119,7 @@ const Navbar: React.FC = () => {
             prefetch={false}
             passHref
             className="relative !w-[170px] !h-[53px] min-w-[115px] min-h-[53px]"
+            aria-label="Logo"
           >
             <Image
               src={Logo}
@@ -131,8 +132,10 @@ const Navbar: React.FC = () => {
               target="_blank"
               href="https://ordersave.com/partnersite/j5DgkW8FF1Nd/menu"
               className="mr-10"
+              aria-label="Order Now Link"
             >
               <button
+                aria-label="Order Now"
                 className={`px-6 py-2 h-12 hidden md:block w-[180px] text-[20px] bg-bg3 font-rubik font-medium  border rounded-[10px] text-bg1 transition-opacity duration-500 ${
                   isButtonVisible ? "opacity-100" : "opacity-0"
                 }`}
@@ -141,7 +144,7 @@ const Navbar: React.FC = () => {
                 ORDER NOW
               </button>
             </Link>
-            <button>
+            <button aria-label="Close Menu">
               <Image
                 src={HamburgerIcon}
                 alt="Sidebar"
@@ -156,7 +159,11 @@ const Navbar: React.FC = () => {
             isMenuOpen ? "translate-x-0" : "translate-x-full"
           }`}
         >
-          <button className="self-end mr-4 mt-4" onClick={toggleMenu}>
+          <button
+            aria-label="Toggle Menu"
+            className="self-end mr-4 mt-4"
+            onClick={toggleMenu}
+          >
             <svg
               className="absolute top-2 right-2 sm:top-10 sm:right-10 w-6 h-6 text-white"
               fill="none"

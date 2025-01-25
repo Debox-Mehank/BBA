@@ -78,7 +78,7 @@ const Footer: React.FC = () => {
     <footer className="bg-bg1 pt-12 pb-6 px-4 font-rubik text-bg3">
       <div className="container mx-auto grid md:grid-cols-4 gap-8 md:gap-12">
         {/* Column 1: Logo, Address, Social Links */}
-        <div className="flex flex-col items-start md:pl-10">
+        <div className="flex flex-col items-start md:pl-10 !w-full">
           <Image
             src={Logo || "/placeholder.svg"}
             alt="Restaurant Logo"

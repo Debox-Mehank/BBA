@@ -144,16 +144,27 @@ const Banner: React.FC<IBanner> = ({
             <br />
           </h1>
           <div className="flex flex-col md:flex-row items-center justify-center space-x-4">
-            <Link target="_blank" href={`${onlineOrderLink}`}>
-              <button className="mt-4 px-8 py-3 tracking-wide text-sm xsm:text-lg md:text-xl font-medium font-rubik border-2 text-bg3 bg-bg1 rounded-[15px] shadow-xl">
+            <Link
+              aria-label="Order Link"
+              target="_blank"
+              href={`${onlineOrderLink}`}
+            >
+              <button
+                aria-label="Order Now"
+                className="mt-4 px-8 py-3 tracking-wide text-sm xsm:text-lg md:text-xl font-medium font-rubik border-2 text-bg3 bg-bg1 rounded-[15px] shadow-xl"
+              >
                 ORDER NOW
               </button>
             </Link>
             <Link
               target="_blank"
               href="https://www.clover.com/online-ordering/kwality-ice-creams-atl-sandy-springs"
+              aria-label="Kwality Link"
             >
-              <button className="mt-4 px-8 py-3 tracking-wide text-sm xsm:text-lg md:text-xl font-medium font-rubik border-2 border-bg1 text-bg1 bg-bg3 rounded-[15px] shadow-xl">
+              <button
+                aria-label="Kwality"
+                className="mt-4 px-8 py-3 tracking-wide text-sm xsm:text-lg md:text-xl font-medium font-rubik border-2 border-bg1 text-bg1 bg-bg3 rounded-[15px] shadow-xl"
+              >
                 Kwality Ice-Creams Atlanta
               </button>
             </Link>
