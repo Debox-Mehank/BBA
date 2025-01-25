@@ -111,7 +111,7 @@ const Footer: React.FC = () => {
 
         {/* Column 2: Quick Links */}
         <div className="lg:ml-20">
-          <h3 className="font-semibold uppercase mb-4 ">Quick Links:</h3>
+          <h2 className="font-semibold uppercase mb-4 ">Quick Links:</h2>
           <div className="flex flex-col space-y-2 text-start">
             {quickLinks.map((item, index) => (
               <Link
@@ -127,7 +127,7 @@ const Footer: React.FC = () => {
 
         {/* Column 3: Operational Hours */}
         <div>
-          <h3 className="font-semibold uppercase mb-4">Operational Hours:</h3>
+          <h2 className="font-semibold uppercase mb-4">Operational Hours:</h2>
           <div className="">
             <RichText content={footerData.operationalHours.raw} />
           </div>
@@ -135,7 +135,7 @@ const Footer: React.FC = () => {
 
         {/* Column 4: Contact Us */}
         <div>
-          <h3 className="font-semibold uppercase mb-4">Contact Us:</h3>
+          <h2 className="font-semibold uppercase mb-4">Contact Us:</h2>
           <p>
             Phone:
             <a
