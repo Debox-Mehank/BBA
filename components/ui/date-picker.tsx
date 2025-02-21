@@ -86,6 +86,7 @@ export function DateTimePicker({
           <div className="flex flex-col sm:flex-row sm:h-[300px] divide-y sm:divide-y-0 sm:divide-x">
             <ScrollArea className="w-64 sm:w-auto">
               <div className="flex sm:flex-col p-2">
+                <span className="p-1 font-medium font-rubik text-sm">HH</span>
                 {hours.map((hour) => (
                   <Button
                     key={hour}
@@ -106,6 +107,7 @@ export function DateTimePicker({
             </ScrollArea>
             <ScrollArea className="w-64 sm:w-auto">
               <div className="flex sm:flex-col p-2">
+                <span className="p-1 font-medium font-rubik text-sm">MM</span>
                 {Array.from({ length: 12 }, (_, i) => i * 5).map((minute) => (
                   <Button
                     key={minute}

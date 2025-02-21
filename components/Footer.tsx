@@ -86,7 +86,13 @@ const Footer: React.FC = () => {
             height={50}
             className="mb-4"
           />
-          <p className="mb-4">{footerData.address}</p>
+          <Link
+            target="_blank"
+            href={`https://www.google.com/maps/place/Bawarchi+Biryanis+Atlanta/@33.9358123,-84.3794284,17z/data=!3m1!4b1!4m6!3m5!1s0x88f50e9fded7b25d:0x28ffca00c31c2e05!8m2!3d33.9358123!4d-84.3768535!16s%2Fg%2F11b5wjnpzw?entry=ttu&g_ep=EgoyMDI0MTIwMS4xIKXMDSoASAFQAw%3D%3D`}
+            className="hover:underline"
+          >
+            <p className="mb-4">{footerData.address}</p>
+          </Link>
           <div className="flex items-center">
             <Link
               href={`${footerData.facebookLink}`}

@@ -125,7 +125,7 @@ const Blogs: React.FC = () => {
                 alt={blog.title}
                 placeholder="blur"
                 blurDataURL={blurHashToDataURL(blog.blurHash)}
-                className="rounded-[30px] xsm:w-[600px] xsm:h-[550px] w-[400px] h-[450px]"
+                className="rounded-[30px] xsm:w-[600px] xsm:h-[550px] w-[400px] h-[450px] object-cover object-bottom"
                 width={600}
                 height={400}
               />

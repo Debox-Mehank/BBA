@@ -113,7 +113,7 @@ const Navbar: React.FC = () => {
         ref={navbarRef}
         className="fixed top-0 left-0 w-full px-2 py-0 bg-bg1 z-50"
       >
-        <div className="flex justify-between items-center px-2 sm:px-16 py-6 xl:px-24 lg:px-12">
+        <div className="flex max-w-8xl xl:mx-auto justify-between items-center px-2 sm:px-16 py-6 xl:px-24 lg:px-12">
           <Link
             href={"/"}
             prefetch={false}

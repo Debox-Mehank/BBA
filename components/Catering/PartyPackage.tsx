@@ -74,7 +74,7 @@ const PartyPackage: React.FC<IPartyPackage> = ({
             <h2 className="text-3xl lg:text-5xl font-bebas text-center">
               {Package1Title}
             </h2>
-            <h3 className="text-2xl lg:text-4xl font-bebas text-center">
+            <h3 className="text-2xl lg:text-4xl font-bebas !font-normal text-center">
               {Package1Subtitle}
             </h3>
             <p className="font-rubik text-lg lg:text-2xl text-center flex-1">

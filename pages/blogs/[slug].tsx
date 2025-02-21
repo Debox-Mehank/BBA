@@ -143,7 +143,7 @@ const BlogDetails = ({
               </div>
             </div>
           </div>
-          <div className="max-w-5xl mx-auto">
+          <div className="max-w-4xl w-11/12 mx-auto">
             <Image
               src={blog?.image?.url}
               alt={blog?.title}

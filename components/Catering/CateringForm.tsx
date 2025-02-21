@@ -163,7 +163,7 @@ const CateringForm: React.FC = () => {
 
   // Render form or thank you message
   return (
-    <div className="px-6 sm:px-12 md:px-16 lg:px-24 py-10 lg:py-20 bg-bg2 rounded-[30px] lg:rounded-[100px] my-10">
+    <div className="px-6 sm:px-12 md:px-16 lg:px-24 py-10 lg:py-20 bg-bg2 rounded-[30px] lg:rounded-[100px]">
       {isSubmitted ? (
         <div ref={thankYouRef} className="text-center">
           <h2 className="font-bebas text-4xl lg:text-[60px] xl:text-[90px] mb-6 text-bg1">

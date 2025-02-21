@@ -53,8 +53,8 @@ export default async function handler(
       `;
 
       const { data, error } = await resend.emails.send({
-        from: "Bawarchi Atlanta <noreply@bawarchiatlanta.com>",
-        to: ["aditya@debox.co.in"],
+        from: "BBA Catering <app.bb.atlanta@gmail.com>",
+        to: ["bawarchibiryaniatl@gmail.com"],
         subject: "Bawarchi Atlanta: New Catering Inquiry",
         html: htmlTemplate,
       });
