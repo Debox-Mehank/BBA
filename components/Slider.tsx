@@ -61,7 +61,7 @@ const Slider: React.FC<ISliderSectionProps> = ({
 
         {/* Counter Section */}
         <div className="text-center gap-10 flex flex-col items-center space-y-8 min-h-[80vh] justify-center">
-          <div className="flex flex-wrap md:justify-between justify-center items-center gap-8 md:gap-20 font-bebas">
+          <div className="flex flex-wrap justify-between items-center gap-8 md:gap-20 font-bebas w-full md:px-6">
             <motion.div
               className="text-center text-bg2"
               initial={{ opacity: 0, y: 50 }}
