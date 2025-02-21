@@ -1,8 +1,7 @@
-import React from "react";
-import Image from "next/image";
-import CountUp from "react-countup";
 import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
+import Image from "next/image";
+import React, { useRef } from "react";
+import CountUp from "react-countup";
 
 interface ISliderSectionProps {
   highlightSectionTitle: string;
@@ -62,14 +61,14 @@ const Slider: React.FC<ISliderSectionProps> = ({
 
         {/* Counter Section */}
         <div className="text-center gap-10 flex flex-col items-center space-y-8 min-h-[80vh] justify-center">
-          <div className="flex flex-wrap justify-center items-center gap-8 md:gap-20 font-bebas">
+          <div className="flex flex-wrap md:justify-between justify-center items-center gap-8 md:gap-20 font-bebas">
             <motion.div
               className="text-center text-bg2"
               initial={{ opacity: 0, y: 50 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: 0.2 }}
             >
-              <h2 className="text-3xl md:text-6xl font-bold">
+              <h2 className="text-3xl md:text-7xl font-bold">
                 {isInView && (
                   <CountUp
                     start={eventsCatered - 100}
@@ -78,15 +77,15 @@ const Slider: React.FC<ISliderSectionProps> = ({
                   />
                 )}
               </h2>
-              <p className="text-lg md:text-3xl">Events Catered</p>
+              <p className="text-lg md:text-4xl">Events Catered</p>
             </motion.div>
             <motion.div
-              className="text-center text-bg2 md:-mt-10"
+              className="text-center text-bg2 md:-mt-20"
               initial={{ opacity: 0, y: 50 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: 0.4 }}
             >
-              <h2 className="text-3xl md:text-6xl font-bold">
+              <h2 className="text-3xl md:text-7xl font-bold">
                 {isInView && (
                   <CountUp
                     start={biryanisServed - 100}
@@ -95,7 +94,7 @@ const Slider: React.FC<ISliderSectionProps> = ({
                   />
                 )}
               </h2>
-              <p className="text-lg md:text-3xl">Biryanis Served</p>
+              <p className="text-lg md:text-4xl">Biryanis Served</p>
             </motion.div>
             <motion.div
               className="text-center text-bg2"
@@ -103,7 +102,7 @@ const Slider: React.FC<ISliderSectionProps> = ({
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: 0.6 }}
             >
-              <h2 className="text-3xl md:text-6xl  font-bold">
+              <h2 className="text-3xl md:text-7xl  font-bold">
                 {isInView && (
                   <CountUp
                     start={guestsServed - 100}
@@ -112,7 +111,7 @@ const Slider: React.FC<ISliderSectionProps> = ({
                   />
                 )}
               </h2>
-              <p className="text-xl md:text-3xl">Guests Served</p>
+              <p className="text-xl md:text-4xl">Guests Served</p>
             </motion.div>
           </div>
 
