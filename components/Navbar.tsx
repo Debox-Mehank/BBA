@@ -1,13 +1,13 @@
 "use client";
 
-import React, { useRef, useState, useEffect } from "react";
-import { useRouter } from "next/router";
-import { motion } from "framer-motion";
 import { fadeIn } from "@/utils/motion";
-import Image, { StaticImageData } from "next/image";
-import Logo from "../assets/logo.png";
-import HamburgerIcon from "../assets/hamburger.png";
+import { motion } from "framer-motion";
+import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/router";
+import React, { useEffect, useRef, useState } from "react";
+import HamburgerIcon from "../assets/hamburger.png";
+import Logo from "../assets/logo.png";
 
 interface FooterLink {
   name: string;
@@ -33,6 +33,10 @@ const Navbar: React.FC = () => {
     {
       name: "Kwality Ice-Creams",
       href: "https://www.clover.com/online-ordering/kwality-ice-creams-atl-sandy-springs",
+    },
+    {
+      name: "Limited-Time Iftar Packages",
+      href: "/iftar-packages.webp",
     },
   ];
 
@@ -186,8 +190,16 @@ const Navbar: React.FC = () => {
             whileInView="show"
           >
             {footer.map((item, index) => (
-              <Link key={index} href={item.href} onClick={toggleMenu}>
-                <span className="cursor-pointer hover:text-bg3 uppercase">
+              <Link
+                key={index}
+                href={item.href}
+                target={
+                  item.name === "Limited-Time Iftar Packages" ? "_blank" : ""
+                }
+                onClick={toggleMenu}
+                className="text-center"
+              >
+                <span className="cursor-pointer hover:text-bg3 uppercase text-center">
                   {item.name}
                 </span>
               </Link>
