@@ -36,7 +36,7 @@ const Navbar: React.FC = () => {
     },
     {
       name: "Limited-Time Iftar Packages",
-      href: "/iftar-packages.webp",
+      href: "/iftar-special-packages.pdf",
     },
   ];
 
