@@ -32,7 +32,7 @@ const Navbar: React.FC = () => {
     },
     {
       name: "Kwality Ice-Creams",
-      href: "https://www.clover.com/online-ordering/kwality-ice-creams-atl-sandy-springs",
+      href: "https://kwalityatlanta.com/menu",
     },
     {
       name: "Limited-Time Iftar Packages",
