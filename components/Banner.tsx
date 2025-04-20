@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from "react";
-import Link from "next/link";
 import Image from "next/image";
+import Link from "next/link";
+import React, { useEffect, useState } from "react";
 
 interface IBanner {
   title: string;
@@ -158,7 +158,7 @@ const Banner: React.FC<IBanner> = ({
             </Link>
             <Link
               target="_blank"
-              href="https://www.clover.com/online-ordering/kwality-ice-creams-atl-sandy-springs"
+              href="https://kwalityatlanta.com"
               aria-label="Kwality Link"
             >
               <button
