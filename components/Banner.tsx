@@ -158,7 +158,7 @@ const Banner: React.FC<IBanner> = ({
             </Link>
             <Link
               target="_blank"
-              href="https://kwalityatlanta.com"
+              href="https://kwalityatlanta.com/menu"
               aria-label="Kwality Link"
             >
               <button
